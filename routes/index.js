@@ -13,11 +13,10 @@ router.get('/config', function(req, res, next) {
   var param = {
     debug: true,
     jsApiList: ['translateVoice', 'playVoice', 'pauseVoice', 'stopVoice', 'onVoicePlayEnd', 'uploadVoice', 'downloadVoice'],
-    url: 'http://game.easyell.com'
+    url: 'http://wx.easyell.com'
   }
   api.getJsConfig(param, function(err, result) {
     if (err) console.log(err)
-    console.log(result)
     res.json(result)
   })
 })
