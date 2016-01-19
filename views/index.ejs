@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>index</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        var config = {
+            debug:"<%= debug %>",
+            appId:"<%= appId %>",
+            timestamp:"<%= timestamp %>",
+            nonceStr:"<%= nonceStr %>",
+            signature:"<%= signature %>",
+            jsApiList:['translateVoice', 'playVoice', 'pauseVoice', 'stopVoice', 'onVoicePlayEnd', 'uploadVoice', 'downloadVoice']
+        }
+        wx.config(config)
+    </script>
+    <style>
+        body{
+            background-color: #000000;
+        }
+        audio{
+            position: absolute;
+            visibility: hidden;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+</body>
+<script>
+</script>
+</html>
+

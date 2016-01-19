@@ -17,7 +17,13 @@ router.get('/config', function(req, res, next) {
   }
   api.getJsConfig(param, function(err, result) {
     if (err) console.log(err)
-    res.json(result)
+    res.render('index', {
+      debug:result.debug,
+      appId: result.appId,
+      timestamp: result.timestamp,
+      nonceStr: result.nonceStr,
+      signature: result.signature,
+    });
   })
 })
 
