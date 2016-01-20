@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 router.get('/config', function(req, res, next) {
   var param = {
     debug: true,
-    jsApiList: ['translateVoice', 'playVoice', 'pauseVoice', 'stopVoice', 'onVoicePlayEnd', 'uploadVoice', 'downloadVoice'],
+    jsApiList: ['translateVoice', 'startRecord', 'stopRecord', 'playVoice', 'pauseVoice', 'stopVoice', 'onVoicePlayEnd', 'uploadVoice', 'downloadVoice'],
     url: 'http://wx.easyell.com'
   }
   api.getJsConfig(param, function(err, result) {
