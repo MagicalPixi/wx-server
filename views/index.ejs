@@ -9,8 +9,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script>
-        var config = '<%- JSON.stringify(config) %>'
-        wx.config(JSON.parse(config))
+        var configString = '<%- JSON.stringify(config) %>'
+        var config = JSON.parse(configString)
+        wx.config(config)
     </script>
     <style>
         body{
@@ -24,8 +25,29 @@
     </style>
 </head>
 <body>
+<button style="width:50%; height:100%" onclick='a()'>start</button>
+<button style="width:50%; height:100%" onclick='b()'>stop</button>
+<button style="width:50%; height:100%" onclick='c()'>play</button>
+
 </body>
-<script>
+<script type="text/javascript" charset="utf-8">
+    var localId
+    var a = function() {
+        wx.startRecord();
+    }
+    var b = function() {
+        wx.stopRecord({
+            success: function (res) {
+                console.log(res)
+                localId = res.localId;
+            }
+        });
+    }
+    var c = function() {
+        wx.playVoice({
+            localId: localId // 需要播放的音频的本地ID，由stopRecord接口获得
+        });
+    }
 </script>
 </html>
 
