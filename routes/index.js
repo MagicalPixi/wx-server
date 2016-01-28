@@ -3,13 +3,14 @@ var router = express.Router();
 var wechat = require('wechat')
 var WechatAPI = require('wechat-api')
 
+var wxConfig = require('../config').wx
 var config = {
-  token: 'guoshencheng',
-  appid: 'wx6f6c7828adb6b4a4',
-  encodingAESKey: 'a6A2gGxXu5lAKc2lz9njpBQa01BJRFMSChQPg6ttl8l'
-};
+  token: wxConfig.token,
+  appid: wxConfig.appid,
+  encodingAESKey: wxConfig.encodingAESKey
+}
 
-var api = new WechatAPI('wx6f6c7828adb6b4a4', '73769a30f5e2ba3114f8e5f04f19bcc8')
+var api = new WechatAPI(wxConfig.appid, wxConfig.secretKey)
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
