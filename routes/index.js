@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var wechat = require('wechat')
 var WechatAPI = require('wechat-api')
-var oauth = require('wecht-oauth')
+var oauth = require('wechat-oauth')
 var wxConfig = require('../config').wx
 var config = {
   token: wxConfig.token,
