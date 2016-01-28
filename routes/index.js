@@ -20,7 +20,7 @@ var api = new WechatAPI(wxConfig.appid, wxConfig.secretKey, function (callback) 
   var Token = model.Token
   Token.findOne({name: 'renyan'}, function(e, v) {
     v = v || new Token({name: 'renyan'})
-    v.access_token = token.access_token
+    v.accessToken = token.accessToken
     v.expireTime = token.expireTime
     v.save(callback)
   })
