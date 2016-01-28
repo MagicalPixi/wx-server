@@ -4,6 +4,7 @@ var wechat = require('wechat')
 var WechatAPI = require('wechat-api')
 var OAuth = require('wechat-oauth')
 var wxConfig = require('../config').wx
+var fs = require('fs')
 var config = {
   token: wxConfig.token,
   appid: wxConfig.appid,
