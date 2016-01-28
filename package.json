@@ -13,10 +13,11 @@
     "ejs-loader": "^0.2.1",
     "express": "~4.13.1",
     "jade": "~1.11.0",
+    "mongoose": "^4.3.7",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0",
     "wechat": "^2.0.2",
-    "wechat-oauth": "^1.1.0",
-    "wechat-api": "^1.23.0"
+    "wechat-api": "^1.23.0",
+    "wechat-oauth": "^1.1.0"
   }
 }

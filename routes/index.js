@@ -5,6 +5,8 @@ var WechatAPI = require('wechat-api')
 var OAuth = require('wechat-oauth')
 var wxConfig = require('../config').wx
 var fs = require('fs')
+var model = require('../models')
+
 var config = {
   token: wxConfig.token,
   appid: wxConfig.appid,
@@ -12,13 +14,15 @@ var config = {
 }
 
 var api = new WechatAPI(wxConfig.appid, wxConfig.secretKey, function (callback) {
-  fs.readFile('access_token.txt', 'utf8', function (err, txt) {
-    if (err) {return callback(err);}
-    callback(null, JSON.parse(txt));
-  });
+  var Token = model.Token
+  Token.findOne({name: 'renyan'}, callback)
 }, function (token, callback) {
-  console.log(token)
-  fs.writeFile('access_token.txt', JSON.stringify(token), callback);
+  var Token = model.Token
+  Token.findOne({name: 'renyan'}, function(e, v) {
+    v = v || new Token()
+    v.access_token = token
+    v.save(callback)
+  })
 });
 
 var oauthApi = new OAuth('appid', 'secret', function (openid, callback) {
