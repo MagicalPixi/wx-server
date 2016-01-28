@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var wechat = require('wechat')
 var WechatAPI = require('wechat-api')
-
+var oauth = require('wecht-oauth')
 var wxConfig = require('../config').wx
 var config = {
   token: wxConfig.token,
@@ -10,7 +10,26 @@ var config = {
   encodingAESKey: wxConfig.encodingAESKey
 }
 
-var api = new WechatAPI(wxConfig.appid, wxConfig.secretKey)
+var api = new API(wxConfig.appid, wxConfig.secretKey, function (callback) {
+  fs.readFile('access_token.txt', 'utf8', function (err, txt) {
+    if (err) {return callback(err);}
+    callback(null, JSON.parse(txt));
+  });
+}, function (token, callback) {
+  console.log(token)
+  fs.writeFile('access_token.txt', JSON.stringify(token), callback);
+});
+
+var oauthApi = new OAuth('appid', 'secret', function (openid, callback) {
+  fs.readFile(openid +':access_token.txt', 'utf8', function (err, txt) {
+    if (err) {return callback(err);}
+    callback(null, JSON.parse(txt));
+  });
+}, function (openid, token, callback) {
+  fs.writeFile(openid + ':access_token.txt', JSON.stringify(token), callback);
+});
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
