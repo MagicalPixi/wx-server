@@ -4,6 +4,7 @@
 var mongoose = require('mongoose');
 var tokenSchema = mongoose.Schema({
   name: String,
+  expireTime: Number,
   access_token: String
 });
 
