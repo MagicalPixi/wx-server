@@ -40,6 +40,10 @@ router.get('/gameUrl', function(req, res, next) {
 })
 
 router.get('/game', function(req, res, next) {
+  var code = req.query.code
+  oauthApi.getUserByCode(code, function (err, result) {
+    console.log(result)
+  })
   res.json('hello world')
 })
 
