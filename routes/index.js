@@ -27,14 +27,7 @@ var api = new WechatAPI(wxConfig.appid, wxConfig.secretKey, function (callback) 
   })
 });
 
-var oauthApi = new OAuth(wxConfig.appid, wxConfig.secretKey, function (openid, callback) {
-  fs.readFile(openid +':access_token.txt', 'utf8', function (err, txt) {
-    if (err) {return callback(err);}
-    callback(null, JSON.parse(txt));
-  });
-}, function (openid, token, callback) {
-  fs.writeFile(openid + ':access_token.txt', JSON.stringify(token), callback);
-});
+var oauthApi = new OAuth(wxConfig.appid, wxConfig.secretKey);
 
 router.get('/gameUrl', function(req, res, next) {
   var url = oauthApi.getAuthorizeURL(domin + 'game', '123', 'snsapi_base');
