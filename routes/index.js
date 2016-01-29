@@ -41,7 +41,7 @@ router.get('/gameUrl', function(req, res, next) {
   res.redirect(url)
 })
 
-router.get('./game', function(req, res, next) {
+router.get('/game', function(req, res, next) {
   res.json('hello world')
 })
 
