@@ -6,6 +6,7 @@ var OAuth = require('wechat-oauth')
 var wxConfig = require('../config').wx
 var fs = require('fs')
 var model = require('../models')
+var domin = 'http://wx.easyell.com/'
 
 var config = {
   token: wxConfig.token,
@@ -35,6 +36,10 @@ var oauthApi = new OAuth('appid', 'secret', function (openid, callback) {
   fs.writeFile(openid + ':access_token.txt', JSON.stringify(token), callback);
 });
 
+router.get('/gameUrl', function(req, res, next) {
+  var url = oauthApi.getAuthorizeURL(domin + 'config', '123', 'snsapi_base');
+  res.redirect(url)
+})
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
