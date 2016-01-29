@@ -27,7 +27,7 @@ var api = new WechatAPI(wxConfig.appid, wxConfig.secretKey, function (callback) 
   })
 });
 
-var oauthApi = new OAuth('appid', 'secret', function (openid, callback) {
+var oauthApi = new OAuth(wxConfig.appid, wxConfig.secretKey, function (openid, callback) {
   fs.readFile(openid +':access_token.txt', 'utf8', function (err, txt) {
     if (err) {return callback(err);}
     callback(null, JSON.parse(txt));
