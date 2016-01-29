@@ -37,8 +37,12 @@ var oauthApi = new OAuth('appid', 'secret', function (openid, callback) {
 });
 
 router.get('/gameUrl', function(req, res, next) {
-  var url = oauthApi.getAuthorizeURL(domin + 'config', '123', 'snsapi_base');
+  var url = oauthApi.getAuthorizeURL(domin + 'game', '123', 'snsapi_base');
   res.redirect(url)
+})
+
+router.get('./game', function(req, res, next) {
+  res.json('hello world')
 })
 
 /* GET home page. */
