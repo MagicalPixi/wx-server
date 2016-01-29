@@ -3,9 +3,15 @@
  */
 var mongoose = require('mongoose');
 var userSchema = mongoose.Schema({
-  access_token: String,
   openid: String,
-  refresh_token: String,
+  token: {
+    access_token: String,
+    expires_in: Number,
+    refresh_token: String,
+    openid: String,
+    scope: String,
+    create_at: Number
+  },
   nickname: String,
   headimgurl: String,
   monster: {

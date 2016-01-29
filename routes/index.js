@@ -28,10 +28,18 @@ var api = new WechatAPI(wxConfig.appid, wxConfig.secretKey, function (callback) 
 });
 
 var oauthApi = new OAuth(wxConfig.appid, wxConfig.secretKey, function (openid, callback) {
-  //var User = model.User
-  //User.findOne({openid: openid})
+  var User = model.User
+  User.findOne({openid: openid}, function(err, result) {
+    if (err) return callback(err)
+    callback(null, result.token)
+  })
 }, function (openid, token, callback) {
-  console.log(token);
+  var User = model.User
+  User.findOne({openid: openid}, function(err, result) {
+    result = result || new User({openid: openid})
+    result.token = token
+    result.save(callback)
+  })
 });
 
 router.get('/gameUrl', function(req, res, next) {
@@ -43,8 +51,8 @@ router.get('/game', function(req, res, next) {
   var code = req.query.code
   oauthApi.getUserByCode(code, function (err, result) {
     console.log(result)
+    res.json('hello, ' + result.nickname)
   })
-  res.json('hello world')
 })
 
 /* GET home page. */
