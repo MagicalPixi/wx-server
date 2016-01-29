@@ -30,7 +30,7 @@ var api = new WechatAPI(wxConfig.appid, wxConfig.secretKey, function (callback) 
 var oauthApi = new OAuth(wxConfig.appid, wxConfig.secretKey);
 
 router.get('/gameUrl', function(req, res, next) {
-  var url = oauthApi.getAuthorizeURL(domin + 'game', '123', 'snsapi_base');
+  var url = oauthApi.getAuthorizeURL(domin + 'game', '123', 'snsapi_userinfo');
   res.redirect(url)
 })
 
