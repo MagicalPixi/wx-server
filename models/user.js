@@ -4,7 +4,7 @@
 var mongoose = require('mongoose');
 var userSchema = mongoose.Schema({
   access_token: String,
-  openId: String,
+  openid: String,
   refresh_token: String,
   nickname: String,
   headimgurl: String,

@@ -27,7 +27,12 @@ var api = new WechatAPI(wxConfig.appid, wxConfig.secretKey, function (callback) 
   })
 });
 
-var oauthApi = new OAuth(wxConfig.appid, wxConfig.secretKey);
+var oauthApi = new OAuth(wxConfig.appid, wxConfig.secretKey, function (openid, callback) {
+  //var User = model.User
+  //User.findOne({openid: openid})
+}, function (openid, token, callback) {
+  console.log(token);
+});
 
 router.get('/gameUrl', function(req, res, next) {
   var url = oauthApi.getAuthorizeURL(domin + 'game', '123', 'snsapi_userinfo');
