@@ -11,9 +11,7 @@ var oauth = new OAuth(wxConfig.appid, wxConfig.secretKey, function (openid, call
     callback(null, result.token)
   })
 }, function (openid, token, callback) {
-  createOrSaveUser(openid, token, function() {
-    createOrSaveMonster(openid, callback)
-  })
+  createOrSaveUser(openid, token, callback)
 });
 
 var createOrSaveUser = function(openid, token, callback) {
