@@ -23,9 +23,7 @@ var checkAuthorize = function(req, res, next) {
           user.headimgurl = result.headimgurl
           user.sex = result.sex
           user.save(function(e, v) {
-            createOrSaveMonster(result.openid, function(e, v) {
-              next()
-            })
+            next()
           })
         })
       }
@@ -58,20 +56,6 @@ var configExample = function(req, res, next) {
     res.render('index', {config: result})
   })
 }
-
-var createOrSaveMonster = function(openid, callback) {
-  var Monster = model.Monster
-  Monster.findOne({ownerid: openid}, function(err, result) {
-    result = result || new Monster({ownerid: openid, property1: 0, property2: 0, property3: 0, property4: 0, property5: 0})
-    result.type = result.type || randomType()
-    result.save(callback)
-  })
-}
-
-var randomType = function() {
-  return parseInt(Math.random() * 4)
-}
-
 
 module.exports = {
   getGameView: getGameView,

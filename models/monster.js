@@ -9,7 +9,7 @@ var monserSchema = mongoose.Schema({
   property3: Number,
   property4: Number,
   property5: Number,
-  ownerid: Number,
+  ownerid: String,
   type: String
 });
 
