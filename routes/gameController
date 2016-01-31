@@ -20,7 +20,7 @@ var checkAuthorize = function(req, res, next) {
         User.findOne({openid: result.openid}, function(a, user) {
           user = user || new User({openid: openid})
           user.nickname = result.nickname
-          user.headimageurl = result.headimageurl
+          user.headimgurl = result.headimgurl
           user.sex = result.sex
           user.save(function(e, v) {
             next()

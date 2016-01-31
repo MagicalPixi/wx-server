@@ -12,9 +12,9 @@ var userSchema = mongoose.Schema({
     scope: String,
     create_at: Number
   },
-  nickName:String,
+  nickname: String,
   sex: String,
-  headimageurl: String,
+  headimgurl: String,
   monster: {
     rank: Number
   }
