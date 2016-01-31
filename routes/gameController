@@ -1,0 +1,57 @@
+var api = require('./api')
+var oauth = require('./oauth')
+var domin = 'http://wx.easyell.com/'
+
+var authorize = function(res) {
+  var url = oauth.getAuthorizeURL(domin + 'game', '123', 'snsapi_userinfo');
+  res.redirect(url)
+}
+
+var checkAuthorize = function(req, res, next) {
+  var code = req.query.code
+  if (code) {
+    oauth.getUserByCode(code, function (err, result) {
+      if(err) {
+        res.render('error', {
+          message: err.message,
+          error: err
+        });
+      } else  {
+        req.userInfo = result
+        next()
+      }
+    })
+  } else  {
+    authorize(res)
+  }
+}
+
+var getGameView = function(req, res, next) {
+  var param = {
+    debug: true,
+    jsApiList: ['translateVoice', 'startRecord', 'stopRecord', 'playVoice', 'pauseVoice', 'stopVoice', 'onVoicePlayEnd', 'uploadVoice', 'downloadVoice'],
+    url: 'http://wx.easyell.com/config'
+  }
+  api.getJsConfig(param, function(err, result) {
+    if (err) console.log(err)
+    res.render('index', {config: result})
+  })
+}
+
+var configExample = function(req, res, next) {
+  var param = {
+    debug: true,
+    jsApiList: ['translateVoice', 'startRecord', 'stopRecord', 'playVoice', 'pauseVoice', 'stopVoice', 'onVoicePlayEnd', 'uploadVoice', 'downloadVoice'],
+    url: 'http://wx.easyell.com/config'
+  }
+  api.getJsConfig(param, function(err, result) {
+    if (err) console.log(err)
+    res.render('index', {config: result})
+  })
+}
+
+module.exports = {
+  getGameView: getGameView,
+  checkAuthorize: checkAuthorize,
+  configExample: configExample
+}
