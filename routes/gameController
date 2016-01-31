@@ -30,7 +30,7 @@ var getGameView = function(req, res, next) {
   var param = {
     debug: true,
     jsApiList: ['translateVoice', 'startRecord', 'stopRecord', 'playVoice', 'pauseVoice', 'stopVoice', 'onVoicePlayEnd', 'uploadVoice', 'downloadVoice'],
-    url: 'http://wx.easyell.com/config'
+    url: 'http://wx.easyell.com/game'
   }
   api.getJsConfig(param, function(err, result) {
     if (err) console.log(err)
