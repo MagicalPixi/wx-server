@@ -10,7 +10,7 @@ mongoose.connect(db, {
 
 var Token = require('./token')
 var User = require('./user')
-var Monster = require('./Monster')
+var Monster = require('./monster')
 exports.Token = Token
 exports.User = User
 exports.Monster = Monster
