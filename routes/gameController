@@ -12,10 +12,7 @@ var checkAuthorize = function(req, res, next) {
   if (code) {
     oauth.getUserByCode(code, function (err, result) {
       if(err) {
-        res.render('error', {
-          message: err.message,
-          error: err
-        });
+        authorize(res)
       } else  {
         req.userInfo = result
         next()
