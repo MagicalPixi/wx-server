@@ -15,9 +15,6 @@ var userSchema = mongoose.Schema({
   nickname: String,
   sex: String,
   headimgurl: String,
-  monster: {
-    rank: Number
-  }
 });
 
 var User = mongoose.model('User',userSchema)
