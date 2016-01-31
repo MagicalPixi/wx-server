@@ -1,9 +1,9 @@
 var api = require('./api')
 var oauth = require('./oauth')
-var domin = 'http://wx.easyell.com/'
+var domin = 'http://wx.easyell.com'
 
 var authorize = function(res) {
-  var url = oauth.getAuthorizeURL(domin + 'game', '123', 'snsapi_userinfo');
+  var url = oauth.getAuthorizeURL(domin + '/game', '123', 'snsapi_userinfo');
   res.redirect(url)
 }
 
@@ -30,7 +30,7 @@ var getGameView = function(req, res, next) {
   var param = {
     debug: true,
     jsApiList: ['translateVoice', 'startRecord', 'stopRecord', 'playVoice', 'pauseVoice', 'stopVoice', 'onVoicePlayEnd', 'uploadVoice', 'downloadVoice'],
-    url: req.originalUrl
+    url: domin + req.originalUrl
   }
   api.getJsConfig(param, function(err, result) {
     if (err) console.log(err)
