@@ -35,6 +35,22 @@ var checkAuthorize = function(req, res, next) {
   }
 }
 
+var updateMonster = function(req, res, next) {
+  var openid = req.params.id
+  var monster = req.body
+  createOrSaveMonster(openid, monster, function(err, result) {
+    res.json(result)
+  })
+}
+
+var monster = function(req, res, next) {
+  var openid = req.params.id
+  getMonster(openid, function(err, result) {
+    res.json(result)
+  })
+}
+
+
 var getGameView = function(req, res, next) {
   var param = {
     debug: true,
@@ -59,22 +75,33 @@ var configExample = function(req, res, next) {
   })
 }
 
-var createOrSaveMonster = function(openid, callback) {
+var createOrSaveMonster = function(openid, monster, callback) {
   var Monster = model.Monster
   Monster.findOne({ownerid: openid}, function(err, result) {
     result = result || new Monster({ownerid: openid, property1: 0, property2: 0, property3: 0, property4: 0, property5: 0})
     result.type = result.type || randomType()
+    result.property1 = monster.property1
+    result.property2 = monster.property2
+    result.property3 = monster.property3
+    result.property4 = monster.property4
+    result.property5 = monster.property5
     result.save(callback)
   })
+}
+
+var getMonster = function(openid, callback) {
+  var Monster = model.Monster
+  Monster.findOne({ownerid: openid}, callback)
 }
 
 var randomType = function() {
   return parseInt(Math.random() * 4)
 }
 
-
 module.exports = {
   getGameView: getGameView,
   checkAuthorize: checkAuthorize,
-  configExample: configExample
+  configExample: configExample,
+  updateMonster: updateMonster,
+  monster: monster
 }
