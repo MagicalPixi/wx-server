@@ -36,8 +36,6 @@ module.exports = function (gulp) {
 
         var nameIndex = parseInt(i++/4);
 
-        console.log(nameIndex);
-
         return path.join(saveSprites,'/'+downloadMaterialNames[nameIndex] + '/');
       }));
   });

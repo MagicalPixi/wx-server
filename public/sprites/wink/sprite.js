@@ -1,9 +1,30 @@
-var sprite = require('pixi-lib'); 
-var mySprite = sprite.getMc({
-maxFrame:null,
-preFix:null, 
-'spriteName':wink, 
-'animationSpeed':0.05, 
-'play':null, 
-}); 
-module.exports = mySprite; 
+var lib = require('pixi-lib');
+
+var mySprite = lib.getMc({
+
+    textures:lib.getTextures('wink'),
+
+    
+
+        
+
+        "spriteName" :  "wink" ,
+
+        
+
+    
+
+        
+
+        "animationSpeed" :  0.05 ,
+
+        
+
+    
+
+        
+
+    
+});
+
+module.exports = mySprite;
