@@ -50,7 +50,6 @@ var monster = function(req, res, next) {
   })
 }
 
-
 var getGameView = function(req, res, next) {
   var param = {
     debug: true,
