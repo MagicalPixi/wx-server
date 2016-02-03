@@ -8,6 +8,8 @@ var app = require('../app');
 var debug = require('debug')('WXServer:server');
 var http = require('http');
 
+var gulpfile = require('../gulpfile')
+
 /**
  * Get port from environment and store in Express.
  */
@@ -87,4 +89,15 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+  runGulp()
+}
+
+function runGulp(){
+  var env = app.get('env');
+  if( env === 'development'){
+    gulpfile.start('development');
+  }
+  if( env === 'product'){
+    gulpfile.start('product');
+  }
 }
