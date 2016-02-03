@@ -58,7 +58,7 @@ var getGameView = function(req, res, next) {
   }
   api.getJsConfig(param, function(err, result) {
     if (err) console.log(err)
-    res.render('index', {config: result})
+    res.render('newyear', {env: 'develop', config: result})
   })
 }
 
