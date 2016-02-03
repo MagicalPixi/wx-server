@@ -10,7 +10,7 @@ var download = require('gulp-download');
 var unzip = require('gulp-unzip');
 
 var downloadMaterialNames = [
-  'boomTP2',
+  'boomTP',
   'wink'
 ];
 
