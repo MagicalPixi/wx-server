@@ -16,8 +16,8 @@ list.filter(function(name){
   return !/\./.test(name);
 }).map(function(name){
   return [
-      name + 'Index',
-      path.resolve(__dirname,jsMainDir,name,'main.js')
+      name,
+      path.resolve(__dirname,jsMainDir,name,'index.js')
   ]
 }).forEach(function(kvArr){
   entry[kvArr[0]] = kvArr[1];

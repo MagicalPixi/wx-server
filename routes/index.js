@@ -12,5 +12,8 @@ router.get('/game', gameController.checkAuthorize, gameController.getGameView)
 router.post('/wechat',wechat.example)
 router.get('/wechat', wechat.check)
 router.get('/config', gameController.configExample)
+router.get('/gametest', function (req, res, next) {
+  res.render('newyear', {env: 'develop'})
+})
 
 module.exports = router;
