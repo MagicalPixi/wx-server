@@ -3,8 +3,15 @@ var router = express.Router();
 var wechat = require('./wechat')
 var gameController = require('./gameController')
 
+var env = process.env.NODE_ENV;
+env = env?env:'development'
+
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  //res.render('index', { title: 'Express' });
+  res.render('Newyear', {
+    title: 'Express' ,
+    env:env
+  });
 });
 router.post('/monster/:id', gameController.updateMonster);
 router.get('/monster/:id', gameController.monster)
@@ -15,5 +22,7 @@ router.get('/config', gameController.configExample)
 router.get('/gametest', function (req, res, next) {
   res.render('newyear', {env: 'develop'})
 })
+
+
 
 module.exports = router;

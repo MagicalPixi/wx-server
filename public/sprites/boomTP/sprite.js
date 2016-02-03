@@ -2,13 +2,13 @@ var lib = require('pixi-lib');
 
 var mySprite = lib.getMc({
 
-    textures:lib.getTextures('boomTP2'),
+    textures:lib.getTextures('boomTP'),
 
     
 
         
 
-        "spriteName" :  "boomTP2" ,
+        "spriteName" :  "boomTP" ,
 
         
 

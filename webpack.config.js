@@ -6,25 +6,6 @@ var webpack = require('webpack');
 
 var webpackDevPort = 7301;
 
-var entry = {};
-
-//获取到所有的js入口
-var jsMainDir = './public/js/';
-var list = fs.readdirSync(jsMainDir);
-
-list.filter(function(name){
-  return !/\./.test(name);
-}).map(function(name){
-  return [
-      name,
-      path.resolve(__dirname,jsMainDir,name,'index.js')
-  ]
-}).forEach(function(kvArr){
-  entry[kvArr[0]] = kvArr[1];
-});
-
-
-
 var uglify = new webpack.optimize.UglifyJsPlugin({
   compress: {
     warnings: false
@@ -48,14 +29,20 @@ if(process.env.NODE_ENV === 'product'){
 module.exports = {
   webpackDevPort: webpackDevPort,
   plugins:plugins,
+  externals:{
+    'pixi':'PIXI',
+    'PIXI':'PIXI'
+  },
   resolve: {
     extensions: ['', '.js']
   },
-  entry: entry,
+  entry: {
+    main:'./public/js/newyear/index.js'
+  },
   output: {
     path: path.resolve(__dirname, './public/dist'),
     publicPath: "http://localhost:" + webpackDevPort + "/public/dist",
-    filename: '[name].js'
+    filename: 'main.js'
   },
   module: {
     loaders: [
