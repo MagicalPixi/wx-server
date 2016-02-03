@@ -1,0 +1,21 @@
+{
+  "name": "newyear",
+  "version": "0.0.1",
+  "homepage": "https://github.com/MagicalPixi/wx-server",
+  "authors": [
+    "guoshencheng <648772021@qq.com>"
+  ],
+  "description": "a server for newyear html5",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pixi": "~3.0.9"
+  }
+}
