@@ -1,8 +1,5 @@
 var pixiLib = require('pixi-lib')
-
-
 var renderer;
-
 pixiLib.isSupportWebGL() ? renderer = new PIXI.WebGLRenderer(640, 1004, {
     transparent:true
   }
