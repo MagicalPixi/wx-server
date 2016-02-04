@@ -3,7 +3,7 @@ var pixiLib = require('pixi-lib')
 var renderer = new PIXI.autoDetectRenderer(640, 1004, {
     transparent:true
   }
-)
+);
 
 var render = function(stage) {
   function animate() {
@@ -19,5 +19,5 @@ var render = function(stage) {
 }
 
 document.body.appendChild(renderer.view)
-//require('./start')(render);
-require('./battle')(render);
+require('./start')(render);
+//require('./battle')(render);

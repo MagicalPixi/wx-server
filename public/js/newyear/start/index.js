@@ -1,4 +1,7 @@
 var loader = require('../../loader');
+
+var descriptionAction = require('../../../actions/descriptionAction');
+
 module.exports = function(render) {
   loader.add(['light', 'start', 'who',
     'change_monster', 'comfirm_monster', 'monster_description'],'json')
@@ -10,9 +13,11 @@ module.exports = function(render) {
 
     //descript init
     var description = require('./description')
-    description.dissapear = function () {
-      chooseMonster.appear(startStage)
-    }
+    //description.dissapear = function () {
+    //  chooseMonster.appear(startStage)
+    //}
+
+    descriptionAction(description);
 
     //startStafe int
     var startStage = new PIXI.Container()
