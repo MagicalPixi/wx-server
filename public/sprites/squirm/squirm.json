@@ -1,0 +1,20 @@
+{
+"frames": {
+	" # 0.png": {
+		"frame": {"x":274, "y":0, "w":271, "h":338},
+		"spriteSourceSize": {"x":313,"y":98,"w":640,"h":1008},
+		"sourceSize": {"w":640,"h":1008}
+	},
+	"＃1蠕动1.png": {
+		"frame": {"x":0, "y":0, "w":273, "h":324},
+		"spriteSourceSize": {"x":367,"y":112,"w":640,"h":1008},
+		"sourceSize": {"w":640,"h":1008}
+	}
+
+},
+"meta": {
+	"image": "squirm.png",
+	"size": {"w": 546, "h": 339},
+	"scale": "1"
+}
+}

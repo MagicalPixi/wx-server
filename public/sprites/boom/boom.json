@@ -1,0 +1,35 @@
+{
+"frames": {
+	"＃1origin.png": {
+		"frame": {"x":397, "y":0, "w":271, "h":338},
+		"spriteSourceSize": {"x":313,"y":98,"w":640,"h":1008},
+		"sourceSize": {"w":640,"h":1008}
+	},
+	"＃1鞭炮 1.png": {
+		"frame": {"x":595, "y":339, "w":270, "h":338},
+		"spriteSourceSize": {"x":313,"y":99,"w":640,"h":1008},
+		"sourceSize": {"w":640,"h":1008}
+	},
+	"＃1鞭炮 2.png": {
+		"frame": {"x":304, "y":412, "w":290, "h":338},
+		"spriteSourceSize": {"x":294,"y":99,"w":640,"h":1008},
+		"sourceSize": {"w":640,"h":1008}
+	},
+	"＃1鞭炮 3.png": {
+		"frame": {"x":0, "y":412, "w":303, "h":381},
+		"spriteSourceSize": {"x":280,"y":98,"w":640,"h":1008},
+		"sourceSize": {"w":640,"h":1008}
+	},
+	"＃1鞭炮 4.png": {
+		"frame": {"x":0, "y":0, "w":396, "h":411},
+		"spriteSourceSize": {"x":188,"y":98,"w":640,"h":1008},
+		"sourceSize": {"w":640,"h":1008}
+	}
+
+},
+"meta": {
+	"image": "boom.png",
+	"size": {"w": 866, "h": 794},
+	"scale": "1"
+}
+}

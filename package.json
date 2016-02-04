@@ -12,11 +12,6 @@
     "ejs": "^2.3.4",
     "ejs-loader": "^0.2.1",
     "express": "~4.13.1",
-    "gulp": "^3.9.0",
-    "gulp-ejs": "^1.2.1",
-    "gulp-qiniu": "0.0.9",
-    "gulp-tinypng": "^1.0.2",
-    "gulp-util": "^3.0.7",
     "jade": "~1.11.0",
     "mongoose": "^4.3.7",
     "morgan": "~1.6.1",
@@ -25,6 +20,11 @@
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-ejs": "^1.2.1",
+    "gulp-qiniu": "0.0.9",
+    "gulp-tinypng": "^1.0.2",
+    "gulp-util": "^3.0.7",
     "gulp-download": "0.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-unzip": "^0.1.3",
