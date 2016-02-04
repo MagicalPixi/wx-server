@@ -9,7 +9,7 @@ chooseMonster.addChild(monster_description)
 chooseMonster.appear = function(parent) {
   parent.addChild(this)
   chooseBar.appear()
-  console.log(1)
+  monster_description.walkIn()
 }
 
 chooseMonster.render = function () {

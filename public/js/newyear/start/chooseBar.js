@@ -1,9 +1,26 @@
 /**
  * Created by guoshencheng on 2/4/16.
  */
+var monster_description = require('../../../sprites/monster_description')
 var change_monster = require('../../../sprites/change_monster')
 var comfirm_monster = require('../../../sprites/comfirm_monster')
 var chooseBar = new PIXI.Container()
+
+// change_monster
+change_monster.on('touchstart', function() {
+  this.gotoAndStop(1)
+})
+
+change_monster.on('touchend', function() {
+  this.gotoAndStop(0)
+  if (monster_description.inStage ) {
+    monster_description.walkOut(function() {
+      console.log(1)
+      monster_description.walkIn()
+    })
+  }
+})
+
 chooseBar.y = 150
 chooseBar.speed = 0
 chooseBar.acceleration = 0
