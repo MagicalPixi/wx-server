@@ -1,12 +1,9 @@
 var pixiLib = require('pixi-lib')
-var renderer;
-pixiLib.isSupportWebGL() ? renderer = new PIXI.WebGLRenderer(640, 1004, {
+
+var renderer = new PIXI.autoDetectRenderer(640, 1004, {
     transparent:true
   }
-) : renderer= new PIXI.CanvasRenderer(640, 1004, {
-    transparent:true
-  }
-);
+)
 
 var render = function(stage) {
   function animate() {
