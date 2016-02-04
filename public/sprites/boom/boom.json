@@ -1,6 +1,6 @@
 {
 "frames": {
-	"＃1origin.png": {
+	" # 0.png": {
 		"frame": {"x":397, "y":0, "w":271, "h":338},
 		"spriteSourceSize": {"x":313,"y":98,"w":640,"h":1008},
 		"sourceSize": {"w":640,"h":1008}
@@ -24,7 +24,13 @@
 		"frame": {"x":0, "y":0, "w":396, "h":411},
 		"spriteSourceSize": {"x":188,"y":98,"w":640,"h":1008},
 		"sourceSize": {"w":640,"h":1008}
+	},	
+	" # 0副本.png": {
+		"frame": {"x":397, "y":0, "w":271, "h":338},
+		"spriteSourceSize": {"x":313,"y":98,"w":640,"h":1008},
+		"sourceSize": {"w":640,"h":1008}
 	}
+
 
 },
 "meta": {
