@@ -6,13 +6,10 @@ var start = require('../../../sprites/start')
 var who = require('../../../sprites/who')
 
 var description = new PIXI.Container()
-description.speed = 0
-description.isApear = true
-description.acceleration = 0
+
 description.addChild(title)
 description.addChild(start)
 description.addChild(who)
-
 
 var startAction = require('../../../actions/startAction');
 

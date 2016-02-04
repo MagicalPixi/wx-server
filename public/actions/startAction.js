@@ -3,7 +3,7 @@
  */
 var pixiLib = require('pixi-lib')
 
-module.exports = pixiLib.createAction('start',function start(startBtn, chooseMonster) {
+module.exports = pixiLib.createAction('start',function start(startBtn) {
   var state = this;
 
   //start action
