@@ -1,0 +1,20 @@
+{
+"frames": {
+	"who1.png": {
+		"frame": {"x":0, "y":71, "w":250, "h":70},
+		"spriteSourceSize": {"x":0,"y":5,"w":250,"h":80},
+		"sourceSize": {"w":250,"h":80}
+	},
+	"who2.png": {
+		"frame": {"x":0, "y":0, "w":250, "h":70},
+		"spriteSourceSize": {"x":0,"y":5,"w":250,"h":80},
+		"sourceSize": {"w":250,"h":80}
+	}
+
+},
+"meta": {
+	"image": "who.png",
+	"size": {"w": 251, "h": 142},
+	"scale": "1"
+}
+}

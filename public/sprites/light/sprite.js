@@ -2,13 +2,13 @@ var lib = require('pixi-lib');
 
 var mySprite = lib.getMc({
 
-    textures:lib.getTextures('boomTP'),
+    textures:lib.getTextures('light'),
 
     
 
         
 
-        "spriteName" :  "boomTP" ,
+        "spriteName" :  "light" ,
 
         
 
@@ -16,7 +16,11 @@ var mySprite = lib.getMc({
 
         
 
-        "scale.y" :  0.5 ,
+    
+
+        
+
+        "scale.y" :  1 ,
 
         
 
@@ -32,11 +36,7 @@ var mySprite = lib.getMc({
 
         
 
-    
-
-        
-
-        "scale.x" :  0.5 ,
+        "scale.x" :  1 ,
 
         
 

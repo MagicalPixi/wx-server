@@ -1,0 +1,20 @@
+{
+"frames": {
+	"light1.png": {
+		"frame": {"x":0, "y":155, "w":615, "h":175},
+		"spriteSourceSize": {"x":9,"y":7,"w":640,"h":1108},
+		"sourceSize": {"w":640,"h":1108}
+	},
+	"light2.png": {
+		"frame": {"x":0, "y":0, "w":615, "h":154},
+		"spriteSourceSize": {"x":9,"y":7,"w":640,"h":1108},
+		"sourceSize": {"w":640,"h":1108}
+	}
+
+},
+"meta": {
+	"image": "light.png",
+	"size": {"w": 616, "h": 331},
+	"scale": "1"
+}
+}

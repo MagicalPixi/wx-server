@@ -1,21 +1,15 @@
-var pixiLib = require('pixi-lib');
-
 var loader = require('../../loader');
-
 module.exports = function(render) {
-
-
-  loader.add(['boomTP','wink'],'json').load(function () {
-
-    var boomTP2 = require('../../../sprites/boomTP');
-    var wink = require('../../../sprites/wink');
-
-
-    var startStage = new PIXI.Container();
-
-    startStage.addChild(boomTP2);
-    startStage.addChild(wink)
-
+  loader.add(['light', 'start', 'who'],'json').load(function () {
+    var light = require('../../../sprites/light')
+    var title = require('../../../sprites/title')
+    var start = require('../../../sprites/start')
+    var who =require('../../../sprites/who')
+    var startStage = new PIXI.Container()
+    startStage.addChild(light)
+    startStage.addChild(title)
+    startStage.addChild(start)
+    startStage.addChild(who)
     render(startStage);
   })
 };
