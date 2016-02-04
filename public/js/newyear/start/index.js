@@ -1,6 +1,7 @@
 var loader = require('../../loader');
 
 var descriptionAction = require('../../../actions/descriptionAction');
+var chooseMonsterAction = require('../../../actions/chooseMonsterAction');
 
 module.exports = function(render) {
   loader.add(['light', 'start', 'who',
@@ -18,12 +19,15 @@ module.exports = function(render) {
     //}
 
     descriptionAction(description);
+    chooseMonsterAction(chooseMonster);
 
     //startStafe int
     var startStage = new PIXI.Container()
     startStage.addChild(light)
     startStage.addChild(description)
+
     light.play()
+
     render(startStage);
   })
 };
