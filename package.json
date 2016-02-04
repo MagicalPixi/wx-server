@@ -20,7 +20,7 @@
     "jade": "~1.11.0",
     "mongoose": "^4.3.7",
     "morgan": "~1.6.1",
-    "pixi-lib": "^1.3.3",
+    "pixi-lib": "^1.3.4",
     "request": "^2.69.0",
     "serve-favicon": "~2.3.0"
   },

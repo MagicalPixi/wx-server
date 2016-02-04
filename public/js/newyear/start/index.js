@@ -1,10 +1,10 @@
 var loader = require('../../loader');
 module.exports = function(render) {
-  loader.add(['light', 'start', 'who'],'json').load(function () {
+  loader.add(['light', 'start', 'who'],'json').add(['title'], 'png').load(function () {
     var light = require('../../../sprites/light')
     var title = require('../../../sprites/title')
     var start = require('../../../sprites/start')
-    var who =require('../../../sprites/who')
+    var who = require('../../../sprites/who')
     var startStage = new PIXI.Container()
     startStage.addChild(light)
     startStage.addChild(title)
