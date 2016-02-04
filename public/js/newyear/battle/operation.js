@@ -5,7 +5,7 @@
 var attack = require('../../../sprites/attack')
 var attack1 = attack({
   texture: 'attack',
-  x: 50,
+  x: 15,
   y: 830,
   anchorx: 0,
   ontouch: function() {
@@ -14,7 +14,7 @@ var attack1 = attack({
 })
 var attack2 = attack({
   texture: 'attack',
-  x: 590,
+  x: 625,
   y: 830,
   anchorx: 1,
   ontouch: function() {
@@ -23,8 +23,8 @@ var attack2 = attack({
 })
 var attack3 = attack({
   texture: 'attack',
-  x: 50,
-  y: 900,
+  x: 15,
+  y: 910,
   anchorx: 0,
   ontouch: function() {
     wagTail()
@@ -32,8 +32,8 @@ var attack3 = attack({
 })
 var attack4 = attack({
   texture: 'attack',
-  x: 590,
-  y: 900,
+  x: 625,
+  y: 910,
   anchorx: 1,
   ontouch: function() {
     squirm()

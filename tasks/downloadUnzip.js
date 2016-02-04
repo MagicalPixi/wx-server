@@ -10,12 +10,9 @@ var download = require('gulp-download');
 var unzip = require('gulp-unzip');
 
 var downloadMaterialNames = [
-  'tall',
-  'white',
-  'beautiful',
-  'handsom',
-  'rich',
-  'attack'
+  'playerhp',
+  'enemyhp',
+  'hpframe'
 ];
 
 var downloadUrls = downloadMaterialNames.map(function (name) {
