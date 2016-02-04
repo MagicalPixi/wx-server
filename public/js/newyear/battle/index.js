@@ -4,19 +4,17 @@
 var loader = require('../../loader');
 module.exports = function (render) {
   loader.add(
-    ['boom', 'shock', 'wagTail', 'squirm', 'wink'],
+    ['boom', 'shock', 'wagTail', 'squirm', 'wink', 'attack'],
     'json'
   ).load(function () {
 
-
+      var operation = require('./operation')
       var monster = require('./monster');
 
       //startStafe int
       var battleStage = new PIXI.Container();
-
-
-
       battleStage.addChild(monster);
+    battleStage.addChild(operation)
 
       window.shock = function () {
         monster.shock();
