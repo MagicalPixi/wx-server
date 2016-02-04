@@ -16,7 +16,7 @@ monster.addChild(shock);
 monster.boom = function () {
   monster.removeChildren();
   monster.addChild(boom);
-  boom.play();
+  boom.gotoAndPlay(0);
 
 };
 
