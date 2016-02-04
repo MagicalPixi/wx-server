@@ -1,20 +1,20 @@
 {
 "frames": {
 	"monster_description1.png": {
-		"frame": {"x":0, "y":0, "w":320, "h":400},
-		"spriteSourceSize": {"x":0,"y":0,"w":320,"h":400},
-		"sourceSize": {"w":320,"h":400}
+		"frame": {"x":370, "y":0, "w":362, "h":450},
+		"spriteSourceSize": {"x":0,"y":0,"w":362,"h":450},
+		"sourceSize": {"w":362,"h":450}
 	},
 	"monster_description2.png": {
-		"frame": {"x":0, "y":0, "w":320, "h":400},
-		"spriteSourceSize": {"x":0,"y":0,"w":320,"h":400},
-		"sourceSize": {"w":320,"h":400}
+		"frame": {"x":0, "y":0, "w":369, "h":450},
+		"spriteSourceSize": {"x":0,"y":0,"w":369,"h":450},
+		"sourceSize": {"w":369,"h":450}
 	}
 
 },
 "meta": {
 	"image": "monster_description.png",
-	"size": {"w": 321, "h": 401},
+	"size": {"w": 733, "h": 451},
 	"scale": "1"
 }
 }

@@ -5,7 +5,7 @@ var mySprite = lib.getMc({
         "spriteName" :  "monster_description" ,
         "y" :  240 ,
         "anchor.x" :  0.5 ,
-        "animationSpeed" :  1 ,
+        "animationSpeed" :  0.1 ,
         "scale.y" :  1 ,
         "rotation" :  0 ,
         "x" :  320 ,
