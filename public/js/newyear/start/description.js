@@ -7,6 +7,7 @@ var who = require('../../../sprites/who')
 
 var description = new PIXI.Container()
 description.speed = 0
+description.isApear = true
 description.acceleration = 0
 description.addChild(title)
 description.addChild(start)
@@ -27,6 +28,10 @@ var checkdrop = function() {
   if (description.y > 1004) {
     description.speed = 0
     description.acceleration = 0
+    if (description.isApear && description.dissapear)  {
+      description.isApear = false
+      description.dissapear()
+    }
   }
 }
 
@@ -37,7 +42,7 @@ start.on('touchstart', function() {
 
 start.on('touchend', function() {
   this.gotoAndStop(1)
-  description.drop(0.4)
+  description.drop(0.6)
 })
 
 
