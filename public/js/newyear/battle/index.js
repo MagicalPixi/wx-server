@@ -11,7 +11,6 @@ module.exports = function (render) {
   ).addMulti('enemy_dragon',['_boom','_ahhhh','_clean','_squirm','_wagTail','_wink'])
   .addMulti('myDragon', myMonsterParams.action, 'json')
     .add(['hpframe'], 'png').load(function () {
-      var operation = require('./operation')
       var myMonster = require('../../../sprites/myMonster')
       var operation2 = require('./operation2')
       var monster = require('./monster');
@@ -23,7 +22,6 @@ module.exports = function (render) {
       //startStafe int
       var battleStage = new PIXI.Container();
       battleStage.addChild(monster);
-      //battleStage.addChild(operation)
       battleStage.addChild(operation2)
       battleStage.addChild(enemyhpframe)
       battleStage.addChild(playerhpframe)
