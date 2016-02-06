@@ -10,9 +10,8 @@ var download = require('gulp-download');
 var unzip = require('gulp-unzip');
 
 var downloadMaterialNames = [
-  'playerhp',
-  'enemyhp',
-  'hpframe'
+  'share',
+  'playagain'
 ];
 
 var downloadUrls = downloadMaterialNames.map(function (name) {
@@ -22,7 +21,6 @@ var downloadUrls = downloadMaterialNames.map(function (name) {
 var saveSprites = path.resolve(__dirname,'../public/sprites/');
 
 module.exports = function (gulp) {
-
   gulp.task('down', function () {
 
     var i = 0;

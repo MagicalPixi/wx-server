@@ -1,0 +1,19 @@
+{
+"frames": {
+    "original.png": {
+		"frame": {"x":1282, "y":0, "w":640, "h":1004},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1004},
+		"sourceSize": {"w":640,"h":1004}
+    },
+	"blink.png": {
+		"frame": {"x":2564, "y":2010, "w":640, "h":1004},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1004},
+		"sourceSize": {"w":640,"h":1004}
+	}
+},
+"meta": {
+	"image": "dragon_self.png",
+	"size": {"w": 3846, "h": 3015},
+	"scale": "1"
+}
+}
