@@ -8,7 +8,9 @@ module.exports = function (render) {
       'attack', 'playerhp', 'enemyhp',
       'fire_button', 'boom_button', 'clean_button', 'ahhhh_button'],
     'json'
-  ).addMulti('myDragon', ['_angry', '_awkaward'], 'json').add(['hpframe'], 'png').load(function () {
+  ).addMulti('myDragon', ['_angry', '_awkaward'], 'json')
+    .addMulti('enemy_dragon',['_boom','_ahhhh','_clean','_squirm','_wagTail','_wink'])
+    .add(['hpframe'], 'png').load(function () {
       var operation = require('./operation')
       var myMonster = require('../../../sprites/myMonster')
       var operation2 = require('./operation2')

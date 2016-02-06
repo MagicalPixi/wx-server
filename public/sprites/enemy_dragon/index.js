@@ -3,8 +3,4 @@
  */
 var sprite = require('./sprite');
 
-var container = new PIXI.Container()
-
-container.addChild(sprite)
-
-module.exports = container
+module.exports = sprite

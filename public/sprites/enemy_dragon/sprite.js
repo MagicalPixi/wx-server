@@ -49,9 +49,10 @@ formatArray.forEach(function (name,i) {
       setTimeout(function () {
         obj.stop();
       },2000)
-
     }
   }
 });
+
+enemyDragon.addChild(spriteObjArray[0]);
 
 module.exports = enemyDragon;
