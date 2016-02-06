@@ -1,0 +1,39 @@
+{
+"frames": {
+    "myMonkey_original.png": {
+		"frame": {"x":1282, "y":0, "w":640, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1005},
+		"sourceSize": {"w":640,"h":1005}
+	},
+	"myMonkey_firecrack1.png": {
+		"frame": {"x":1923, "y":1006, "w":640, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1005},
+		"sourceSize": {"w":640,"h":1005}
+	},
+	"myMonkey_firecrack2.png": {
+		"frame": {"x":1923, "y":0, "w":640, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1005},
+		"sourceSize": {"w":640,"h":1005}
+	},
+	"myMonkey_firecrack3.png": {
+		"frame": {"x":3205, "y":2011, "w":640, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1005},
+		"sourceSize": {"w":640,"h":1005}
+	},
+	"myMonkey_firecrack4.png": {
+		"frame": {"x":1282, "y":1006, "w":640, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1005},
+		"sourceSize": {"w":640,"h":1005}
+	},
+    "myMonkey_original2.png": {
+		"frame": {"x":1282, "y":0, "w":640, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1005},
+		"sourceSize": {"w":640,"h":1005}
+	}
+},
+"meta": {
+	"image": "myMonkey.png",
+	"size": {"w": 3846, "h": 3018},
+	"scale": "1"
+}
+}

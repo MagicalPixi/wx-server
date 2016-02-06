@@ -16,7 +16,7 @@ var attack = ['angry', 'awkward', 'blink', 'boom', 'clean'
 
 module.exports = {
   cate: cate,
-  myMonster: cate.bear,
+  myMonster: cate.monkey,
   action: action,
   attack: attack
 }

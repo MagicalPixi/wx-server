@@ -1,0 +1,19 @@
+{
+"frames": {
+    "myMonkey_original.png": {
+		"frame": {"x":1282, "y":0, "w":640, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1005},
+		"sourceSize": {"w":640,"h":1005}
+	},
+	"myMonkey_angry.png": {
+		"frame": {"x":1282, "y":2012, "w":640, "h":1004},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1004},
+		"sourceSize": {"w":640,"h":1004}
+	}
+},
+"meta": {
+	"image": "myMonkey.png",
+	"size": {"w": 3846, "h": 3018},
+	"scale": "1"
+}
+}
