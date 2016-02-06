@@ -11,6 +11,7 @@ module.exports = function (render) {
   ).addMulti('enemy_dragon',['_boom','_ahhhh','_clean','_squirm','_wagTail','_wink'])
   .addMulti('myDragon', myMonsterParams.action, 'json')
     .add(['hpframe'], 'png').load(function () {
+
       var myMonster = require('../../../sprites/myMonster')
       var operation2 = require('./operation2')
       var enemy_dragon = require('./enemy_dragon');
@@ -33,6 +34,8 @@ module.exports = function (render) {
       window.shock = function () {
         myMonster.scream();
         enemy_dragon.ahhhh();
+        es()
+
       }
       window.boom = function () {
         myMonster.boom();
@@ -48,6 +51,32 @@ module.exports = function (render) {
       window.wink = function () {
         enemy_dragon.wink();
       }
+
+      var ii=5;
+
+      window.es = function () {
+        battleStage.render = function () {
+          if((--ii)<0){
+            ii = 5
+            if(battleStage.y%2===0){
+              battleStage.y -= 11;
+              battleStage.x -= 11;
+              battleStage.scale.x = 1.05;
+              battleStage.scale.y = 1.05;
+            }else{
+              battleStage.y += 11;
+              battleStage.x += 11;
+              battleStage.scale.x = 1;
+              battleStage.scale.y = 1;
+            }
+          }
+        }
+
+        setTimeout(function () {
+          battleStage.render = '';
+        },2000)
+      }
+
 
       render(battleStage);
     })
