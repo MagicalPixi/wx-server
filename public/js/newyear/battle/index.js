@@ -4,8 +4,7 @@
 var loader = require('../../loader');
 module.exports = function (render) {
   loader.add(
-    ['boom', 'shock', 'wagTail', 'squirm', 'wink',
-      'attack', 'playerhp', 'enemyhp',
+    ['attack', 'playerhp', 'enemyhp',
       'fire_button', 'boom_button', 'clean_button', 'ahhhh_button'],
     'json'
   ).addMulti('myDragon', ['_angry', '_awkaward'], 'json')
