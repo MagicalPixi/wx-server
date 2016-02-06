@@ -31,7 +31,7 @@ module.exports = function (render) {
 
 
       window.shock = function () {
-        monster.shock();
+        monster.ahhhh();
       }
       window.boom = function () {
         monster.boom();
