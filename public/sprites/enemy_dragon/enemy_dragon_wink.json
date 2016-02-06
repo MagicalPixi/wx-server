@@ -1,0 +1,25 @@
+ {
+"frames": {
+	" # 0副本.png": {
+		"frame": {"x":641, "y":2018, "w":640, "h":1008},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1008},
+		"sourceSize": {"w":640,"h":1008}
+	},
+	"眨眼.png": {
+		"frame": {"x":0, "y":0, "w":640, "h":1008},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1008},
+		"sourceSize": {"w":640,"h":1008}
+	},
+	" # 0副本.png": {
+		"frame": {"x":641, "y":2018, "w":640, "h":1008},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1008},
+		"sourceSize": {"w":640,"h":1008}
+	}
+
+},
+"meta": {
+	"image": "enemy_dragon.png",
+	"size": {"w": 2564, "h": 3027},
+	"scale": "1"
+}
+}
