@@ -33,6 +33,7 @@ spriteObjArray[specialIndex].loop = false;
 enemyDragon[formatArray[specialIndex]] = function () {
   enemyDragon.removeChildren();
   enemyDragon.addChild(spriteObjArray[specialIndex]);
+
   spriteObjArray[specialIndex].gotoAndPlay(0);
 };
 
@@ -47,7 +48,7 @@ formatArray.forEach(function (name,i) {
       obj.play();
 
       setTimeout(function () {
-        obj.stop();
+        obj.gotoAndStop(0);
       },2000)
     }
   }
