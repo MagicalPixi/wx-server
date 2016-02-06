@@ -19,5 +19,5 @@ var render = function(stage) {
 }
 
 document.body.appendChild(renderer.view)
-require('./start')(render);
-//require('./battle')(render);
+//require('./start')(render);
+require('./battle')(render);

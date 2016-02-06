@@ -1,0 +1,21 @@
+ {
+"frames": {
+
+	"clean.png": {
+		"frame": {"x":0, "y":133, "w":463, "h":131},
+		"spriteSourceSize": {"x":24,"y":16,"w":520,"h":170},
+		"sourceSize": {"w":520,"h":170}
+	},
+	"clean1.png": {
+		"frame": {"x":0, "y":0, "w":467, "h":132},
+		"spriteSourceSize": {"x":21,"y":16,"w":520,"h":170},
+		"sourceSize": {"w":520,"h":170}
+	}
+
+},
+"meta": {
+	"image": "clean_button.png",
+	"size": {"w": 468, "h": 265},
+	"scale": "1"
+}
+}

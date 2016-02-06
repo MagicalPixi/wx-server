@@ -1,0 +1,19 @@
+{
+"frames": {
+	"fire.png": {
+		"frame": {"x":0, "y":148, "w":460, "h":141},
+		"spriteSourceSize": {"x":26,"y":14,"w":520,"h":170},
+		"sourceSize": {"w":520,"h":170}
+	},
+	"fire active.png": {
+		"frame": {"x":0, "y":0, "w":466, "h":147},
+		"spriteSourceSize": {"x":22,"y":9,"w":520,"h":170},
+		"sourceSize": {"w":520,"h":170}
+	}
+},
+"meta": {
+	"image": "fire_button.png",
+	"size": {"w": 467, "h": 290},
+	"scale": "1"
+}
+}
