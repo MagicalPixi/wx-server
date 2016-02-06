@@ -13,7 +13,7 @@ module.exports = function (render) {
     .add(['hpframe'], 'png').load(function () {
       var myMonster = require('../../../sprites/myMonster')
       var operation2 = require('./operation2')
-      var monster = require('./monster');
+      var enemy_dragon = require('./enemy_dragon');
       var hpframeFactory = require('../../../sprites/hpframe')
       var enemyhp = require('../../../sprites/enemyhp')
       var playerhp = require('../../../sprites/playerhp')
@@ -21,7 +21,7 @@ module.exports = function (render) {
       var playerhpframe = hpframeFactory({x: 20, y: 760})
       //startStafe int
       var battleStage = new PIXI.Container();
-      battleStage.addChild(monster);
+      battleStage.addChild(enemy_dragon);
       battleStage.addChild(operation2)
       battleStage.addChild(enemyhpframe)
       battleStage.addChild(playerhpframe)
@@ -32,18 +32,21 @@ module.exports = function (render) {
 
       window.shock = function () {
         myMonster.scream();
+        enemy_dragon.ahhhh();
       }
       window.boom = function () {
         myMonster.boom();
+        enemy_dragon.boom();
       }
       window.wagTail = function () {
         myMonster.tail();
+        enemy_dragon.wagTail();
       }
       window.squirm = function () {
-        monster.squirm();
+        enemy_dragon.squirm();
       }
       window.wink = function () {
-        monster.wink();
+        enemy_dragon.wink();
       }
 
       render(battleStage);
