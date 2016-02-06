@@ -8,11 +8,10 @@ module.exports = function (render) {
       'attack', 'playerhp', 'enemyhp',
       'fire_button', 'boom_button', 'clean_button', 'ahhhh_button'],
     'json'
-  ).add(['hpframe'], 'png').load(function () {
+  ).addMulti('dragon_self', ['_angry', '_awkaward'], 'json').add(['hpframe'], 'png').load(function () {
       var operation = require('./operation')
-
+      var self = require('../../../sprites/dragon_self')
       var operation2 = require('./operation2')
-
       var monster = require('./monster');
       var hpframeFactory = require('../../../sprites/hpframe')
       var enemyhp = require('../../../sprites/enemyhp')
@@ -28,6 +27,7 @@ module.exports = function (render) {
       battleStage.addChild(playerhpframe)
       battleStage.addChild(enemyhp)
       battleStage.addChild(playerhp)
+      battleStage.addChild(self)
 
 
       window.shock = function () {
