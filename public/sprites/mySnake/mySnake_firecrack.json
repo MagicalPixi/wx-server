@@ -1,0 +1,34 @@
+{
+"frames": {
+    "mySnake_original.png": {
+		"frame": {"x":1284, "y":0, "w":641, "h":1004},
+		"spriteSourceSize": {"x":0,"y":0,"w":641,"h":1004},
+		"sourceSize": {"w":641,"h":1004}
+	},
+	"mySnake_firecrack1.png": {
+		"frame": {"x":1926, "y":1006, "w":641, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":641,"h":1005},
+		"sourceSize": {"w":641,"h":1005}
+	},
+	"mySnake_firecrack2.png": {
+		"frame": {"x":1926, "y":0, "w":641, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":641,"h":1005},
+		"sourceSize": {"w":641,"h":1005}
+	},
+	"mySnake_firecrack3.png": {
+		"frame": {"x":1284, "y":2011, "w":641, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":641,"h":1005},
+		"sourceSize": {"w":641,"h":1005}
+	},
+	"mySnake_firecrack4.png": {
+		"frame": {"x":1284, "y":1005, "w":641, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":641,"h":1005},
+		"sourceSize": {"w":641,"h":1005}
+	}
+},
+"meta": {
+	"image": "mySnake.png",
+	"size": {"w": 3851, "h": 3018},
+	"scale": "1"
+}
+}

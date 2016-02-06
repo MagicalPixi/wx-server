@@ -1,0 +1,29 @@
+{
+"frames": {
+    "mySnake_original.png": {
+		"frame": {"x":1284, "y":0, "w":641, "h":1004},
+		"spriteSourceSize": {"x":0,"y":0,"w":641,"h":1004},
+		"sourceSize": {"w":641,"h":1004}
+	},
+	"mySnake_round1.png": {
+		"frame": {"x":642, "y":2012, "w":641, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":641,"h":1005},
+		"sourceSize": {"w":641,"h":1005}
+	},
+	"mySnake_round2.png": {
+		"frame": {"x":642, "y":1006, "w":641, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":641,"h":1005},
+		"sourceSize": {"w":641,"h":1005}
+	},
+	"mySnake_round3.png": {
+		"frame": {"x":642, "y":0, "w":641, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":641,"h":1005},
+		"sourceSize": {"w":641,"h":1005}
+	}
+},
+"meta": {
+	"image": "mySnake.png",
+	"size": {"w": 3851, "h": 3018},
+	"scale": "1"
+}
+}
