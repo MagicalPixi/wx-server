@@ -3,7 +3,7 @@
  */
 var lib = require('pixi-lib');
 
-var spriteName = 'enemydragon';
+var spriteName = 'enemy_dragon';
 
 var enemyDragon = new PIXI.Container();
 
