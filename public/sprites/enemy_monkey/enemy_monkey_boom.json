@@ -25,12 +25,11 @@
 		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1005},
 		"sourceSize": {"w":640,"h":1005}
 	},
-  "monky enemy original.png": {
-	"frame": {"x":1282, "y":0, "w":640, "h":1005},
-	"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1005},
-	"sourceSize": {"w":640,"h":1005}
-  }
-
+	"monky enemy 22.png": {
+	  "frame": {"x":1282, "y":0, "w":640, "h":1005},
+	  "spriteSourceSize": {"x":0,"y":0,"w":640,"h":1005},
+	  "sourceSize": {"w":640,"h":1005}
+	}
 },
 "meta": {
 	"image": "enemy_monkey.png",
