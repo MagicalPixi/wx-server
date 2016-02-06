@@ -6,6 +6,7 @@ var pixiLib = require('pixi-lib');
 module.exports = pixiLib.createAction('boomAttack',function start(container,operations) {
   var state = this;
 
+  //临时用的window 4个方法，测试用
   var fns = ['boom','wagTail','wink','shock'];
 
   operations.forEach(function (buttonObj,i) {
