@@ -2,14 +2,14 @@
  * Created by zyg on 16/2/4.
  */
 var loader = require('../../loader');
+var myMonsterParams = require('../../../sprites/myMonster/params')
 module.exports = function (render) {
   loader.add(
     ['attack', 'playerhp', 'enemyhp',
       'fire_button', 'boom_button', 'clean_button', 'ahhhh_button'],
     'json'
-  ).addMulti('myDragon', ['_angry', '_awkaward'], 'json')
-    .addMulti('enemy_dragon',['_boom','_ahhhh','_clean','_squirm','_wagTail','_wink'])
-    .add(['hpframe'], 'png').load(function () {
+  ).addMulti('enemy_dragon',['_boom','_ahhhh','_clean','_squirm','_wagTail','_wink'])
+  .addMulti('myDragon', myMonsterParams.action, 'json').add(['hpframe'], 'png').load(function () {
       var operation = require('./operation')
       var myMonster = require('../../../sprites/myMonster')
       var operation2 = require('./operation2')
@@ -32,13 +32,13 @@ module.exports = function (render) {
 
 
       window.shock = function () {
-        monster.ahhhh();
+        myMonster.scream();
       }
       window.boom = function () {
-        monster.boom();
+        myMonster.boom();
       }
       window.wagTail = function () {
-        monster.wagTail();
+        myMonster.tail();
       }
       window.squirm = function () {
         monster.squirm();

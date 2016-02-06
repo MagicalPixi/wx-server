@@ -2,6 +2,5 @@
  * Created by guoshencheng on 1/28/16.
  */
 module.exports = {
-  wx: require('./wxConfig'),
-  game: require('./gameConfig')
+  wx: require('./wxConfig')
 }
