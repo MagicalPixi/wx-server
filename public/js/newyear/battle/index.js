@@ -5,11 +5,12 @@ var loader = require('../../loader');
 var myMonsterParams = require('../../../sprites/myMonster/params')
 module.exports = function (render) {
   loader.add(
-    ['attack', 'playerhp', 'enemyhp',
+    ['playerhp', 'enemyhp',
       'fire_button', 'boom_button', 'clean_button', 'ahhhh_button'],
     'json'
   ).addMulti('enemy_dragon',['_boom','_ahhhh','_clean','_squirm','_wagTail','_wink'])
-  .addMulti('myDragon', myMonsterParams.action, 'json').add(['hpframe'], 'png').load(function () {
+  .addMulti('myDragon', myMonsterParams.action, 'json')
+    .add(['hpframe'], 'png').load(function () {
       var operation = require('./operation')
       var myMonster = require('../../../sprites/myMonster')
       var operation2 = require('./operation2')
