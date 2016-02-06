@@ -2,11 +2,11 @@
  * Created by guoshencheng on 2/6/16.
  */
 var lib = require('pixi-lib');
-var game = require('../../../config').game
+var params = require('./params')
 
 var sprite = lib.getMc({
-  textures:lib.getTextures(game.myMonster + '_shake'),
-  "spriteName" : game.myMonster + '_shake',
+  textures:lib.getTextures(params.myMonster + '_shake'),
+  "spriteName" : params.myMonster + '_shake',
   "y" : 0 ,
   "scale.y" :  1 ,
   "animationSpeed" :  0.1 ,
