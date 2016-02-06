@@ -3,6 +3,9 @@
  */
 var loader = require('../../loader');
 var myMonsterParams = require('../../../sprites/myMonster/params')
+
+var earthShockAction = require('../../../actions/earthShockAction');
+
 module.exports = function (render) {
   loader.add(
     ['playerhp', 'enemyhp',
@@ -34,7 +37,7 @@ module.exports = function (render) {
       window.shock = function () {
         myMonster.scream();
         enemy_dragon.ahhhh();
-        es()
+        es && es()
 
       }
       window.boom = function () {
@@ -50,33 +53,10 @@ module.exports = function (render) {
       }
       window.wink = function () {
         enemy_dragon.wink();
-      }
+      };
 
-      var ii=5;
 
-      window.es = function () {
-        battleStage.render = function () {
-          if((--ii)<0){
-            ii = 5
-            if(battleStage.y%2===0){
-              battleStage.y -= 11;
-              battleStage.x -= 11;
-              battleStage.scale.x = 1.05;
-              battleStage.scale.y = 1.05;
-            }else{
-              battleStage.y += 11;
-              battleStage.x += 11;
-              battleStage.scale.x = 1;
-              battleStage.scale.y = 1;
-            }
-          }
-        }
-
-        setTimeout(function () {
-          battleStage.render = '';
-        },2000)
-      }
-
+      earthShockAction(battleStage);
 
       render(battleStage);
     })
