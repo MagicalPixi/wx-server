@@ -1,15 +1,15 @@
- {
+{
 "frames": {
 	"boom.png": {
 		"frame": {"x":0, "y":147, "w":458, "h":136},
-		"spriteSourceSize": {"x":26,"y":13,"w":520,"h":170}, 
+		"spriteSourceSize": {"x":26,"y":13,"w":520,"h":170},
 		"sourceSize": {"w":520,"h":170}
 	},
 	"boom1.png": {
 		"frame": {"x":0, "y":0, "w":458, "h":146},
 		"spriteSourceSize": {"x":26,"y":13,"w":520,"h":170},
 		"sourceSize": {"w":520,"h":170}
-	} 
+	}
 
 },
 "meta": {
