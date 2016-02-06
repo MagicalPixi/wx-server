@@ -40,7 +40,7 @@ var mySprite = lib.getMc({
 
         
 
-        "x" :  20 ,
+        "x" :  40 ,
 
         
 

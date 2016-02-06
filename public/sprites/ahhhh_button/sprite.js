@@ -2,13 +2,13 @@ var lib = require('pixi-lib');
 
 var mySprite = lib.getMc({
 
-    textures:lib.getTextures('ahhh_button'),
+    textures:lib.getTextures('ahhhh_button'),
 
     
 
         
 
-        "spriteName" :  "ahhh_button" ,
+        "spriteName" :  "ahhhh_button" ,
 
         
 

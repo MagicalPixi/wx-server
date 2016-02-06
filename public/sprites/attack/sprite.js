@@ -15,6 +15,6 @@ var spriteFactory = function (property) {
     sprite.interactive = true
     sprite.on('touchend', property.ontouch)
     return sprite
-}
+};
 
 module.exports = spriteFactory;
