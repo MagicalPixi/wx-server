@@ -1,0 +1,24 @@
+{
+"frames": {
+	"monky enemy original.png": {
+		"frame": {"x":1282, "y":0, "w":640, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1005},
+		"sourceSize": {"w":640,"h":1005}
+	},
+	"monky enemy clean 1.png": {
+		"frame": {"x":2564, "y":1006, "w":640, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1005},
+		"sourceSize": {"w":640,"h":1005}
+	},
+	"monky enemy clean 2.png": {
+		"frame": {"x":2564, "y":0, "w":640, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1005},
+		"sourceSize": {"w":640,"h":1005}
+	}
+},
+"meta": {
+	"image": "enemy_monkey.png",
+	"size": {"w": 3205, "h": 3018},
+	"scale": "1"
+}
+}
