@@ -48,7 +48,7 @@ formatArray.forEach(function (name,i) {
       obj.play();
 
       setTimeout(function () {
-        obj.gotoAndStop(0);
+        obj.stop();
       },2000)
     }
   }

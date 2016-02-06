@@ -8,15 +8,15 @@ var cate = {
   bear:'myBear'
 }
 
-var action = ['_angry', '_awkaward', '_blink', '_firecrack', '_clean'
-, '_dead', '_round', '_scream', '_shake', '_tail']
+var action = ['_angry', '_awkward', '_blink', '_firecrack', '_clean'
+  , '_dead', '_round', '_scream', '_shake', '_tail']
 
-var attack = ['angry', 'awkaward', 'blink', 'boom', 'clean'
+var attack = ['angry', 'awkward', 'blink', 'boom', 'clean'
   , 'dead', 'round', 'scream', 'shake', 'tail']
 
 module.exports = {
   cate: cate,
-  myMonster: cate.dragon,
+  myMonster: cate.snake,
   action: action,
   attack: attack
 }

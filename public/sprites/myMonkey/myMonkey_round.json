@@ -1,0 +1,34 @@
+{
+"frames": {
+    "myMonkey_original.png": {
+		"frame": {"x":1282, "y":0, "w":640, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1005},
+		"sourceSize": {"w":640,"h":1005}
+	},
+	"myMonkey_round1.png": {
+		"frame": {"x":641, "y":2012, "w":640, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1005},
+		"sourceSize": {"w":640,"h":1005}
+	},
+	"myMonkey_round2.png": {
+		"frame": {"x":641, "y":1006, "w":640, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1005},
+		"sourceSize": {"w":640,"h":1005}
+	},
+	"myMonkey_round3.png": {
+		"frame": {"x":641, "y":0, "w":640, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1005},
+		"sourceSize": {"w":640,"h":1005}
+	},
+	"myMonkey_round4.png": {
+		"frame": {"x":0, "y":2012, "w":640, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1005},
+		"sourceSize": {"w":640,"h":1005}
+	}
+},
+"meta": {
+	"image": "myMonkey.png",
+	"size": {"w": 3846, "h": 3018},
+	"scale": "1"
+}
+}

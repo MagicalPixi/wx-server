@@ -24,6 +24,11 @@
 		"frame": {"x":1282, "y":1005, "w":640, "h":1004},
 		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1004},
 		"sourceSize": {"w":640,"h":1004}
+	},
+	"original2.png": {
+		"frame": {"x":1282, "y":0, "w":640, "h":1004},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1004},
+		"sourceSize": {"w":640,"h":1004}
 	}
 },
 "meta": {

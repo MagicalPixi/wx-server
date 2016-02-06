@@ -1,0 +1,19 @@
+{
+"frames": {
+    "mySnake_original.png": {
+		"frame": {"x":1284, "y":0, "w":641, "h":1004},
+		"spriteSourceSize": {"x":0,"y":0,"w":641,"h":1004},
+		"sourceSize": {"w":641,"h":1004}
+	},
+	"mySnake_scream.png": {
+		"frame": {"x":0, "y":2010, "w":641, "h":1004},
+		"spriteSourceSize": {"x":0,"y":0,"w":641,"h":1004},
+		"sourceSize": {"w":641,"h":1004}
+	}
+},
+"meta": {
+	"image": "mySnake.png",
+	"size": {"w": 3851, "h": 3018},
+	"scale": "1"
+}
+}
