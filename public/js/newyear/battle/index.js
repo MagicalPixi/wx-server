@@ -9,7 +9,7 @@ module.exports = function (render) {
       'fire_button', 'boom_button', 'clean_button', 'ahhhh_button'],
     'json'
   ).addMulti('enemy_dragon',['_boom','_ahhhh','_clean','_squirm','_wagTail','_wink'])
-  .addMulti('myDragon', myMonsterParams.action, 'json')
+  .addMulti(myMonsterParams.myMonster, myMonsterParams.action, 'json')
     .add(['hpframe'], 'png').load(function () {
 
       var myMonster = require('../../../sprites/myMonster')

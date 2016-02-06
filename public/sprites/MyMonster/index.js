@@ -2,7 +2,7 @@
  * Created by guoshencheng on 2/6/16.
  */
 var angry = require('./angry')
-var awkaward = require('./awkaward')
+var awkward = require('./awkward')
 var blink = require('./blink')
 var boom = require('./boom')
 var clean = require('./clean')
@@ -13,11 +13,14 @@ var shake = require('./shake')
 var tail = require('./tail')
 var params = require('./params')
 
-var sprites = [angry, awkaward, blink, boom, clean, dead, round, scream, shake, tail]
+var sprites = [angry, awkward, blink, boom, clean, dead, round, scream, shake, tail]
 
 var myMonster = new PIXI.Container()
   params.attack.forEach(function (name,i) {
-  var obj = sprites[i];
+  var obj = sprites[i]
+  if (name == 'boom') {
+    obj.loop = false
+  }
   myMonster[name] = function () {
     this.removeChildren();
     this.addChild(obj);
