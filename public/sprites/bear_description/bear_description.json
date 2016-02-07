@@ -1,0 +1,20 @@
+{
+"frames": {
+	"original.png": {
+		"frame": {"x":0, "y":0, "w":195, "h":335},
+		"spriteSourceSize": {"x":274,"y":113,"w":641,"h":1004},
+		"sourceSize": {"w":641,"h":1004}
+	},
+	"walk.png": {
+		"frame": {"x":196, "y":0, "w":194, "h":328},
+		"spriteSourceSize": {"x":274,"y":113,"w":640,"h":1004},
+		"sourceSize": {"w":640,"h":1004}
+	}
+
+},
+"meta": {
+	"image": "bear_walk.png",
+	"size": {"w": 391, "h": 336},
+	"scale": "1"
+}
+}

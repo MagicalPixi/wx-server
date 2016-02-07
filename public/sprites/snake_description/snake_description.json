@@ -1,0 +1,20 @@
+{
+"frames": {
+	"original.png": {
+		"frame": {"x":343, "y":0, "w":342, "h":441},
+		"spriteSourceSize": {"x":234,"y":71,"w":641,"h":1005},
+		"sourceSize": {"w":641,"h":1005}
+	},
+	"walk.png": {
+		"frame": {"x":0, "y":0, "w":342, "h":438},
+		"spriteSourceSize": {"x":233,"y":71,"w":640,"h":1005},
+		"sourceSize": {"w":640,"h":1005}
+	}
+
+},
+"meta": {
+	"image": "snake_description.png",
+	"size": {"w": 686, "h": 442},
+	"scale": "1"
+}
+}

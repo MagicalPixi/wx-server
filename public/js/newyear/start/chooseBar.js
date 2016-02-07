@@ -8,20 +8,6 @@ var chooseBar = new PIXI.Container()
 
 chooseBar.addChild(change_monster)
 chooseBar.addChild(comfirm_monster)
-
-// change_monster
-change_monster.on('touchstart', function() {
-  this.gotoAndStop(1)
-})
-
-change_monster.on('touchend', function() {
-  this.gotoAndStop(0)
-  if (monster_description.inStage ) {
-    monster_description.walkOut(function() {
-      monster_description.walkIn()
-    })
-  }
-});
 //
 //chooseBar.y = 150
 //chooseBar.speed = 0

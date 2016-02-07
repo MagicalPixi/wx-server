@@ -6,7 +6,8 @@ var R = {
   json: [
     'light', 'start', 'who',
     'change_monster', 'comfirm_monster', 'monster_description',
-    'white', 'tall', 'rich', 'handsom', 'beautiful'
+    'white', 'tall', 'rich', 'handsom', 'beautiful',
+    'monkey_description', 'snake_description', 'bear_description'
   ],
   png: ['title']
 }

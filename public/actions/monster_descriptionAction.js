@@ -7,7 +7,7 @@ var pixiLib = require('pixi-lib')
 module.exports = pixiLib.createAction('monster_description',function start(monster) {
   var state = this;
 
-  monster.inStage = false;
+  window.inStage = false;
   monster.speed = 0;
   monster.walkIn = function() {
     this.play()
@@ -26,24 +26,17 @@ module.exports = pixiLib.createAction('monster_description',function start(monst
   };
 
   var checkInOrOut = function() {
-    if ((!monster.inStage) && monster.x < 320 + monster.speed && monster.x > 320 - monster.speed ) {
+    if ((!window.inStage) && monster.x < 320 + monster.speed && monster.x > 320 - monster.speed ) {
       monster.x = 320
       monster.speed = 0
-      monster.inStage = true
+      window.inStage = true
       monster.stop()
-    } else if (monster.inStage && monster.x < -300) {
+    } else if (window.inStage && monster.x < -300) {
       monster.x = 940
       monster.speed = 0
-      monster.inStage = false
+      window.inStage = false
       monster.stop()
       if(monster.disapear) monster.disapear()
     }
   }
-
-
-  state.on('descriptionEnd', function (stage) {
-
-    monster.walkIn()
-  });
-
 });

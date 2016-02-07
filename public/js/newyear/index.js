@@ -23,6 +23,5 @@ document.body.appendChild(renderer.view)
 window.enemyName = 'snake';
 window.myMonsterName = 'snake';
 
-//require('./start')(render);
-require('./battle')(render);
+require('./start')(render);
 //require('./battle')(render);
