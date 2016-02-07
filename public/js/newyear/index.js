@@ -19,5 +19,9 @@ var render = function(stage) {
 }
 
 document.body.appendChild(renderer.view)
+
+window.enemyName = 'snake';
+window.myMonsterName = 'snake';
+
 //require('./start')(render);
 require('./battle')(render);

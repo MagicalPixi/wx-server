@@ -12,6 +12,8 @@ var uglify = new webpack.optimize.UglifyJsPlugin({
   }
 });
 
+var common = new webpack.optimize.CommonsChunkPlugin('common.js')
+
 var definePlugin = new webpack.DefinePlugin({
   env:{
     isDevelopment:process.env.NODE_ENV !== 'product'
@@ -19,7 +21,7 @@ var definePlugin = new webpack.DefinePlugin({
 
 });
 
-var plugins = [definePlugin];
+var plugins = [definePlugin,common];
 
 
 if(process.env.NODE_ENV === 'product'){
