@@ -58,7 +58,6 @@ module.exports = function (render) {
       ['playerhp', 'enemyhp',
         'fire_button', 'boom_button', 'clean_button', 'ahhhh_button'], 'json')
       .addMulti(enemy.pre,enemy.format)
-      .addMulti('myDragon', myMonsterParams.action, 'json')
       .addMulti(myMonsterParams.myMonster, myMonsterParams.action, 'json')
       .add(['hpframe'], 'png').load(function () {
 
