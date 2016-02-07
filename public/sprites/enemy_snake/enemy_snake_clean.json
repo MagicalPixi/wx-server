@@ -1,0 +1,25 @@
+{
+"frames": {
+	"snake enemy original.png": {
+		"frame": {"x":0, "y":0, "w":641, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":641,"h":1005},
+		"sourceSize": {"w":641,"h":1005}
+	},
+	"snake enemy clean 1.png": {
+		"frame": {"x":2564, "y":2012, "w":640, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1005},
+		"sourceSize": {"w":640,"h":1005}
+	},
+	"snake enemy clean 2.png": {
+		"frame": {"x":2564, "y":1006, "w":640, "h":1005},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1005},
+		"sourceSize": {"w":640,"h":1005}
+	}
+
+},
+"meta": {
+	"image": "enemy_snake.png",
+	"size": {"w": 3206, "h": 3018},
+	"scale": "1"
+}
+}
