@@ -22,6 +22,8 @@ module.exports = function(render) {
 
     light.play()
 
+    startStage.name = 'startStage';
+
     render(startStage);
   })
 };

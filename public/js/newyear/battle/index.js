@@ -48,6 +48,10 @@ module.exports = function (render) {
     './enemy_monkey',
     './enemy_snake',
   ], function (require) {
+
+    var battleStage = new PIXI.Container();
+    render(battleStage);
+
      //loading资源
     loader.add(
       ['playerhp', 'enemyhp',
@@ -71,7 +75,6 @@ module.exports = function (render) {
         var enemyhpframe = hpframeFactory({x: 20, y: 0})
         var playerhpframe = hpframeFactory({x: 20, y: 760})
         //startStafe int
-        var battleStage = new PIXI.Container();
         battleStage.addChild(enemy_monster);
 
         battleStage.addChild(operation2)
@@ -104,7 +107,8 @@ module.exports = function (render) {
 
         earthShockAction(battleStage);
 
-        render(battleStage);
+        battleStage.ready=true;
+        battleStage.name = 'battleStage';
       });
   });
 
