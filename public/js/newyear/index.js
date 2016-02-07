@@ -8,7 +8,9 @@ var renderer = new PIXI.autoDetectRenderer(640, 1004, {
 var currentStage = null;
 
 var twistFilter = new PIXI.filters.TwistFilter();
-twistFilter.radius = 0.7;
+twistFilter.radius = 0.8;
+var blurFilter = new PIXI.filters.BlurFilter();
+
 
 window.T = twistFilter;
 //
@@ -20,6 +22,7 @@ function loadingBetweenStages(currentStage,newStage){
   if(newStage.ready){
     if(currentStage !== newStage){
       currentStage = newStage;
+      currentStage.filters = [twistFilter,blurFilter];
     }
 
     if(twistFilter.angle >= 0){
@@ -28,13 +31,14 @@ function loadingBetweenStages(currentStage,newStage){
 
     if(twistFilter.angle <=0){
       changeStageFlag = false;
-      currentStage.filters = []
+      blurFilter.blur = 0;
+      currentStage.filters = [blurFilter]
     }
   }else{
     twistFilter.angle += 0.1;
+    currentStage.filters = [twistFilter,blurFilter];
   }
 
-  currentStage.filters = [twistFilter];
 
   return currentStage;
 }
