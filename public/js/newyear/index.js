@@ -30,7 +30,7 @@ function loadingBetweenStages(currentStage,newStage){
     }
 
     if(twistFilter.angle >= 0){
-      twistFilter.angle -= 0.05;
+      twistFilter.angle -= 0.1;
     }
 
     if(twistFilter.angle <=0){

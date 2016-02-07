@@ -52,7 +52,6 @@ formatArray.forEach(function (name,i) {
 
         actionFinish && actionFinish();
 
-
       },2000)
     }
   }
