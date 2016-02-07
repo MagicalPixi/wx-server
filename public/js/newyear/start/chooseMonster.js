@@ -1,6 +1,8 @@
 /**
  * Created by guoshencheng on 2/4/16.
  */
+var render = require('../index')
+var battle = require('../battle')
 var chooseBar = require('./chooseBar')
 var change_monster = require('../../../sprites/change_monster')
 var comfirm_monster = require('../../../sprites/comfirm_monster')
@@ -31,7 +33,7 @@ comfirm_monster.on('touchstart', function() {
 
 comfirm_monster.on('touchend', function() {
   this.gotoAndStop(0)
-
+  battle(render)
 })
 
 chooseMonster.addChild(chooseBar)

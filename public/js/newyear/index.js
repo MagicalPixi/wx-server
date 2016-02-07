@@ -25,3 +25,6 @@ window.myMonsterName = 'snake';
 
 require('./start')(render);
 //require('./battle')(render);
+
+
+module.exports = render
