@@ -4,9 +4,9 @@
 
 var pixiLib = require('pixi-lib')
 
-module.exports = pixiLib.createAction('myMonster', function start(myMonster) {
+module.exports = pixiLib.createAction('enemyMonster', function start(enemyMonster) {
   var state = this
   state.on('chooseMonsterEnd', function() {
-    myMonster.appear()
+    enemyMonster.appear()
   })
 })
