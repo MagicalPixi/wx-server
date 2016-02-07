@@ -14,10 +14,6 @@ var enemyPathArr = [
   './enemy_snake',
 ];
 
-var myMonsterPathArr = [
-  '../../../sprites/myMonster'
-];
-
 var enemyMap = {
   bear:{
     pre:'enemy_bear',
@@ -51,7 +47,6 @@ module.exports = function (render) {
     './enemy_dragon',
     './enemy_monkey',
     './enemy_snake',
-    '../../../sprites/myMonster'
   ], function (require) {
      //loading资源
     loader.add(
