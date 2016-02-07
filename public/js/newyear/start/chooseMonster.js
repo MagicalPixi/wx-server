@@ -1,11 +1,9 @@
 /**
  * Created by guoshencheng on 2/4/16.
  */
-var render = require('../index')
-var battle = require('../battle')
+
 var chooseBar = require('./chooseBar')
 var change_monster = require('../../../sprites/change_monster')
-var comfirm_monster = require('../../../sprites/comfirm_monster')
 var monster_description = require('../../../sprites/monster_description')
 var monkey_description = require('../../../sprites/monkey_description')
 var bear_description = require('../../../sprites/bear_description')
@@ -26,15 +24,6 @@ change_monster.on('touchend', function() {
     })
   }
 });
-
-comfirm_monster.on('touchstart', function() {
-  this.gotoAndStop(1)
-})
-
-comfirm_monster.on('touchend', function() {
-  this.gotoAndStop(0)
-  battle(render)
-})
 
 chooseMonster.addChild(chooseBar)
 chooseMonster.addChild(monster_description);

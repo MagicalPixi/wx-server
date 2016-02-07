@@ -3,10 +3,8 @@
  */
 var pixiLib = require('pixi-lib')
 
-
 module.exports = pixiLib.createAction('monster_description',function start(monster) {
   var state = this;
-
   window.inStage = false;
   monster.speed = 0;
   monster.walkIn = function() {
@@ -31,7 +29,7 @@ module.exports = pixiLib.createAction('monster_description',function start(monst
       monster.speed = 0
       window.inStage = true
       monster.stop()
-    } else if (window.inStage && monster.x < -300) {
+    } else if (window.inStage && monster.x < -120) {
       monster.x = 940
       monster.speed = 0
       window.inStage = false
