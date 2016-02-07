@@ -23,10 +23,14 @@ function loadingBetweenStages(currentStage,newStage){
     if(currentStage !== newStage){
       currentStage = newStage;
       currentStage.filters = [twistFilter,blurFilter];
+
+      setTimeout(function () {
+
+      },500)
     }
 
     if(twistFilter.angle >= 0){
-      twistFilter.angle -= 0.1;
+      twistFilter.angle -= 0.05;
     }
 
     if(twistFilter.angle <=0){
