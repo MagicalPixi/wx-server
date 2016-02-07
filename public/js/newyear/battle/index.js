@@ -6,7 +6,7 @@ var myMonsterParams = require('../../../sprites/myMonster/params')
 
 var earthShockAction = require('../../../actions/earthShockAction');
 var enemyAttackAction = require('../../../actions/enemyAttackAction');
-var enemyHpAction = require('../../../actions/enemyHpAction');
+var myHpAction = require('../../../actions/myHpAction');
 
 var enemyPathArr = [
   './enemy_bear',
@@ -84,7 +84,7 @@ module.exports = function (render) {
 
         enemyAttackAction(enemy_monster,enemy.format);
 
-        enemyHpAction(playerhp);
+        myHpAction(playerhp);
 
         window.shock = function () {
           myMonster.scream();

@@ -4,16 +4,15 @@
 var pixiLib = require('pixi-lib');
 
 module.exports = pixiLib.createAction('enemyAttack', function (enemy,attackFnNames) {
-  attackFnNames = attackFnNames.map(function (n) {
+  attackFnNames = attackFnNames.filter(function (n) {
+    return n !== 'dead';
+  }).map(function (n) {
     return n.replace('_','');
   });
 
   var state = this;
 
   var fnLen = attackFnNames.length;
-
-
-  console.log(attackFnNames);
 
   function attack() {
 
