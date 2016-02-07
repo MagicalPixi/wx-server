@@ -41,7 +41,7 @@ formatArray.forEach(function (name,i) {
   if(i !== specialIndex){
     var obj = spriteObjArray[i];
 
-    enemyDragon[name] = function () {
+    enemyDragon[name] = function (actionFinish) {
       this.removeChildren();
       this.addChild(obj);
 
@@ -49,6 +49,8 @@ formatArray.forEach(function (name,i) {
 
       setTimeout(function () {
         obj.stop();
+        actionFinish && actionFinish();
+
       },2000)
     }
   }
