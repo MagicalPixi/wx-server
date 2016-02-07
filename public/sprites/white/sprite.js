@@ -16,7 +16,7 @@ var mySprite = lib.getMc({
 
         
 
-        "y" :  0 ,
+        "y" :  500 ,
 
         
 
