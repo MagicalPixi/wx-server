@@ -84,7 +84,7 @@ module.exports = function (render) {
 
         enemyAttackAction(enemy_monster,enemy.format);
 
-        enemyHpAction(enemyhp);
+        enemyHpAction(playerhp);
 
         window.shock = function () {
           myMonster.scream();
