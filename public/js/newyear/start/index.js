@@ -12,6 +12,8 @@ module.exports = function(render) {
     ////descript init
     var description = require('./description')
 
+
+    var enemyMonster = require('./enemyMonster')
     descriptionAction(description);
     chooseMonsterAction(chooseMonster);
 
@@ -19,7 +21,7 @@ module.exports = function(render) {
     var startStage = new PIXI.Container()
     startStage.addChild(light)
     startStage.addChild(description)
-
+    startStage.addChild(enemyMonster)
     light.play()
 
     startStage.name = 'startStage';

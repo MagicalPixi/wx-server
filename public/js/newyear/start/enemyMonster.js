@@ -2,7 +2,7 @@
  * Created by guoshencheng on 2/7/16.
  */
 
-var monster_description = require('../../../sprites/monster_description')
+var monster = require('../../../sprites/monkey')
 var white = require('../../../sprites/white')
 var rich = require('../../../sprites/rich')
 var handsom = require('../../../sprites/handsom')
@@ -22,8 +22,7 @@ description.x = 320
 description.y = 700
 
 var enemyMonster = new PIXI.Container()
-monster_description.x = 320
-enemyMonster.addChild(monster_description)
+enemyMonster.addChild(monster)
 enemyMonster.addChild(tall)
 enemyMonster.addChild(rich)
 enemyMonster.addChild(handsom)
@@ -34,13 +33,14 @@ enemyMonsterAction(enemyMonster)
 
 enemyMonster.speed = 0;
 enemyMonster.inStage = false
+enemyMonster.x = 640
 enemyMonster.walkIn = function() {
   this.speed = 5
 };
 
 var checkIn= function() {
-  if ((!enemyMonster.inStage) && enemyMonster.x < 320 + enemyMonster.speed && enemyMonster.x > 320 - enemyMonster.speed ) {
-    enemyMonster.x = 320
+  if ((!enemyMonster.inStage) && enemyMonster.x < 0 ) {
+    enemyMonster.x = 0
     enemyMonster.speed = 0
     enemyMonster.inStage = true
   }

@@ -9,7 +9,7 @@ var R = {
     'white', 'tall', 'rich', 'handsom', 'beautiful',
     'monkey_description', 'snake_description', 'bear_description'
   ],
-  png: ['title']
+  png: ['title', 'dragon', 'monkey', 'snake', 'bear']
 }
 
 module.exports = {
