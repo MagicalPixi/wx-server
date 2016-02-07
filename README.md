@@ -10,6 +10,7 @@ use `bower install` to install pixi
 has added webpack for `/public/js/`
 
 TODO:
+
 	- finish logicalflow of game
 		- attack and hit will discrease hp
 		- Turn-basierte logicalflow

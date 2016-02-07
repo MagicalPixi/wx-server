@@ -1,27 +1,21 @@
 var loader = require('../../loader');
-
+var params = require('./params')
 var descriptionAction = require('../../../actions/descriptionAction');
 var chooseMonsterAction = require('../../../actions/chooseMonsterAction');
-
 module.exports = function(render) {
-  loader.add(['light', 'start', 'who',
-    'change_monster', 'comfirm_monster', 'monster_description'],'json')
-    .add(['title'], 'png').load(function () {
+  loader.add(params.resource.json,'json')
+    .add(params.resource.png, 'png').load(function () {
     var light = require('../../../sprites/light')
-
     //chooseMonster init
     var chooseMonster = require('./chooseMonster')
 
-    //descript init
+    ////descript init
     var description = require('./description')
-    //description.dissapear = function () {
-    //  chooseMonster.appear(startStage)
-    //}
 
     descriptionAction(description);
     chooseMonsterAction(chooseMonster);
 
-    //startStafe int
+    ////startStafe int
     var startStage = new PIXI.Container()
     startStage.addChild(light)
     startStage.addChild(description)

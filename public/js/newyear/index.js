@@ -25,3 +25,4 @@ window.myMonsterName = 'snake';
 
 //require('./start')(render);
 require('./battle')(render);
+//require('./battle')(render);

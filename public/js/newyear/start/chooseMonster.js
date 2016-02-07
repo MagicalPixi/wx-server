@@ -13,7 +13,17 @@ var monster_descriptionAction = require('../../../actions/monster_descriptionAct
 
 chooseBarAction(chooseBar);
 monster_descriptionAction(monster_description);
+var description = new PIXI.Text('邋遢兽！害怕生活\n' +
+  '在干净的环境里，善于放鞭炮', {
+  font: '30px Arial',
+  fill: 0x666666,
+  align: 'left'
+})
 
+description.anchor.x = 0.5
+description.x = 320
+description.y = 700
+chooseMonster.addChild(description)
 //chooseMonster.appear = function(parent) {
 //  parent.addChild(this)
 //  chooseBar.appear()

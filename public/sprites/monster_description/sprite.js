@@ -3,7 +3,7 @@ var lib = require('pixi-lib');
 var mySprite = lib.getMc({
     textures:lib.getTextures('monster_description'),
         "spriteName" :  "monster_description" ,
-        "y" :  240 ,
+        "y" :  200 ,
         "anchor.x" :  0.5 ,
         "animationSpeed" :  0.1 ,
         "scale.y" :  1 ,
