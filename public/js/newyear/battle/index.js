@@ -6,6 +6,7 @@ var myMonsterParams = require('../../../sprites/myMonster/params')
 
 var earthShockAction = require('../../../actions/earthShockAction');
 var enemyAttackAction = require('../../../actions/enemyAttackAction');
+var enemyHpAction = require('../../../actions/enemyHpAction');
 
 var enemyPathArr = [
   './enemy_bear',
@@ -65,10 +66,10 @@ module.exports = function (render) {
 
         var enemy_monster = require(enemy.path);
 
-
         var hpframeFactory = require('../../../sprites/hpframe')
         var enemyhp = require('../../../sprites/enemyhp')
-        var playerhp = require('../../../sprites/playerhp')
+        var playerhp = require('../../../sprites/playerhp');
+
         var enemyhpframe = hpframeFactory({x: 20, y: 0})
         var playerhpframe = hpframeFactory({x: 20, y: 760})
         //startStafe int
@@ -82,6 +83,8 @@ module.exports = function (render) {
         battleStage.addChild(myMonster)
 
         enemyAttackAction(enemy_monster,enemy.format);
+
+        enemyHpAction(enemyhp);
 
         window.shock = function () {
           myMonster.scream();
