@@ -17,8 +17,13 @@ module.exports = pixiLib.createAction('earthShock', function (sprite,option) {
   });
 
 
+  var initialPosition = 0;
+  var initialScale = 0;
+
   var es = function () {
 
+    initialPosition = sprite.position;
+    initialScale = sprite.scale;
     sprite.render = function () {
 
       if((--speed)<0){
@@ -29,18 +34,16 @@ module.exports = pixiLib.createAction('earthShock', function (sprite,option) {
           sprite.scale.x = 1.05;
           sprite.scale.y = 1.05;
         }else{
-          sprite.y += 11;
-          sprite.x += 11;
-          sprite.scale.x = 1;
-          sprite.scale.y = 1;
+          sprite.position = initialPosition;
+          sprite.scale = initialScale;
         }
       }
     }
 
     setTimeout(function () {
       sprite.render = '';
-      sprite.y += 11;
-      sprite.x += 11;
+      sprite.y = 0;
+      sprite.x = 0;
       sprite.scale.x = 1;
       sprite.scale.y = 1;
 
