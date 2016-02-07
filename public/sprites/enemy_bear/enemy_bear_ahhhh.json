@@ -1,0 +1,19 @@
+{
+"frames": {
+	"bear enemy original.png": {
+		"frame": {"x":0, "y":0, "w":641, "h":1004},
+		"spriteSourceSize": {"x":0,"y":0,"w":641,"h":1004},
+		"sourceSize": {"w":641,"h":1004}
+	},
+	"bear enemy scream.png": {
+		"frame": {"x":0, "y":2010, "w":640, "h":1004},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1004},
+		"sourceSize": {"w":640,"h":1004}
+	}
+},
+"meta": {
+	"image": "enemy_bear.png",
+	"size": {"w": 3206, "h": 3015},
+	"scale": "1"
+}
+}

@@ -12,6 +12,8 @@ module.exports = function (render) {
       'fire_button', 'boom_button', 'clean_button', 'ahhhh_button'], 'json')
     .addMulti('enemy_dragon',['_boom','_ahhhh','_clean','_squirm','_wagTail','_wink'])
     .addMulti('enemy_monkey',['_boom','_blink','_ahhhh','_clean','_dead','_round','_shake','_tail'])
+    .addMulti('enemy_snake',['_boom','_blink','_ahhhh','_clean','_dead','_round','_shake','_tail'])
+    .addMulti('enemy_bear',['_boom','_blink','_ahhhh','_clean','_dead','_round','_shake','_tail'])
     .addMulti('myDragon', myMonsterParams.action, 'json')
     .addMulti(myMonsterParams.myMonster, myMonsterParams.action, 'json')
     .add(['hpframe'], 'png').load(function () {
@@ -20,6 +22,11 @@ module.exports = function (render) {
       var operation2 = require('./operation2')
       var enemy_dragon = require('./enemy_dragon');
       var enemy_monkey = require('./enemy_monkey');
+      var enemy_snake = require('./enemy_snake');
+      var enemy_bear = require('./enemy_bear');
+
+      var enemy_monster = enemy_bear;
+
       var hpframeFactory = require('../../../sprites/hpframe')
       var enemyhp = require('../../../sprites/enemyhp')
       var playerhp = require('../../../sprites/playerhp')
@@ -27,8 +34,7 @@ module.exports = function (render) {
       var playerhpframe = hpframeFactory({x: 20, y: 760})
       //startStafe int
       var battleStage = new PIXI.Container();
- //     battleStage.addChild(enemy_dragon);
-      battleStage.addChild(enemy_monkey);
+      battleStage.addChild(enemy_monster);
 
       battleStage.addChild(operation2)
       battleStage.addChild(enemyhpframe)
@@ -39,23 +45,23 @@ module.exports = function (render) {
 
       window.shock = function () {
         myMonster.scream();
-        enemy_monkey.ahhhh();
+        enemy_monster.ahhhh();
         es && es()
 
       }
       window.boom = function () {
         myMonster.boom();
-        enemy_monkey.boom();
+        enemy_monster.boom();
       }
       window.wagTail = function () {
         myMonster.tail();
-        enemy_monkey.tail();
+        enemy_monster.tail();
       }
       window.squirm = function () {
-        enemy_monkey.squirm();
+        enemy_monster.squirm();
       }
       window.wink = function () {
-        enemy_monkey.blink();
+        enemy_monster.blink();
       };
 
 
