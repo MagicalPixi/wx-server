@@ -75,8 +75,9 @@ document.body.appendChild(renderer.view);
 
 window.enemyName = 'snake';
 
-
 require('./start')(render);
 window.change = function(){
   require('./battle')(render);
 };
+//require('./start')(render);
+//require('./battle')(render);

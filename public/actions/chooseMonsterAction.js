@@ -7,9 +7,8 @@ module.exports = pixiLib.createAction('chooseMonster',function start(chooseMonst
   var state = this;
 
   state.on('descriptionEnd', function (stage) {
-
-
     stage.addChild(chooseMonster)
+    chooseMonster.walkIn()
   });
 
   chooseMonster.appear = function(parent) {

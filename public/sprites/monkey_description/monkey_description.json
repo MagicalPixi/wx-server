@@ -1,0 +1,20 @@
+{
+"frames": {
+	"original.png": {
+		"frame": {"x":280, "y":0, "w":279, "h":353},
+		"spriteSourceSize": {"x":259,"y":105,"w":640,"h":1005},
+		"sourceSize": {"w":640,"h":1005}
+	},
+	"walk.png": {
+		"frame": {"x":0, "y":0, "w":279, "h":362},
+		"spriteSourceSize": {"x":259,"y":105,"w":640,"h":1005},
+		"sourceSize": {"w":640,"h":1005}
+	}
+
+},
+"meta": {
+	"image": "monkey_description.png",
+	"size": {"w": 560, "h": 363},
+	"scale": "1"
+}
+}
