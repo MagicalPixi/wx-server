@@ -7,6 +7,7 @@ var myMonsterParams = require('../../../sprites/myMonster/params')
 var earthShockAction = require('../../../actions/earthShockAction');
 var enemyAttackAction = require('../../../actions/enemyAttackAction');
 var myHpAction = require('../../../actions/myHpAction');
+var enemyHpAction = require('../../../actions/enemyHpAction');
 
 var enemyPathArr = [
   './enemy_bear',
@@ -16,25 +17,25 @@ var enemyPathArr = [
 ];
 
 var enemyMap = {
-  bear:{
-    pre:'enemy_bear',
-    format:['_boom','_blink','_ahhhh','_clean','_dead','_round','_shake','_tail'],
-    path:enemyPathArr[0]
+  bear: {
+    pre: 'enemy_bear',
+    format: ['_boom', '_blink', '_ahhhh', '_clean', '_dead', '_round', '_shake', '_tail'],
+    path: enemyPathArr[0]
   },
-  dragon:{
-    pre:'enemy_dragon',
-    format:['_boom','_ahhhh','_clean','_squirm','_wagTail','_wink'],
-    path:enemyPathArr[1]
+  dragon: {
+    pre: 'enemy_dragon',
+    format: ['_boom', '_ahhhh', '_clean', '_squirm', '_wagTail', '_wink'],
+    path: enemyPathArr[1]
   },
-  monkey:{
-    pre:'enemy_monkey',
-    format:['_boom','_blink','_ahhhh','_clean','_dead','_round','_shake','_tail'],
-    path:enemyPathArr[2]
+  monkey: {
+    pre: 'enemy_monkey',
+    format: ['_boom', '_blink', '_ahhhh', '_clean', '_dead', '_round', '_shake', '_tail'],
+    path: enemyPathArr[2]
   },
-  snake:{
-    pre:'enemy_snake',
-    format:['_boom','_blink','_ahhhh','_clean','_dead','_round','_shake','_tail'],
-    path:enemyPathArr[3]
+  snake: {
+    pre: 'enemy_snake',
+    format: ['_boom', '_blink', '_ahhhh', '_clean', '_dead', '_round', '_shake', '_tail'],
+    path: enemyPathArr[3]
   }
 };
 
@@ -53,19 +54,19 @@ module.exports = function (render) {
     var battleStage = new PIXI.Container();
     render(battleStage);
 
-     //loading资源
+    //loading资源
     loader.add(
       ['playerhp', 'enemyhp',
         'fire_button', 'boom_button', 'clean_button', 'ahhhh_button'], 'json')
-      .addMulti(enemy.pre,enemy.format)
+      .addMulti(enemy.pre, enemy.format)
       .addMulti(myMonsterParams.myMonster, myMonsterParams.action, 'json')
       .add(['hpframe'], 'png').load(function () {
 
         var myMonster = require('../../../sprites/myMonster')
         var operation2 = require('./operation2')
 
-      var myAttackAction = require('../../../actions/myAttackAction')
-      myAttackAction(myMonster)
+        var myAttackAction = require('../../../actions/myAttackAction')
+
         var enemy_monster = require(enemy.path);
 
         var hpframeFactory = require('../../../sprites/hpframe')
@@ -74,6 +75,13 @@ module.exports = function (render) {
 
         var enemyhpframe = hpframeFactory({x: 20, y: 0})
         var playerhpframe = hpframeFactory({x: 20, y: 760})
+
+        myAttackAction(myMonster)
+        enemyHpAction(enemyhp);
+
+        battleStage.ready = true;
+        battleStage.name = 'battleStage';
+
         //startStafe int
         battleStage.addChild(enemy_monster);
 
@@ -84,35 +92,33 @@ module.exports = function (render) {
         battleStage.addChild(playerhp)
         battleStage.addChild(myMonster)
 
-        enemyAttackAction(enemy_monster,enemy.format);
+        enemyAttackAction(enemy_monster, enemy.format);
 
         myHpAction(playerhp);
 
-        window.shock = function () {
-          myMonster.scream();
-          enemy_monster.ahhhh();
-          es && es()
-
-        }
-        window.boom = function () {
-          myMonster.boom();
-          enemy_monster.boom();
-        }
-        window.wagTail = function () {
-          myMonster.tail();
-          enemy_monster.tail();
-        }
-        window.squirm = function () {
-          enemy_monster.squirm();
-        }
-        window.wink = function () {
-          enemy_monster.blink();
-        };
+        //window.shock = function () {
+        //  myMonster.scream();
+        //  enemy_monster.ahhhh();
+        //  es && es()
+        //
+        //}
+        //window.boom = function () {
+        //  myMonster.boom();
+        //  enemy_monster.boom();
+        //}
+        //window.wagTail = function () {
+        //  myMonster.tail();
+        //  enemy_monster.tail();
+        //}
+        //window.squirm = function () {
+        //  enemy_monster.squirm();
+        //}
+        //window.wink = function () {
+        //  enemy_monster.blink();
+        //};
 
         earthShockAction(battleStage);
 
-        battleStage.ready=true;
-        battleStage.name = 'battleStage';
       });
   });
 

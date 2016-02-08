@@ -9,7 +9,9 @@ module.exports = pixiLib.createAction('enemyAttack', function (enemy,attackFnNam
 
   var fnLen = attackFnNames.length;
 
-  state.on('myAttack', function () {
+  state.on('myAttackProgress', function () {
+
+    console.log('myAttackProgress');
 
     attack();
   });

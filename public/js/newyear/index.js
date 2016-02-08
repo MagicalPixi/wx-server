@@ -93,7 +93,7 @@ window.battle = function(){
   require('./battle')(render);
 };
 
-enemy();
+battle();
 
 
 module.exports = render

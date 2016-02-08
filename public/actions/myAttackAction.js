@@ -3,10 +3,10 @@
  */
 var pixilib = require('pixi-lib')
 
-var fireButton = require('../sprites/fire_button');
-var ahhhhButton = require('../sprites/ahhhh_button');
-var boomButton = require('../sprites/boom_button');
-var cleanButton = require('../sprites/clean_button');
+//var fireButton = require('../sprites/fire_button');
+//var ahhhhButton = require('../sprites/ahhhh_button');
+//var boomButton = require('../sprites/boom_button');
+//var cleanButton = require('../sprites/clean_button');
 var params = require('../sprites/myMonster/params')
 
 var angry = require('../sprites/myMonster/angry')
@@ -24,22 +24,32 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
   var state = this;
 
   var sprites = [angry, awkward, blink, boom, clean, dead, round, scream, shake, tail];
+  var fnLen = params.attack.length;
 
   state.on('enemyAttackProgress', function() {
-    fireButton.interactive = true;
-    ahhhhButton.interactive = true;
-    boomButton.interactive = true;
-    cleanButton.interactive = true;
+
   });
 
-  //我的HP还有
-  state.on('myHpProgress', function() {
+  //按下底部攻击按钮
+  state.on('boomAttackProgress', function (attackObj) {
+    var index = attackObj.index;
+    var attackName = attackObj.name;
+
+    var random = Math.random();
+    if(random > 0.6){
+      index = parseInt(random * fnLen);
+    }
+
+    myMonster[params.attack[index]]();
   });
+
   //我的HP扣完了
   state.on('myHpEnd', function() {
 
   });
 
+
+  //@TODO 这里与sprites/myMonster 重复了。
   params.attack.forEach(function (name,i) {
     var obj = sprites[i]
     if (name == 'boom') {
@@ -49,12 +59,13 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
       this.removeChildren();
       this.addChild(obj);
       obj.play();
+
       setTimeout(function () {
         obj.gotoAndStop(0);
-        state.end()
+
+        state.progress()
+
       },2000)
     }
   });
-
-
-})
+});
