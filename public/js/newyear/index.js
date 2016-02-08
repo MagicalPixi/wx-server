@@ -83,12 +83,17 @@ document.body.appendChild(renderer.view);
 
 window.enemyName = 'snake';
 
-require('./start')(render);
-window.change = function(){
+window.start = function () {
+  require('./start')(render);
+};
+window.enemy = function () {
+  require('./enemy')(render);
+};
+window.battle = function(){
   require('./battle')(render);
 };
-//require('./start')(render);
-//require('./battle')(render);
+
+enemy();
 
 
 module.exports = render

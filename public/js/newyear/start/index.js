@@ -2,6 +2,7 @@ var loader = require('../../loader');
 var params = require('./params')
 var descriptionAction = require('../../../actions/descriptionAction');
 var chooseMonsterAction = require('../../../actions/chooseMonsterAction');
+
 module.exports = function(render) {
   loader.add(params.resource.json,'json')
     .add(params.resource.png, 'png').load(function () {
@@ -13,7 +14,8 @@ module.exports = function(render) {
     var description = require('./description')
 
 
-    var enemyMonster = require('./enemyMonster')
+    var enemyMonster = require('./enemyMonster');
+
     descriptionAction(description);
     chooseMonsterAction(chooseMonster);
 
@@ -22,7 +24,7 @@ module.exports = function(render) {
     startStage.addChild(light)
     startStage.addChild(description)
     startStage.addChild(enemyMonster)
-    light.play()
+    light.play();
 
     startStage.name = 'startStage';
 

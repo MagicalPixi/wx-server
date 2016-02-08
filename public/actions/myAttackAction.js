@@ -9,26 +9,27 @@ var boomButton = require('../sprites/boom_button');
 var cleanButton = require('../sprites/clean_button');
 var params = require('../sprites/myMonster/params')
 
+var angry = require('../sprites/myMonster/angry')
+var awkward = require('../sprites/myMonster/awkward')
+var blink = require('../sprites/myMonster/blink')
+var boom = require('../sprites/myMonster/boom')
+var clean = require('../sprites/myMonster/clean')
+var dead = require('../sprites/myMonster/dead')
+var round = require('../sprites/myMonster/round')
+var scream = require('../sprites/myMonster/scream')
+var shake = require('../sprites/myMonster/shake')
+var tail = require('../sprites/myMonster/tail')
+
 module.exports = pixilib.createAction('myAttack', function start(myMonster) {
-  var state = this
-  var angry = require('../sprites/myMonster/angry')
-  var awkward = require('../sprites/myMonster/awkward')
-  var blink = require('../sprites/myMonster/blink')
-  var boom = require('../sprites/myMonster/boom')
-  var clean = require('../sprites/myMonster/clean')
-  var dead = require('../sprites/myMonster/dead')
-  var round = require('../sprites/myMonster/round')
-  var scream = require('../sprites/myMonster/scream')
-  var shake = require('../sprites/myMonster/shake')
-  var tail = require('../sprites/myMonster/tail')
-  var params = require('../sprites/myMonster/params')
-  var sprites = [angry, awkward, blink, boom, clean, dead, round, scream, shake, tail]
+  var state = this;
+
+  var sprites = [angry, awkward, blink, boom, clean, dead, round, scream, shake, tail];
 
   state.on('enemyAttackProgress', function() {
-    fireButton.interactive = true
-    ahhhhButton.interactive = true
-    boomButton.interactive = true
-    cleanButton.interactive = true
+    fireButton.interactive = true;
+    ahhhhButton.interactive = true;
+    boomButton.interactive = true;
+    cleanButton.interactive = true;
   });
 
   //我的HP还有
