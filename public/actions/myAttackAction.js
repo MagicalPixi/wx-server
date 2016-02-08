@@ -11,17 +11,17 @@ var params = require('../sprites/myMonster/params')
 
 module.exports = pixilib.createAction('myAttack', function start(myMonster) {
   var state = this
-  var angry = require('../sprites/MyMonster/angry')
-  var awkward = require('../sprites/MyMonster/awkward')
-  var blink = require('../sprites/MyMonster/blink')
-  var boom = require('../sprites/MyMonster/boom')
-  var clean = require('../sprites/MyMonster/clean')
-  var dead = require('../sprites/MyMonster/dead')
-  var round = require('../sprites/MyMonster/round')
-  var scream = require('../sprites/MyMonster/scream')
-  var shake = require('../sprites/MyMonster/shake')
-  var tail = require('../sprites/MyMonster/tail')
-  var params = require('../sprites/MyMonster/params')
+  var angry = require('../sprites/myMonster/angry')
+  var awkward = require('../sprites/myMonster/awkward')
+  var blink = require('../sprites/myMonster/blink')
+  var boom = require('../sprites/myMonster/boom')
+  var clean = require('../sprites/myMonster/clean')
+  var dead = require('../sprites/myMonster/dead')
+  var round = require('../sprites/myMonster/round')
+  var scream = require('../sprites/myMonster/scream')
+  var shake = require('../sprites/myMonster/shake')
+  var tail = require('../sprites/myMonster/tail')
+  var params = require('../sprites/myMonster/params')
   var sprites = [angry, awkward, blink, boom, clean, dead, round, scream, shake, tail]
 
   state.on('enemyAttackProgress', function() {
