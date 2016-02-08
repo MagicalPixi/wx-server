@@ -24,7 +24,7 @@ module.exports = pixiLib.createAction('enemyAttack', function (enemy,attackFnNam
     });
   }
 
-  state.on('', function () {
+  state.on('myAttack', function () {
 
     attack();
   });

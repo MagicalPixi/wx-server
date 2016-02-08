@@ -64,6 +64,8 @@ module.exports = function (render) {
         var myMonster = require('../../../sprites/myMonster')
         var operation2 = require('./operation2')
 
+      var myAttackAction = require('../../../actions/myAttackAction')
+      myAttackAction(myMonster)
         var enemy_monster = require(enemy.path);
 
         var hpframeFactory = require('../../../sprites/hpframe')
