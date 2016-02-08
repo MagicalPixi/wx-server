@@ -1,6 +1,7 @@
 /**
  * Created by zyg on 16/2/8.
  */
+var pixiLib = require('pixi-lib');
 var loader = require('../../loader');
 var params = require('./params')
 
@@ -20,6 +21,6 @@ module.exports = function(render) {
 
       render(enemyStage)
 
-      enemyMonster.appear();
+      pixiLib.createAction.dispatch('chooseMonsterEnd');
     });
 }
