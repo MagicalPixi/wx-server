@@ -3,7 +3,7 @@
  */
 var pixiLib = require('pixi-lib')
 
-module.exports = pixiLib.createAction('enemyHp', function (enemyHp) {
+module.exports = pixiLib.createAction('myHp', function (myHP) {
   var state = this;
 
   var i = 9;
@@ -15,7 +15,13 @@ module.exports = pixiLib.createAction('enemyHp', function (enemyHp) {
     if(i!==0){
       i--;
     }
-    enemyHp.gotoAndStop(i);
+    myHP.gotoAndStop(i);
+
+    if(i===0){
+      state.end();
+    }else{
+      state.progress();
+    }
   });
 
 });

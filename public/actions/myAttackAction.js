@@ -24,12 +24,20 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
   var params = require('../sprites/MyMonster/params')
   var sprites = [angry, awkward, blink, boom, clean, dead, round, scream, shake, tail]
 
-  state.on('enemyAttackend', function() {
+  state.on('enemyAttackProgress', function() {
     fireButton.interactive = true
     ahhhhButton.interactive = true
     boomButton.interactive = true
     cleanButton.interactive = true
-  })
+  });
+
+  //我的HP还有
+  state.on('myHpProgress', function() {
+  });
+  //我的HP扣完了
+  state.on('myHpEnd', function() {
+
+  });
 
   params.attack.forEach(function (name,i) {
     var obj = sprites[i]
