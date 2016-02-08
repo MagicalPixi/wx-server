@@ -4,10 +4,10 @@
 var pixiLib = require('pixi-lib');
 
 module.exports = pixiLib.createAction('enemyAttack', function (enemy,attackFnNames) {
-  attackFnNames = attackFnNames.filter(function (n) {
-    return n !== 'dead';
-  }).map(function (n) {
+  attackFnNames = attackFnNames.map(function (n) {
     return n.replace('_','');
+  }).filter(function (n) {
+    return n !== 'dead';
   });
 
   var state = this;
