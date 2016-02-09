@@ -30,11 +30,13 @@ var spriteObjArray = formatArray.map(function (format) {
 //第0个特殊处理
 spriteObjArray[specialIndex].loop = false;
 
-enemyDragon[formatArray[specialIndex]] = function () {
+enemyDragon[formatArray[specialIndex]] = function (actionFinish) {
   enemyDragon.removeChildren();
   enemyDragon.addChild(spriteObjArray[specialIndex]);
 
   spriteObjArray[specialIndex].gotoAndPlay(0);
+
+  actionFinish && actionFinish();
 };
 
 formatArray.forEach(function (name,i) {
