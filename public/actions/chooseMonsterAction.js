@@ -17,8 +17,10 @@ module.exports = pixiLib.createAction('chooseMonster',function start(chooseMonst
     chooseMonster.acceleration = 0.6
   })
   state.on('descriptionEnd', function (stage) {
-    stage.addChild(chooseMonster)
-    chooseMonster.walkIn()
+    if (!window.mymonster) {
+      stage.addChild(chooseMonster)
+      chooseMonster.walkIn()
+    }
   });
 
   chooseMonster.appear = function(parent) {

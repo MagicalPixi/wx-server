@@ -11,6 +11,12 @@ module.exports = pixiLib.createAction('enemyMonster', function start(enemyMonste
     enemyMonster.appear()
   })
 
+  state.on('descriptionEnd', function (stage) {
+    if (window.mymonster) {
+      enemyMonster.appear()
+    }
+  });
+
   enemyMonster.speed = 0;
   enemyMonster.inStage = false
   enemyMonster.x = 640
