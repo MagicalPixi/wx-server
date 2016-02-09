@@ -13,6 +13,8 @@ var texts = ['西方大食国的龙兽，善于吐火\n' +
             '来自北方高句丽的蛇精兽，善于咆\n' +
             '哮，喜欢宅在家里录直播，畏惧光明与火焰']
 
+var share = []
+
 module.exports = {
   texts: texts
 }

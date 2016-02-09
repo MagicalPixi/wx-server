@@ -13,7 +13,7 @@ var shake = require('./shake')
 var tail = require('./tail')
 var params = require('./params')
 var myMonster = new PIXI.Container()
-var sprites = [angry, awkward, blink, boom, clean, dead, round, scream, shake, tail]
+var sprites = [boom, tail, blink, scream, angry, awkward, clean, dead, round, shake]
   params.attack.forEach(function (name,i) {
   var obj = sprites[i]
   if (name == 'boom') {
