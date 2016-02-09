@@ -12,6 +12,9 @@ var R = {
   png: ['title', 'dragon', 'monkey', 'snake', 'bear']
 }
 
+var monsters = ['dragon', 'bear', 'monkey', 'snake']
+
 module.exports = {
-  resource: R
+  resource: R,
+  monsters: monsters
 }

@@ -14,6 +14,7 @@ module.exports = pixiLib.createAction('chooseMonster',function start(chooseMonst
 
   comfirm_monster.on('touchend', function() {
     this.gotoAndStop(0)
+    //window.mymonster =
     chooseMonster.acceleration = 0.6
   })
   state.on('descriptionEnd', function (stage) {

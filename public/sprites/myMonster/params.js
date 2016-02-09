@@ -10,11 +10,11 @@ var cate = {
 
 var monsters = ['myDragon', 'myBear', 'myMonkey', 'mySnake']
 
-var action = ['_firecrack', '_tail', '_blink', '_scream','_angry', '_awkward', '_clean'
-  , '_dead', '_round', '_shake']
+var action = ['_firecrack', '_clean', '_blink', '_scream','_angry', '_awkward', '_tail'
+  , '_round', '_shake', '_dead']
 
-var attack = ['boom', 'tail', 'blink', 'scream', 'angry', 'awkward', 'clean'
-  , 'dead', 'round', 'shake']
+var attack = ['boom', 'clean', 'blink', 'scream', 'angry', 'awkward', 'tail'
+  , 'round', 'shake', 'dead']
 
 module.exports = {
   cate: cate,

@@ -91,9 +91,11 @@ window.enemyName = 'bear';
 window.start = function () {
   require('./start')(render);
 };
-//window.enemy = function () {
-//  require('./enemy')(render);
-//};
+
+window.enemy = function (beat) {
+  require('./enemy')(render);
+};
+
 window.battle = function(){
   require('./battle')(render);
 };

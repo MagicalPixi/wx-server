@@ -6,21 +6,21 @@ var loader = require('../../loader');
 var params = require('./params')
 
 
-module.exports = function(render) {
+module.exports = function(render, beat) {
   loader.add(params.resource.json, 'json')
     .add(params.resource.png, 'png').load(function () {
-      var enemyStage = new PIXI.Container()
+      var endStage = new PIXI.Container()
 
-      enemyStage.name = 'enemyStage';
+      endStage.name = 'enemyStendStageage';
 
-      var enemyMonster = require('./enemyMonster');
+      var monster = require('./monster');
       var light = require('../../../sprites/light');
       light.play();
 
-      enemyStage.addChild(light)
-      enemyStage.addChild(enemyMonster);
+      endStage.addChild(light)
+      endStage.addChild(monster);
 
-      render(enemyStage)
+      render(endStage)
       pixiLib.createAction.dispatch('chooseMonsterEnd');
     });
 }
