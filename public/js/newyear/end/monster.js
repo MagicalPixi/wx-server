@@ -53,13 +53,17 @@ myMonster.update = function (beat) {
   if (beat) {
     addNewProperty()
     var shareText
+    console.log(upgradeIndex)
     if (upgradeIndex < tags.length - 1) {
       shareText = '就在刚才' + window.user.nickname + '弄死了'
         + window.enemymonster.ownerNickName + '的年兽, \n' + '恭喜你获得了\' ' + tags[upgradeIndex] + "'的属性,\n 成功的阻止了年兽的肆虐!"
-    } else {
+    } else if(upgradeIndex == 100) {
       shareText = '就在刚才,' + window.user.nickname + ' 弄死了 '+ window.enemymonster.ownerNickName + '的年兽! \n' +
         '恭喜获得了所有属性, \'高\' \'富\' \'帅\' \'白\' \n' +
         ' \'美\' 于一身'
+    } else  {
+      shareText = '就在刚才,' + window.user.nickname + ' 弄死了 '+ window.enemymonster.ownerNickName + '的年兽! \n' +
+        '但他并没有获得属性!'
     }
   } else {
     shareText = '就在刚才, xxx 的年兽被 xxx的年兽 弄死了'
@@ -93,16 +97,24 @@ var properties = ['property1', 'property2', 'property3'
 
 var addNewProperty = function() {
   var array = []
+  var count = 0
   for (var i = 0; i < properties.length; i++) {
     var property = properties[i]
     if (window.mymonster[property] == 0 && window.enemymonster[property] != 0) {
       array.push(i)
+    }
+    if (window.mymonster[property] == 1) {
+      count ++
     }
   }
   if (array.length > 0) {
     var index = Math.random() * array.length
     window.mymonster[array[index]] = 1;
     upgradeIndex = array[index]
+  } else if(count != 5) {
+    upgradeIndex = 101
+  } else {
+    upgradeIndex = 100
   }
   window.mymonster.beat ++
   window.mymonster.ownerNickName = window.user.nickname
