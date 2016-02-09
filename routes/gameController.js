@@ -60,7 +60,7 @@ var getGameView = function(req, res, next) {
     var user = req.userInfo
     getMonster(user.openid, function(err, mymonster) {
       getMonster(openid, function(err, enemy) {
-        res.render('newyear', {env: 'develop', config: result, mymonster: mymonster, enemy: enemy, user: user})
+        res.render('newyear', {env: process.env.NODE_ENV?process.env.NODE_ENV:'development', config: result, mymonster: mymonster, enemy: enemy, user: user})
       })
     })
   })
