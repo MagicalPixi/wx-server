@@ -4,11 +4,8 @@ var model = require('../models')
 var domin = 'http://wx.easyell.com'
 
 var authorize = function(req, res) {
-  console.log(1111 + req.params.id)
   var url = oauth.getAuthorizeURL(domin + '/game/' + req.params.id, '123', 'snsapi_userinfo');
-  console.log(url)
   res.redirect(url)
-  console.log(2222)
 }
 
 var checkAuthorize = function(req, res, next) {
@@ -26,9 +23,9 @@ var checkAuthorize = function(req, res, next) {
           user.headimgurl = result.headimgurl
           user.sex = result.sex
           user.save(function(e, v) {
-            createOrSaveMonster(result.openid, function(e, v) {
-              next()
-            })
+            if (e) console.log(e)
+            if (v) console.log(v)
+            next()
           })
         })
       }
