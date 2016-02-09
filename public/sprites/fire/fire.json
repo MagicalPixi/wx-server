@@ -1,0 +1,24 @@
+{
+"frames": {
+	"fire1.png": {
+		"frame": {"x":641, "y":0, "w":640, "h":1004},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1004},
+		"sourceSize": {"w":640,"h":1004}
+	},
+	"fire2.png": {
+		"frame": {"x":0, "y":0, "w":640, "h":1004},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1004},
+		"sourceSize": {"w":640,"h":1004}
+	},
+	"fire1.png": {
+		"frame": {"x":641, "y":0, "w":640, "h":1004},
+		"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1004},
+		"sourceSize": {"w":640,"h":1004}
+	}
+},
+"meta": {
+	"image": "fire.png",
+	"size": {"w": 1282, "h": 1005},
+	"scale": "1"
+}
+}

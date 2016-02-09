@@ -7,7 +7,7 @@ module.exports = pixiLib.createAction('boomAttack',function start(container,oper
   var state = this;
 
   //临时用的window 4个方法，测试用
-  var fns = ['boom','wagTail','wink','shock'];
+  var fns = ['boom','wagTail','fire','shock'];
 
 
   //敌人攻击结束才能按下

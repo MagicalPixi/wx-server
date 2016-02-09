@@ -19,11 +19,11 @@ var round = require('../sprites/myMonster/round')
 var scream = require('../sprites/myMonster/scream')
 var shake = require('../sprites/myMonster/shake')
 var tail = require('../sprites/myMonster/tail')
-
+var fire  = require('../sprites/fire')
 module.exports = pixilib.createAction('myAttack', function start(myMonster) {
   var state = this;
 
-  var sprites = [boom, clean, blink, scream, angry, awkward, tail, round, shake,dead]
+  var sprites = [boom, clean, fire, scream, angry, awkward, tail, round, blink, shake,dead]
   var fnLen = params.attack.length;
 
   //按下底部攻击按钮

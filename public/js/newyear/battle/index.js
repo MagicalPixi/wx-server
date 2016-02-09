@@ -57,7 +57,7 @@ module.exports = function (render) {
 
     //loading资源
     loader.add(
-      ['playerhp', 'enemyhp',
+      ['playerhp', 'enemyhp', 'fire',
         'fire_button', 'boom_button', 'clean_button', 'ahhhh_button'], 'json')
       .addMulti(enemy.pre, enemy.format)
       .addMulti(myMonsterParams.myMonster, myMonsterParams.action, 'json')
