@@ -10,6 +10,8 @@ var monserSchema = mongoose.Schema({
   property4: Number,
   property5: Number,
   ownerid: String,
+  ownerNickName: String,
+  beat: Number,
   type: String
 });
 

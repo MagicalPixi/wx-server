@@ -89,6 +89,8 @@ var createOrSaveMonster = function(openid, monster, callback) {
     result.property3 = monster.property3
     result.property4 = monster.property4
     result.property5 = monster.property5
+    if(monster.ownerNickName) result.ownerNickName = monster.ownerNickName
+    if(monster.beat) result.beat = monster.beat
     result.save(callback)
   })
 }
