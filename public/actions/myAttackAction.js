@@ -74,11 +74,26 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
     if (name == 'boom') {
       obj.loop = false
     }
-    if(name === 'dead'){
+
+    if(name === 'dead') {
       myMonster[name] = function (lose) {
         this.removeChildren();
         this.addChild(obj);
         obj.gotoAndStop(1);
+      }
+
+    }else if(name === 'fire'){
+
+      myMonster[name] = function (lose) {
+        this.addChild(obj);
+        obj.play();
+
+
+        setTimeout(function () {
+          obj.parent.removeChild(obj);
+
+          state.progress(lose)
+        },1500)
       }
 
     }else{
