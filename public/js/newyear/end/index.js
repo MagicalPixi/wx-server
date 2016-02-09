@@ -12,6 +12,10 @@ module.exports = function(render, beat) {
       var endStage = new PIXI.Container()
 
       endStage.name = 'enemyStendStage';
+
+
+      render(endStage)
+
       var again = require('../../../sprites/again')
       var monster = require('./monster');
       monster.update(true)
@@ -32,7 +36,8 @@ module.exports = function(render, beat) {
           window.battle()
       })
 
-      render(endStage)
       pixiLib.createAction.dispatch('chooseMonsterEnd');
+
+      endStage.ready = true;
     });
 }

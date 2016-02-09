@@ -49,8 +49,4 @@ module.exports = pixiLib.createAction('enemyAttack', function (enemy,attackFnNam
       state.progress(attackName);
     });
   }
-
-
-  window.attck = attack;
-
 });
