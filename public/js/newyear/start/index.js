@@ -13,8 +13,7 @@ module.exports = function(render) {
     var chooseMonster = require('./chooseMonster')
 
     ////descript init
-    var description = require('./description')
-
+    var description = require('./description');
 
     var enemyMonster = require('./enemyMonster');
 
