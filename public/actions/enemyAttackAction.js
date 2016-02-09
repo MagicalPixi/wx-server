@@ -38,9 +38,11 @@ module.exports = pixiLib.createAction('enemyAttack', function (enemy,attackFnNam
 
     var randomAttackIndex = parseInt(Math.random() * fnLen);
 
+    var attackName = attackFnNames[randomAttackIndex];
+
     enemy[attackFnNames[randomAttackIndex]](function () {
 
-      state.progress();
+        state.progress(attackName);
     });
   }
 

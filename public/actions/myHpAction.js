@@ -13,14 +13,14 @@ module.exports = pixiLib.createAction('myHp', function (myHP) {
     myHP.gotoAndStop(i);
   });
 
-  state.on('enemyAttackProgress', function () {
+  state.on('enemyAttackProgress', function (attackName) {
 
-    if(Math.random() > 0.5){
+    if(['boom','ahhhh','shock','clean'].indexOf(attackName) !== -1) {
+      if(i!==0){
+        i--;
+      }
+      myHP.gotoAndStop(i);
     }
-    if(i!==0){
-      i--;
-    }
-    myHP.gotoAndStop(i);
 
     if(i===0){
       state.end();
