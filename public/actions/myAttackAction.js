@@ -30,7 +30,6 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
   state.on('boomAttackProgress', function (attackObj) {
     var index = attackObj.index;
     var index2 = attackObj.index;
-    var attackName = attackObj.name;
 
     var lose = true;
 
@@ -40,14 +39,18 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
       index2 = parseInt(Math.random() * 6 + 4);
     }
 
-    if(myMonster[params.attack[index2]]){
-      if(params.attack[index2] === 'dead'){
+    var attackName = params.attack[index2];
+    if(myMonster[attackName]){
+      if(attackName === 'dead'){
         myMonster[params.attack[index]]();
       }else{
-        myMonster[params.attack[index2]](lose);
+        myMonster[attackName](lose);
+
+        if(attackName ==='scream'){
+          es();
+        }
       }
     }else{
-      console.log(index,params.attack);
     }
   });
 

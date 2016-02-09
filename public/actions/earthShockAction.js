@@ -24,6 +24,7 @@ module.exports = pixiLib.createAction('earthShock', function (sprite,option) {
 
     initialPosition = sprite.position;
     initialScale = sprite.scale;
+
     sprite.render = function () {
 
       if((--speed)<0){
@@ -44,8 +45,10 @@ module.exports = pixiLib.createAction('earthShock', function (sprite,option) {
 
     setTimeout(function () {
       sprite.render = '';
-      sprite.position = initialPosition;
-      sprite.scale = initialScale;
+      sprite.x = 0;
+      sprite.y = 0;
+      sprite.scale.x = 1;
+      sprite.scale.y = 1;
 
     },duration)
   }
