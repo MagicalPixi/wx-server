@@ -10,7 +10,7 @@ var enemyDragon = new PIXI.Container();
 var formatArray = ['boom','blink','ahhhh','clean','dead','round','shake','tail'];
 
 //第0个特殊处理,不用loop
-var specialIndexArr = [0,5];
+var specialIndexArr = [0,4];
 
 var spriteObjArray = formatArray.map(function (format) {
   return spriteName+'_'+format

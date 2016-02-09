@@ -21,7 +21,7 @@ router.get('/wechat', wechat.check)
 router.get('/config', gameController.configExample)
 router.get('/gametest', function (req, res, next) {
   var enemy = {
-    type: 0,
+    type: 1,
     ownerid: 'guoshencheng',
     property1: 0,
     property2: 0,
