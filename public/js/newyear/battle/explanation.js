@@ -10,7 +10,7 @@ var text = new PIXI.Text('', {
   align: 'left'
 })
 
-text.y = 400
+text.y = 350
 text.x = 20
 
 explanation.addChild(text)

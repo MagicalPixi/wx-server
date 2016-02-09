@@ -31,8 +31,8 @@ chooseMonster.addChild(monkey_description)
 chooseMonster.addChild(bear_description)
 chooseMonster.addChild(snake_decription)
 
-var monsters = [monster_description, monkey_description,
-bear_description, snake_decription]
+var monsters = [monster_description,
+bear_description,monkey_description, snake_decription]
 
 var chooseBarAction = require('../../../actions/chooseBarAction');
 var monster_descriptionAction = require('../../../actions/monster_descriptionAction');
