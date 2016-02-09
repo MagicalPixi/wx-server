@@ -32,8 +32,11 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
     var index2 = attackObj.index;
     var attackName = attackObj.name;
 
+    var lose = false;
+
     var random = Math.random();
     if(random > 0.6){
+      lose = true;
       index2 = parseInt(Math.random() * 6 + 4);
     }
 
@@ -41,7 +44,7 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
       if(params.attack[index2] === 'dead'){
         myMonster[params.attack[index]]();
       }else{
-        myMonster[params.attack[index2]]();
+        myMonster[params.attack[index2]](lose);
       }
     }else{
       console.log(index,params.attack);
@@ -68,14 +71,14 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
       obj.loop = false
     }
     if(name === 'dead'){
-      myMonster[name] = function () {
+      myMonster[name] = function (lose) {
         this.removeChildren();
         this.addChild(obj);
         obj.gotoAndStop(1);
       }
 
     }else{
-      myMonster[name] = function () {
+      myMonster[name] = function (lose) {
         this.removeChildren();
         this.addChild(obj);
         obj.play();
@@ -83,7 +86,7 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
         setTimeout(function () {
           obj.gotoAndStop(0);
 
-          state.progress()
+          state.progress(lose)
 
         },2000)
       }
