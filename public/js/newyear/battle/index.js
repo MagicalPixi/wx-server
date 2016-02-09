@@ -17,22 +17,22 @@ var enemyPathArr = [
 ];
 
 var enemyMap = {
-  bear: {
+  1: {
     pre: 'enemy_bear',
     format: ['_boom', '_blink', '_ahhhh', '_clean', '_dead', '_round', '_shake', '_tail'],
     path: enemyPathArr[0]
   },
-  dragon: {
+  0: {
     pre: 'enemy_dragon',
     format: ['_boom', '_ahhhh', '_clean', '_squirm', '_wagTail', '_wink'],
     path: enemyPathArr[1]
   },
-  monkey: {
+  2: {
     pre: 'enemy_monkey',
     format: ['_boom', '_blink', '_ahhhh', '_clean', '_dead', '_round', '_shake', '_tail'],
     path: enemyPathArr[2]
   },
-  snake: {
+  3: {
     pre: 'enemy_snake',
     format: ['_boom', '_blink', '_ahhhh', '_clean', '_dead', '_round', '_shake', '_tail'],
     path: enemyPathArr[3]
@@ -41,7 +41,7 @@ var enemyMap = {
 
 module.exports = function (render) {
 
-  var enemy = enemyMap[enemyName];
+  var enemy = enemyMap[enemymonster.type];
 
   //loading脚本,但不执行
   require.ensure([
