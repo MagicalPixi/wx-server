@@ -23,7 +23,8 @@ var fire  = require('../sprites/fire')
 module.exports = pixilib.createAction('myAttack', function start(myMonster) {
   var state = this;
 
-  var sprites = [boom, clean, fire, scream, angry, awkward, tail, round, blink, shake,dead]
+  var sprites = [boom, clean, fire, scream, angry, awkward, tail,
+    round, shake, dead,blink];
   var fnLen = params.attack.length;
 
   //按下底部攻击按钮
@@ -55,11 +56,11 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
   });
 
   state.on('myHpStart', function () {
-    if(myMonster.blink){
-      myMonster.blink();
-    }else if(myMonster.wink){
-      myMonster.wink();
-    }
+    //if(myMonster.blink){
+    //  myMonster.blink();
+    //}else if(myMonster.wink){
+    //  myMonster.wink();
+    //}
   });
   //我的HP扣完了`
   state.on('myHpEnd', function() {

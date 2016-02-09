@@ -20,6 +20,7 @@ module.exports = pixiLib.createAction('enemyAttack', function (enemy,attackFnNam
   });
 
   state.on('enemyHpStart', function () {
+
     if(enemy.blink){
       enemy.blink();
     }else if(enemy.wink){
@@ -31,8 +32,6 @@ module.exports = pixiLib.createAction('enemyAttack', function (enemy,attackFnNam
     enemy.dead && enemy.dead();
     window.end(true)
   });
-
-  window.E = enemy;
 
   function attack() {
 
