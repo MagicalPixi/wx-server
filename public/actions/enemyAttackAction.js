@@ -40,9 +40,13 @@ module.exports = pixiLib.createAction('enemyAttack', function (enemy,attackFnNam
 
     var attackName = attackFnNames[randomAttackIndex];
 
+    if(attackName === 'shock' || attackName === 'ahhhh'){
+      es();
+    }
+
     enemy[attackFnNames[randomAttackIndex]](function () {
 
-        state.progress(attackName);
+      state.progress(attackName);
     });
   }
 

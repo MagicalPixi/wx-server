@@ -86,8 +86,6 @@ var render = function(stage) {
 
 document.body.appendChild(renderer.view);
 
-window.enemyName = 'bear';
-
 window.start = function () {
   require('./start')(render);
 };

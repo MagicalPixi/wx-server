@@ -9,8 +9,11 @@ var renyan = new PIXI.Container()
 renyan.addChild(about)
 renyan.addChild(back)
 
+back.interactive = true;
 back.on('touchstart', function() {
-  renyan.parent.removeChild(renyan)
-})
+  requestAnimationFrame(function () {
+    renyan.parent.removeChild(renyan)
+  })
+});
 
 module.exports = renyan
