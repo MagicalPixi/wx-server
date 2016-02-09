@@ -20,7 +20,30 @@ router.post('/wechat',wechat.example)
 router.get('/wechat', wechat.check)
 router.get('/config', gameController.configExample)
 router.get('/gametest', function (req, res, next) {
-  res.render('newyear', {env: 'develop'})
+  var enemy = {
+    type: 0,
+    ownerid: 'guoshencheng',
+    property1: 0,
+    property2: 0,
+    property3: 0,
+    property4: 0,
+    property5: 0
+  }
+  var mymonster = {
+    type: 0,
+    ownerid: 'zhouyunge',
+    property1: 0,
+    property2: 0,
+    property3: 0,
+    property4: 0,
+    property5: 0
+  }
+  var user = {
+    headimageurl: 'http://wx.qlogo.cn/mmopen/ibmczicnViagpMia4Y4gUSibSEYOxaCCxqQWibWKVuxo2dhTEiaW73F7rntMcTjVLtth2X6k76icZDNOpUt03QXzwUzsqn94EQYBasgB/0',
+    nickname: '申成',
+    opendid: 'guoshencheng'
+  }
+  res.render('newyear', {env: 'develop', mymonster:mymonster, enemy: enemy, user: user})
 })
 
 

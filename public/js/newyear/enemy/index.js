@@ -18,9 +18,7 @@ module.exports = function(render) {
 
       enemyStage.addChild(light)
       enemyStage.addChild(enemyMonster);
-
       render(enemyStage)
-
       pixiLib.createAction.dispatch('chooseMonsterEnd');
     });
 }

@@ -18,6 +18,11 @@
             top: 0;
         }
     </style>
+    <script>
+        window.mymonster = JSON.parse('<%- JSON.stringify(mymonster) %>')
+        window.enemy = JSON.parse('<%- JSON.stringify(enemy) %>')
+        window.user = JSON.parse('<%- JSON.stringify(user) %>')
+    </script>
 </head>
 <body>
 <div style="margin: 0;display: none">
