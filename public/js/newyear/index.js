@@ -28,7 +28,7 @@ function loadingBetweenStages(currentStage,newStage){
 
       setTimeout(function () {
 
-      },500)
+      },500);
 
       backAngleSpeed = twistFilter.angle / 200;
 
