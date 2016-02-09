@@ -3,7 +3,22 @@
  */
 
 var params = require('./params')
-var monster = require('../../../sprites/' + params.monsters[window.enemy.type])
+var monster ;
+var enemyMonsterType = parseInt(window.enemymonster.type);
+if( enemyMonsterType === 0){
+  monster = require('../../../sprites/dragon');
+}
+if(enemyMonsterType === 1){
+  monster = require('../../../sprites/bear');
+}
+if(enemyMonsterType === 2){
+  monster = require('../../../sprites/monkey');
+}
+if(enemyMonsterType === 3){
+  monster = require('../../../sprites/snake');
+}
+
+
 var white = require('../../../sprites/white')
 var rich = require('../../../sprites/rich')
 var handsom = require('../../../sprites/handsom')

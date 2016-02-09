@@ -93,7 +93,7 @@ window.start = function () {
 };
 
 window.enemy = function (beat) {
-  require('./enemy')(render);
+  require('./end')(render);
 };
 
 window.battle = function(){

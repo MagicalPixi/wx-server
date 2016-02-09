@@ -20,9 +20,8 @@ module.exports = pixiLib.createAction('enemyAttack', function (enemy,attackFnNam
   });
 
   state.on('enemyHpEnd', function () {
-    enemy.dead();
+    enemy.dead && enemy.dead();
   });
-
 
   function attack() {
 

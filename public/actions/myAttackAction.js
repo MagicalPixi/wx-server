@@ -41,7 +41,7 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
 
   //我的HP扣完了`
   state.on('myHpEnd', function() {
-    myMonster.dead();
+    myMonster && myMonster.dead();
   });
 
 
