@@ -19,6 +19,14 @@ module.exports = pixiLib.createAction('enemyAttack', function (enemy,attackFnNam
     attack();
   });
 
+  state.on('enemyHpStart', function () {
+    if(enemy.blink){
+      enemy.blink();
+    }else if(enemy.wink){
+      enemy.wink();
+    }
+  });
+
   state.on('enemyHpEnd', function () {
     enemy.dead && enemy.dead();
   });

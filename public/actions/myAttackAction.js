@@ -23,25 +23,41 @@ var tail = require('../sprites/myMonster/tail')
 module.exports = pixilib.createAction('myAttack', function start(myMonster) {
   var state = this;
 
-  var sprites = [boom, clean, blink, scream, angry, awkward, tail, round, shake]
+  var sprites = [boom, clean, blink, scream, angry, awkward, tail, round, shake,dead]
   var fnLen = params.attack.length;
 
   //按下底部攻击按钮
   state.on('boomAttackProgress', function (attackObj) {
     var index = attackObj.index;
+    var index2 = attackObj.index;
     var attackName = attackObj.name;
 
     var random = Math.random();
     if(random > 0.6){
-      index = parseInt(Math.random() * 6 + 5);
+      index2 = parseInt(Math.random() * 6 + 4);
     }
 
-    myMonster[params.attack[index]]();
+    if(myMonster[params.attack[index2]]){
+      if(params.attack[index2] === 'dead'){
+        myMonster[params.attack[index]]();
+      }else{
+        myMonster[params.attack[index2]]();
+      }
+    }else{
+      console.log(index,params.attack);
+    }
   });
 
+  state.on('myHpStart', function () {
+    if(myMonster.blink){
+      myMonster.blink();
+    }else if(myMonster.wink){
+      myMonster.wink();
+    }
+  });
   //我的HP扣完了`
   state.on('myHpEnd', function() {
-    myMonster && myMonster.dead();
+    myMonster.dead && myMonster.dead();
   });
 
 
