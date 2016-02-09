@@ -21,7 +21,7 @@ module.exports = pixiLib.createAction('fuckHim', function (btn) {
         btn.appear = true
       }
     }
-  }
+  };
 
   btn.on('touchstart', function () {
     btn.gotoAndStop(1);
@@ -32,6 +32,8 @@ module.exports = pixiLib.createAction('fuckHim', function (btn) {
     btn.gotoAndStop(0);
 
     state.end();
+
+    battle();
   });
 
 });
