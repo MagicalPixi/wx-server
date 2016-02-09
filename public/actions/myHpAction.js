@@ -8,6 +8,11 @@ module.exports = pixiLib.createAction('myHp', function (myHP) {
 
   var i = 9;
 
+  state.on('myHpStart', function () {
+    i = 9;
+    myHP.gotoAndStop(i);
+  });
+
   state.on('enemyAttackProgress', function () {
 
     if(Math.random() > 0.5){

@@ -43,6 +43,13 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
     }
   });
 
+  state.on('myHpStart', function () {
+    if(myMonster.blink){
+      myMonster.blink();
+    }else if(myMonster.wink){
+      myMonster.wink();
+    }
+  });
   //我的HP扣完了`
   state.on('myHpEnd', function() {
     myMonster && myMonster.dead();
