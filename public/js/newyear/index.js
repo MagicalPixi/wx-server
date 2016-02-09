@@ -30,7 +30,7 @@ function loadingBetweenStages(currentStage,newStage){
 
       },500);
 
-      backAngleSpeed = twistFilter.angle / 200;
+      backAngleSpeed = twistFilter.angle / 60;
 
     }
 

@@ -67,17 +67,26 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
     if (name == 'boom') {
       obj.loop = false
     }
-    myMonster[name] = function () {
-      this.removeChildren();
-      this.addChild(obj);
-      obj.play();
+    if(name === 'dead'){
+      myMonster[name] = function () {
+        this.removeChildren();
+        this.addChild(obj);
+        obj.gotoAndStop(1);
+      }
 
-      setTimeout(function () {
-        obj.gotoAndStop(0);
+    }else{
+      myMonster[name] = function () {
+        this.removeChildren();
+        this.addChild(obj);
+        obj.play();
 
-        state.progress()
+        setTimeout(function () {
+          obj.gotoAndStop(0);
 
-      },2000)
+          state.progress()
+
+        },2000)
+      }
     }
   });
 });

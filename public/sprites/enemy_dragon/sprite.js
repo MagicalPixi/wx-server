@@ -10,7 +10,7 @@ var enemyDragon = new PIXI.Container();
 var formatArray = ['boom','ahhhh','clean','squirm','wagTail','wink'];
 
 //第0个特殊处理,不用loop
-var specialIndex = 0;
+var specialIndexArr = [0];
 
 var spriteObjArray = formatArray.map(function (format) {
   return spriteName+'_'+format
@@ -27,20 +27,23 @@ var spriteObjArray = formatArray.map(function (format) {
   })
 });
 
-//第0个特殊处理
-spriteObjArray[specialIndex].loop = false;
 
-enemyDragon[formatArray[specialIndex]] = function (actionFinish) {
-  enemyDragon.removeChildren();
-  enemyDragon.addChild(spriteObjArray[specialIndex]);
+specialIndexArr.forEach(function (specialIndex) {
+//第specialIndex个特殊处理
+  spriteObjArray[specialIndex].loop = false;
 
-  spriteObjArray[specialIndex].gotoAndPlay(0);
+  enemyDragon[formatArray[specialIndex]] = function (actionFinish) {
+    enemyDragon.removeChildren();
+    enemyDragon.addChild(spriteObjArray[specialIndex]);
 
-  actionFinish && actionFinish();
-};
+    spriteObjArray[specialIndex].gotoAndPlay(0);
+
+    actionFinish && actionFinish();
+  };
+})
 
 formatArray.forEach(function (name,i) {
-  if(i !== specialIndex){
+  if(specialIndexArr.indexOf(i) === -1){
     var obj = spriteObjArray[i];
 
     enemyDragon[name] = function (actionFinish) {
