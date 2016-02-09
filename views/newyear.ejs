@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="stylesheet" href="/style/newyear.css"/>
-    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
     <style>
         body{
             /*background-color: #ffffff;*/
@@ -20,6 +20,7 @@
         }
     </style>
     <script>
+        window.mymonster = JSON.parse('<%- JSON.stringify(mymonster) %>')
         window.enemymonster = JSON.parse('<%- JSON.stringify(enemy) %>')
         window.user = JSON.parse('<%- JSON.stringify(user) %>')
     </script>
