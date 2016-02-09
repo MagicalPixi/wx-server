@@ -39,7 +39,7 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
     myMonster[params.attack[index]]();
   });
 
-  //我的HP扣完了
+  //我的HP扣完了`
   state.on('myHpEnd', function() {
 
   });

@@ -9,6 +9,7 @@ var enemyAttackAction = require('../../../actions/enemyAttackAction');
 var myHpAction = require('../../../actions/myHpAction');
 var enemyHpAction = require('../../../actions/enemyHpAction');
 
+
 var enemyPathArr = [
   './enemy_bear',
   './enemy_dragon',
@@ -43,13 +44,13 @@ module.exports = function (render) {
 
   var enemy = enemyMap[enemymonster.type];
 
-  //loading脚本,但不执行
-  require.ensure([
-    './enemy_bear',
-    './enemy_dragon',
-    './enemy_monkey',
-    './enemy_snake',
-  ], function (require) {
+  ////loading脚本,但不执行
+  //require.ensure([
+  //  './enemy_bear',
+  //  './enemy_dragon',
+  //  './enemy_monkey',
+  //  './enemy_snake',
+  //], function (require) {
 
     var battleStage = new PIXI.Container();
     render(battleStage);
@@ -63,11 +64,26 @@ module.exports = function (render) {
       .add(['hpframe'], 'png').load(function () {
 
         var myMonster = require('../../../sprites/myMonster')
-        var operation2 = require('./operation2')
 
         var myAttackAction = require('../../../actions/myAttackAction')
 
-        var enemy_monster = require(enemy.path);
+        var enemy_monster;
+
+        var enemyMonsterType = parseInt(window.enemymonster.type);
+        if( enemyMonsterType === 0){
+          enemy_monster = require('./enemy_dragon');
+        }
+        if(enemyMonsterType === 1){
+          enemy_monster = require('./enemy_bear');
+        }
+        if(enemyMonsterType === 2){
+          enemy_monster = require('./enemy_monkey');
+        }
+        if(enemyMonsterType === 3){
+          enemy_monster = require('./enemy_snake');
+        }
+
+        var operation2 = require('./operation2')
 
         var hpframeFactory = require('../../../sprites/hpframe')
         var enemyhp = require('../../../sprites/enemyhp')
@@ -120,6 +136,5 @@ module.exports = function (render) {
         earthShockAction(battleStage);
 
       });
-  });
-
+  //});
 };
