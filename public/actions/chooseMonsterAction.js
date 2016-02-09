@@ -14,7 +14,17 @@ module.exports = pixiLib.createAction('chooseMonster',function start(chooseMonst
 
   comfirm_monster.on('touchend', function() {
     this.gotoAndStop(0)
-    //window.mymonster =
+    window.mymonster = {
+      type: chooseMonster.current,
+      property1: 0,
+      property2: 0,
+      property3: 0,
+      property4: 0,
+      property5: 0,
+      beat: 0,
+      ownerid: window.user.openid,
+      ownerNickName: window.user.nickname
+    }
     chooseMonster.acceleration = 0.6
   })
   state.on('descriptionEnd', function (stage) {
