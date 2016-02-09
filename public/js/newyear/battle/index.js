@@ -91,7 +91,7 @@ module.exports = function (render) {
 
         var enemyhpframe = hpframeFactory({x: 20, y: 0})
         var playerhpframe = hpframeFactory({x: 20, y: 760})
-
+        var explanation = require('./explanation')
         myAttackAction(myMonster)
         enemyHpAction(enemyhp);
 
@@ -106,6 +106,7 @@ module.exports = function (render) {
         battleStage.addChild(playerhpframe)
         battleStage.addChild(enemyhp)
         battleStage.addChild(playerhp)
+        battleStage.addChild(explanation)
         battleStage.addChild(myMonster)
 
         enemyAttackAction(enemy_monster, enemy.format);

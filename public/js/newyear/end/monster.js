@@ -92,14 +92,17 @@ var properties = ['property1', 'property2', 'property3'
   , 'property4', 'property5']
 
 var addNewProperty = function() {
-  var i = 0
+  var array = []
   for (var i = 0; i < properties.length; i++) {
     var property = properties[i]
-    if (window.mymonster[property] == 0) {
-      window.mymonster[property] = 1;
-      upgradeIndex = i
-      break
+    if (window.mymonster[property] == 0 && window.enemymonster[property] != 0) {
+      array.push(i)
     }
+  }
+  if (array.length > 0) {
+    var index = Math.random() * array.length
+    window.mymonster[array[index]] = 1;
+    upgradeIndex = array[index]
   }
   window.mymonster.beat ++
   window.mymonster.ownerNickName = window.user.nickname

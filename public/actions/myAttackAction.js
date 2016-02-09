@@ -20,6 +20,7 @@ var scream = require('../sprites/myMonster/scream')
 var shake = require('../sprites/myMonster/shake')
 var tail = require('../sprites/myMonster/tail')
 var fire  = require('../sprites/fire')
+var explanation = require('../js/newyear/battle/explanation')
 module.exports = pixilib.createAction('myAttack', function start(myMonster) {
   var state = this;
 
@@ -37,6 +38,9 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
     if(random > 0.6){
       lose = false;
       index2 = parseInt(Math.random() * 6 + 4);
+      explanation.update(false, false, index2)
+    } else {
+      explanation.update(false, true, index2)
     }
 
     var attackName = params.attack[index2];
