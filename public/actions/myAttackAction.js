@@ -33,10 +33,14 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
 
     var random = Math.random();
     if(random > 0.6){
-      index = parseInt(Math.random() * 6 + 5);
+      index = parseInt(Math.random() * 6 + 4);
     }
 
-    myMonster[params.attack[index]]();
+    if(myMonster[params.attack[index]]){
+      myMonster[params.attack[index]]();
+    }else{
+      console.log(index,params.attack);
+    }
   });
 
   //我的HP扣完了`
