@@ -71,7 +71,7 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
       myMonster[name] = function () {
         this.removeChildren();
         this.addChild(obj);
-        obj.gotoAndStop(0);
+        obj.gotoAndStop(1);
       }
 
     }else{
