@@ -23,7 +23,7 @@ var tail = require('../sprites/myMonster/tail')
 module.exports = pixilib.createAction('myAttack', function start(myMonster) {
   var state = this;
 
-  var sprites = [angry, awkward, blink, boom, clean, dead, round, scream, shake, tail];
+  var sprites = [boom, tail, blink, scream, angry, awkward, clean, dead, round, shake]
   var fnLen = params.attack.length;
 
   //按下底部攻击按钮
@@ -33,7 +33,7 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
 
     var random = Math.random();
     if(random > 0.6){
-      index = parseInt(random * fnLen);
+      index = parseInt(Math.random() * 6 + 5);
     }
 
     myMonster[params.attack[index]]();
