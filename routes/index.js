@@ -27,7 +27,9 @@ router.get('/gametest', function (req, res, next) {
     property2: 0,
     property3: 0,
     property4: 0,
-    property5: 0
+    property5: 0,
+    ownerNickName:'申成',
+    beat: 2000
   }
   var mymonster = {
     type: 0,
@@ -36,7 +38,9 @@ router.get('/gametest', function (req, res, next) {
     property2: 0,
     property3: 0,
     property4: 0,
-    property5: 0
+    property5: 0,
+    ownerNickName:'申成',
+    beat: 2000
   }
   var user = {
     headimageurl: 'http://wx.qlogo.cn/mmopen/ibmczicnViagpMia4Y4gUSibSEYOxaCCxqQWibWKVuxo2dhTEiaW73F7rntMcTjVLtth2X6k76icZDNOpUt03QXzwUzsqn94EQYBasgB/0',

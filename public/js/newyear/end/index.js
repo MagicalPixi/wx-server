@@ -12,7 +12,7 @@ module.exports = function(render, beat) {
       var endStage = new PIXI.Container()
 
       endStage.name = 'enemyStendStageage';
-      var again = require('../../../sprite/again')
+      var again = require('../../../sprites/again')
       var monster = require('./monster');
       monster.update(true)
       var light = require('../../../sprites/light');
@@ -20,7 +20,8 @@ module.exports = function(render, beat) {
 
       endStage.addChild(light)
       endStage.addChild(monster);
-      endStage.addChile(again)
+      endStage.addChild(again)
+      again.interactive = true
       again.on('touchstart', function () {
           again.gotoAndStop(1)
       })
