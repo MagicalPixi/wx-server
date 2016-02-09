@@ -11,7 +11,7 @@ module.exports = function(render, beat) {
     .add(params.resource.png, 'png').load(function () {
       var endStage = new PIXI.Container()
 
-      endStage.name = 'enemyStendStageage';
+      endStage.name = 'enemyStendStage';
       var again = require('../../../sprites/again')
       var monster = require('./monster');
       monster.update(true)
@@ -27,6 +27,8 @@ module.exports = function(render, beat) {
       })
       again.on('touchend', function () {
           again.gotoAndStop(0)
+          dispatch('myHpStart')
+          dispatch('enemyHpStart')
           window.battle()
       })
 

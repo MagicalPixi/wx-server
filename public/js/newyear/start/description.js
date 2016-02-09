@@ -11,6 +11,11 @@ description.addChild(title)
 description.addChild(start)
 description.addChild(who)
 
+who.on('touchstart', function() {
+  var renyan = require('./renyan')
+  description.parent.addChild(renyan)
+})
+
 var startAction = require('../../../actions/startAction');
 
 startAction(start);

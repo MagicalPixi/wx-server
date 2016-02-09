@@ -92,16 +92,16 @@ window.start = function () {
   require('./start')(render);
 };
 
-window.enemy = function (beat) {
-  require('./end')(render);
+window.end = function (beat) {
+  require('./end')(render, beat);
 };
 
 window.battle = function(){
   require('./battle')(render);
 };
 
-//start();
+start();
 //battle();
-enemy();
+//end();
 
 module.exports = render

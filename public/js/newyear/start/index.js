@@ -11,7 +11,6 @@ module.exports = function(render) {
     var light = require('../../../sprites/light')
     //chooseMonster init
     var chooseMonster = require('./chooseMonster')
-
     ////descript init
     var description = require('./description');
 
