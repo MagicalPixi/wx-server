@@ -13,6 +13,9 @@ module.exports = pixiLib.createAction('enemyHp', function (enemyHp) {
     enemyHp.gotoAndStop(i);
   });
 
+  window.F2 = function () {
+    i = 1;
+  }
 
   state.on('myAttackProgress', function (lose) {
 

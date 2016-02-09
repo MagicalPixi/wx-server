@@ -13,6 +13,10 @@ module.exports = pixiLib.createAction('myHp', function (myHP) {
     myHP.gotoAndStop(i);
   });
 
+  window.F1 = function () {
+    i = 1;
+  };
+
   state.on('enemyAttackProgress', function (attackName) {
 
     if(['boom','ahhhh','shock','clean'].indexOf(attackName) !== -1) {

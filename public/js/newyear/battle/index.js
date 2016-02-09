@@ -40,19 +40,30 @@ var enemyMap = {
   }
 };
 
+var isReady = false;
+var battleStage = null;
+
 module.exports = function (render) {
 
-  var enemy = enemyMap[enemymonster.type];
+  if(isReady) {
+    render(battleStage);
 
-  ////loading脚本,但不执行
-  //require.ensure([
-  //  './enemy_bear',
-  //  './enemy_dragon',
-  //  './enemy_monkey',
-  //  './enemy_snake',
-  //], function (require) {
+    dispatch('myHpStart');
+    dispatch('enemyHpStart');
 
-    var battleStage = new PIXI.Container();
+  }else{
+
+    var enemy = enemyMap[enemymonster.type];
+
+    ////loading脚本,但不执行
+    //require.ensure([
+    //  './enemy_bear',
+    //  './enemy_dragon',
+    //  './enemy_monkey',
+    //  './enemy_snake',
+    //], function (require) {
+
+    battleStage = new PIXI.Container();
     render(battleStage);
 
     //loading资源
@@ -70,16 +81,16 @@ module.exports = function (render) {
         var enemy_monster;
 
         var enemyMonsterType = parseInt(window.enemymonster.type);
-        if( enemyMonsterType === 0){
+        if (enemyMonsterType === 0) {
           enemy_monster = require('./enemy_dragon');
         }
-        if(enemyMonsterType === 1){
+        if (enemyMonsterType === 1) {
           enemy_monster = require('./enemy_bear');
         }
-        if(enemyMonsterType === 2){
+        if (enemyMonsterType === 2) {
           enemy_monster = require('./enemy_monkey');
         }
-        if(enemyMonsterType === 3){
+        if (enemyMonsterType === 3) {
           enemy_monster = require('./enemy_snake');
         }
 
@@ -113,29 +124,10 @@ module.exports = function (render) {
 
         myHpAction(playerhp);
 
-        //window.shock = function () {
-        //  myMonster.scream();
-        //  enemy_monster.ahhhh();
-        //  es && es()
-        //
-        //}
-        //window.boom = function () {
-        //  myMonster.boom();
-        //  enemy_monster.boom();
-        //}
-        //window.wagTail = function () {
-        //  myMonster.tail();
-        //  enemy_monster.tail();
-        //}
-        //window.squirm = function () {
-        //  enemy_monster.squirm();
-        //}
-        //window.wink = function () {
-        //  enemy_monster.blink();
-        //};
-
         earthShockAction(battleStage);
 
+        isReady = true;
       });
+  }
   //});
 };
