@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 });
 router.post('/monster/:id', gameController.updateMonster);
 router.get('/monster/:id', gameController.monster)
-router.get('/game', gameController.checkAuthorize, gameController.getGameView)
+router.get('/game/:id', gameController.checkAuthorize, gameController.getGameView)
 router.post('/wechat',wechat.example)
 router.get('/wechat', wechat.check)
 router.get('/config', gameController.configExample)

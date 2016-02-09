@@ -51,6 +51,7 @@ var monster = function(req, res, next) {
 }
 
 var getGameView = function(req, res, next) {
+  var openid = req.params.id
   var param = {
     debug: true,
     jsApiList: ['translateVoice', 'startRecord', 'stopRecord', 'playVoice', 'pauseVoice', 'stopVoice', 'onVoicePlayEnd', 'uploadVoice', 'downloadVoice'],
@@ -58,7 +59,12 @@ var getGameView = function(req, res, next) {
   }
   api.getJsConfig(param, function(err, result) {
     if (err) console.log(err)
-    res.render('newyear', {env: 'develop', config: result})
+    var user = req.userInfo
+    getMonster(user.openid, function(err, mymonster) {
+      getMonster(openid, function(err, enemy) {
+        res.render('newyear', {env: 'develop', config: result, mymonster: mymonster, enemy: enemy, user: user})
+      })
+    })
   })
 }
 
@@ -70,6 +76,7 @@ var configExample = function(req, res, next) {
   }
   api.getJsConfig(param, function(err, result) {
     if (err) console.log(err)
+    var user = req.userInfo
     res.render('index', {config: result})
   })
 }

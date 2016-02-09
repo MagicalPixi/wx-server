@@ -1,5 +1,6 @@
 var loader = require('../../loader');
 var params = require('./params')
+var mymonsterParams = require('../../../sprites/myMonster/params')
 var descriptionAction = require('../../../actions/descriptionAction');
 var chooseMonsterAction = require('../../../actions/chooseMonsterAction');
 
@@ -16,6 +17,9 @@ module.exports = function(render) {
 
     var enemyMonster = require('./enemyMonster');
 
+    if (window.mymonster) {
+      mymonsterParams.myMonster = mymonsterParams.monsters[window.mymonster.type]
+    }
     descriptionAction(description);
     chooseMonsterAction(chooseMonster);
 
