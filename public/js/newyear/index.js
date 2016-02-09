@@ -17,6 +17,8 @@ window.T = twistFilter;
 var changeStageFlag = false;
 var rafI = 0;
 
+var backAngleSpeed = 0;
+
 function loadingBetweenStages(currentStage,newStage){
 
   if(newStage.ready){
@@ -27,10 +29,13 @@ function loadingBetweenStages(currentStage,newStage){
       setTimeout(function () {
 
       },500)
+
+      backAngleSpeed = twistFilter.angle / 200;
+
     }
 
     if(twistFilter.angle >= 0){
-      twistFilter.angle -= 0.1;
+      twistFilter.angle -= backAngleSpeed;
     }
 
     if(twistFilter.angle <=0){
