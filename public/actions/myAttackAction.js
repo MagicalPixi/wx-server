@@ -24,8 +24,7 @@ var explanation = require('../js/newyear/battle/explanation')
 module.exports = pixilib.createAction('myAttack', function start(myMonster) {
   var state = this;
 
-  var sprites = [boom, clean, fire, scream, angry, awkward, tail,
-    round, shake, dead,blink];
+  var sprites = [boom, clean, fire, scream, angry, awkward, tail, round, shake, dead,blink];
   var fnLen = params.attack.length;
 
   //按下底部攻击按钮
