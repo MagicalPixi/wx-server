@@ -12,7 +12,7 @@ module.exports = function(render, beat) {
       var endStage = new PIXI.Container()
 
       endStage.name = 'enemyStendStageage';
-
+      var again = require('../../../sprite/again')
       var monster = require('./monster');
       monster.update(true)
       var light = require('../../../sprites/light');
@@ -20,6 +20,14 @@ module.exports = function(render, beat) {
 
       endStage.addChild(light)
       endStage.addChild(monster);
+      endStage.addChile(again)
+      again.on('touchstart', function () {
+          again.gotoAndStop(1)
+      })
+      again.on('touchend', function () {
+          again.gotoAndStop(0)
+          window.battle()
+      })
 
       render(endStage)
       pixiLib.createAction.dispatch('chooseMonsterEnd');
