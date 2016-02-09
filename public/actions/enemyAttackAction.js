@@ -31,6 +31,8 @@ module.exports = pixiLib.createAction('enemyAttack', function (enemy,attackFnNam
     enemy.dead && enemy.dead();
   });
 
+  window.E = enemy;
+
   function attack() {
 
     var randomAttackIndex = parseInt(Math.random() * fnLen);
