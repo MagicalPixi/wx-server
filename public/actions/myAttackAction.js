@@ -32,11 +32,11 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
     var index2 = attackObj.index;
     var attackName = attackObj.name;
 
-    var lose = false;
+    var lose = true;
 
     var random = Math.random();
     if(random > 0.6){
-      lose = true;
+      lose = false;
       index2 = parseInt(Math.random() * 6 + 4);
     }
 
