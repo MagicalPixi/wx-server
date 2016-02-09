@@ -101,7 +101,7 @@ window.battle = function(){
 };
 
 //start();
-battle();
-//enemy();
+//battle();
+enemy();
 
 module.exports = render

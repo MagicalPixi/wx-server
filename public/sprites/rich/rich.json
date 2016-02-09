@@ -1,12 +1,12 @@
 {
 "frames": {
-	"rich1.png": {
-		"frame": {"x":0, "y":143, "w":149, "h":142},
+	"rich2.png": {
+		"frame": {"x":0, "y":0, "w":149, "h":142},
 		"spriteSourceSize": {"x":5,"y":9,"w":160,"h":160},
 		"sourceSize": {"w":160,"h":160}
 	},
-	"rich2.png": {
-		"frame": {"x":0, "y":0, "w":149, "h":142},
+	"rich1.png": {
+		"frame": {"x":0, "y":143, "w":149, "h":142},
 		"spriteSourceSize": {"x":5,"y":9,"w":160,"h":160},
 		"sourceSize": {"w":160,"h":160}
 	}

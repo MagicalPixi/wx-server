@@ -1,12 +1,12 @@
 {
 "frames": {
-	"handsom1.png": {
-		"frame": {"x":148, "y":0, "w":147, "h":160},
+	"handsom2.png": {
+		"frame": {"x":0, "y":0, "w":147, "h":160},
 		"spriteSourceSize": {"x":8,"y":0,"w":160,"h":160},
 		"sourceSize": {"w":160,"h":160}
 	},
-	"handsom2.png": {
-		"frame": {"x":0, "y":0, "w":147, "h":160},
+	"handsom1.png": {
+		"frame": {"x":148, "y":0, "w":147, "h":160},
 		"spriteSourceSize": {"x":8,"y":0,"w":160,"h":160},
 		"sourceSize": {"w":160,"h":160}
 	}

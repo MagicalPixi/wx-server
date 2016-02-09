@@ -1,16 +1,15 @@
 {
 "frames": {
-	"tall1.png": {
-		"frame": {"x":0, "y":161, "w":160, "h":160},
-		"spriteSourceSize": {"x":0,"y":0,"w":160,"h":160},
-		"sourceSize": {"w":160,"h":160}
-	},
 	"tall2.png": {
 		"frame": {"x":0, "y":0, "w":160, "h":160},
 		"spriteSourceSize": {"x":0,"y":0,"w":160,"h":160},
 		"sourceSize": {"w":160,"h":160}
+	},
+	"tall1.png": {
+		"frame": {"x":0, "y":161, "w":160, "h":160},
+		"spriteSourceSize": {"x":0,"y":0,"w":160,"h":160},
+		"sourceSize": {"w":160,"h":160}
 	}
-
 },
 "meta": {
 	"image": "tall.png",

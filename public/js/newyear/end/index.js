@@ -14,6 +14,7 @@ module.exports = function(render, beat) {
       endStage.name = 'enemyStendStageage';
 
       var monster = require('./monster');
+      monster.update(true)
       var light = require('../../../sprites/light');
       light.play();
 
