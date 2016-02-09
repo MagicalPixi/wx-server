@@ -6,6 +6,7 @@ var chooseMonsterAction = require('../../../actions/chooseMonsterAction');
 
 module.exports = function(render) {
   loader.add(params.resource.json,'json')
+    .add('fuck_him')
     .add(params.resource.png, 'png').load(function () {
     var light = require('../../../sprites/light')
     //chooseMonster init
