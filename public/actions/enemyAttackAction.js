@@ -29,7 +29,7 @@ module.exports = pixiLib.createAction('enemyAttack', function (enemy,attackFnNam
 
   state.on('enemyHpEnd', function () {
     enemy.dead && enemy.dead();
-    window.end()
+    window.end(true)
   });
 
   window.E = enemy;

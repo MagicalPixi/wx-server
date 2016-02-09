@@ -52,18 +52,31 @@ var upgradeIndex = 100
 myMonster.update = function (beat) {
   if (beat) {
     addNewProperty()
-    console.log(upgradeIndex)
+    var shareText
     if (upgradeIndex < tags.length - 1) {
-      description.text = '就在刚才' + window.user.nickname + '弄死了'
+      shareText = '就在刚才' + window.user.nickname + '弄死了'
         + window.enemymonster.ownerNickName + '的年兽, \n' + '恭喜你获得了\' ' + tags[upgradeIndex] + "'的属性,\n 成功的阻止了年兽的肆虐!"
     } else {
-      description.text = '就在刚才,' + window.user.nickname + ' 弄死了 '+ window.enemymonster.ownerNickName + '的年兽! \n' +
+      shareText = '就在刚才,' + window.user.nickname + ' 弄死了 '+ window.enemymonster.ownerNickName + '的年兽! \n' +
         '恭喜获得了所有属性, \'高\' \'富\' \'帅\' \'白\' \n' +
         ' \'美\' 于一身'
     }
   } else {
-    description.text = '就在刚才, xxx 的年兽被 xxx的年兽 弄死了'
+    shareText = '就在刚才, xxx 的年兽被 xxx的年兽 弄死了'
   }
+  description.text = shareText
+  wx.onMenuShareTimeline({
+    title: shareText, // 分享标题
+    link: 'http://wx.easyell.com/game' + window.user.opendid, // 分享链接
+    imgUrl: '', // 分享图标
+    success: function () {
+      // 用户确认分享后执行的回调函数
+    },
+    cancel: function () {
+      // 用户取消分享后执行的回调函数
+    }
+  });
+
   var mymonster = window.mymonster
   tall.gotoAndStop(mymonster.property1)
   rich.gotoAndStop(mymonster.property2)
