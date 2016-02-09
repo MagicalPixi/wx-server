@@ -55,9 +55,9 @@ myMonster.update = function (beat) {
     console.log(upgradeIndex)
     if (upgradeIndex < tags.length - 1) {
       description.text = '就在刚才' + window.user.nickname + '弄死了'
-        + window.mymonster.ownerNickName + '的年兽, \n' + '恭喜你获得了\' ' + tags[upgradeIndex] + "'的属性, 成功的组织了年兽的肆虐!"
+        + window.enemymonster.ownerNickName + '的年兽, \n' + '恭喜你获得了\' ' + tags[upgradeIndex] + "'的属性,\n 成功的阻止了年兽的肆虐!"
     } else {
-      description.text = '就在刚才,' + window.user.nickname + ' 弄死了 '+ window.mymonster.ownerNickName + '的年兽! \n' +
+      description.text = '就在刚才,' + window.user.nickname + ' 弄死了 '+ window.enemymonster.ownerNickName + '的年兽! \n' +
         '恭喜获得了所有属性, \'高\' \'富\' \'帅\' \'白\' \n' +
         ' \'美\' 于一身'
     }

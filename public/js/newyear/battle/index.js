@@ -3,7 +3,7 @@
  */
 var loader = require('../../loader');
 var myMonsterParams = require('../../../sprites/myMonster/params')
-
+myMonsterParams.myMonster = myMonsterParams.monsters[window.mymonster.type]
 var earthShockAction = require('../../../actions/earthShockAction');
 var enemyAttackAction = require('../../../actions/enemyAttackAction');
 var myHpAction = require('../../../actions/myHpAction');
