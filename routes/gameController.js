@@ -3,9 +3,12 @@ var oauth = require('./oauth')
 var model = require('../models')
 var domin = 'http://wx.easyell.com'
 
-var authorize = function(res) {
+var authorize = function(req, res) {
+  console.log(1111 + req.params.id)
   var url = oauth.getAuthorizeURL(domin + '/game/' + req.params.id, '123', 'snsapi_userinfo');
+  console.log(url)
   res.redirect(url)
+  console.log(2222)
 }
 
 var checkAuthorize = function(req, res, next) {
@@ -13,7 +16,7 @@ var checkAuthorize = function(req, res, next) {
   if (code) {
     oauth.getUserByCode(code, function (err, result) {
       if(err) {
-        authorize(res)
+        authorize(req, res)
       } else  {
         res.userInfo = result
         var User = model.User
@@ -31,7 +34,7 @@ var checkAuthorize = function(req, res, next) {
       }
     })
   } else  {
-    authorize(res)
+    authorize(req, res)
   }
 }
 
