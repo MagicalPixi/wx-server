@@ -4,7 +4,7 @@ var model = require('../models')
 var domin = 'http://wx.easyell.com'
 
 var authorize = function(res) {
-  var url = oauth.getAuthorizeURL(domin + '/game', '123', 'snsapi_userinfo');
+  var url = oauth.getAuthorizeURL(domin + '/game/' + req.params.id, '123', 'snsapi_userinfo');
   res.redirect(url)
 }
 
