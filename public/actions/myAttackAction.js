@@ -26,10 +26,6 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
   var sprites = [angry, awkward, blink, boom, clean, dead, round, scream, shake, tail];
   var fnLen = params.attack.length;
 
-  state.on('enemyAttackProgress', function() {
-
-  });
-
   //按下底部攻击按钮
   state.on('boomAttackProgress', function (attackObj) {
     var index = attackObj.index;

@@ -20,13 +20,12 @@ module.exports = pixiLib.createAction('boomAttack',function start(container,oper
   });
 
   //我方攻击不能按
-  //敌人攻击结束才能按下
-  state.on('myAttackProgress', function () {
+  function disabledMyAttack() {
 
     operations.forEach(function (obj) {
       obj.interactive = false;
     });
-  });
+  }
 
 
   operations.forEach(function (buttonObj,i) {
@@ -45,11 +44,12 @@ module.exports = pixiLib.createAction('boomAttack',function start(container,oper
         index:i,
         name:fns[i]
       });
-    })
+    });
 
     buttonObj.on('touchend', function () {
       buttonObj.gotoAndStop(0);
 
+      disabledMyAttack();
     })
   })
 
