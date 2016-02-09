@@ -2,6 +2,7 @@
  * Created by guoshencheng on 2/7/16.
  */
 
+var text = require('../text')
 var monster = require('../../../sprites/monkey')
 var white = require('../../../sprites/white')
 var rich = require('../../../sprites/rich')
@@ -12,9 +13,8 @@ var enemyMonsterAction = require('../../../actions/enemyMonsterAction')
 
 var fuckHimAction = require('../../../actions/fuckHimAction');
 
-var description = new PIXI.Text('Thomas 的邋遢兽！\n' +
-  '他已战胜了539个敌人，害怕生活\n' +
-  '在干净的环境里，善于放鞭炮', {
+var description = new PIXI.Text(
+  window.enemy.ownerNickName + '的' + text.texts[window.enemy.type] + '\n他已战胜了' + window.enemy.beat + '个敌人', {
   font: '30px Arial',
   fill: 0x666666,
   align: 'left'
