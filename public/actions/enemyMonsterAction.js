@@ -33,7 +33,7 @@ module.exports = pixiLib.createAction('enemyMonster', function start(enemyMonste
   }
 
   enemyMonster.appear = function() {
-    this.speed = 5
+    this.speed = 15
   }
 
   enemyMonster.render = function () {
