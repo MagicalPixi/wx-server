@@ -5,16 +5,16 @@
 var text = require('../text')
 
 var monster ;
-if(window.enemymonster.type === 0){
+if(window.enemymonster.type === '0'){
   monster = require('../../../sprites/dragon');
 }
-if(window.enemymonster.type === 1){
+if(window.enemymonster.type === '1'){
   monster = require('../../../sprites/bear');
 }
-if(window.enemymonster.type === 2){
+if(window.enemymonster.type === '2'){
   monster = require('../../../sprites/monkey');
 }
-if(window.enemymonster.type === 3){
+if(window.enemymonster.type === '3'){
   monster = require('../../../sprites/snake');
 }
 
