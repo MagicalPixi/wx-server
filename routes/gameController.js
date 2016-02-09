@@ -15,7 +15,6 @@ var checkAuthorize = function(req, res, next) {
       if(err) {
         authorize(req, res)
       } else  {
-        res.userInfo = result
         var User = model.User
         User.findOne({openid: result.openid}, function(a, user) {
           user = user || new User({openid: openid})
@@ -23,8 +22,7 @@ var checkAuthorize = function(req, res, next) {
           user.headimgurl = result.headimgurl
           user.sex = result.sex
           user.save(function(e, v) {
-            if (e) console.log(e)
-            if (v) console.log(v)
+            req.userInfo = v
             next()
           })
         })
