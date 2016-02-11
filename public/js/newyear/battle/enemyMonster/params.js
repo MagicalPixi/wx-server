@@ -8,7 +8,7 @@ var cate = {
   bear:'enemy_bear'
 };
 
-var monsters = ['enemy_dragon', 'enemy_bear', 'enemy_monkey', 'enemy_snake']
+var monsters = ['enemy_dragon', 'enemy_bear', 'enemy_monkey', 'enemy_snake'];
 
 var action = ['_boom', '_clean', '_ahhhh', '_dead']
 

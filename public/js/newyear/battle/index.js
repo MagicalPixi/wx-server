@@ -5,8 +5,12 @@ var loader = require('../../loader');
 var myMonsterParams = require('./myMonster/params')
 var enemyMonsterParams = require('./enemyMonster/params')
 
+var attackCompare = require('./attackCompare');
+
 var isReady = false;
 var battleStage = null;
+
+window.ac = attackCompare;
 
 module.exports = function (render) {
 
@@ -44,9 +48,13 @@ module.exports = function (render) {
             sprites.myMonster.clean()
           }
         }
-        sprites.operation.registerAction(actions, function(randomAttack) {
+        sprites.operation.registerAction(actions, function(attackName,randomAttack) {
           //TODO add logical for randomAttack compare with myAttack
           console.log('add logical for randomAttack compare with myAttack' + '>>>>>>randomAttackIndex: '+ randomAttack)
+
+          var compareResult = attackCompare.byName(attackName,randomAttack);
+
+          console.log('compare result:',compareResult);
         })
       }
 
@@ -58,12 +66,15 @@ module.exports = function (render) {
             if (name != 'fire') this.removeChildren();
             this.addChild(obj);
             if (name != 'dead') obj.play()
-            name === 'dead' ? obj.gotoAndStop(1) : setTimeout(function () {
-              name == 'fire' ? obj.parent.removeChild(obj) : obj.gotoAndStop(0);
-            }, name == 'fire' ? 1500 : 2000);
+            name === 'dead' ? obj.gotoAndStop(1) :
+              setTimeout(function () {
+                name == 'fire' ? obj.parent.removeChild(obj) : obj.gotoAndStop(0);
+              }, name == 'fire' ? 1500 : 2000);
           }
         });
       }
+
+
 
       battleStage.ready = true;
       battleStage.name = 'battleStage';
