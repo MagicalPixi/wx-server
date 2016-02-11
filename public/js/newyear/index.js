@@ -98,8 +98,8 @@ window.battle = function(){
   require('./battle')(render);
 };
 
-start();
-//battle();
+//start();
+battle();
 //end();
 
 module.exports = render

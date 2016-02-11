@@ -4,41 +4,7 @@
 var loader = require('../../loader');
 var myMonsterParams = require('../../../sprites/myMonster/params')
 myMonsterParams.myMonster = myMonsterParams.monsters[window.mymonster.type]
-var earthShockAction = require('../../../actions/earthShockAction');
-var enemyAttackAction = require('../../../actions/enemyAttackAction');
-var myHpAction = require('../../../actions/myHpAction');
-var enemyHpAction = require('../../../actions/enemyHpAction');
-
-
-var enemyPathArr = [
-  './enemy_bear',
-  './enemy_dragon',
-  './enemy_monkey',
-  './enemy_snake',
-];
-
-var enemyMap = {
-  1: {
-    pre: 'enemy_bear',
-    format: ['_boom', '_blink', '_ahhhh', '_clean', '_dead', '_round', '_shake', '_tail'],
-    path: enemyPathArr[0]
-  },
-  0: {
-    pre: 'enemy_dragon',
-    format: ['_boom', '_ahhhh', '_clean', '_squirm', '_wagTail', '_wink'],
-    path: enemyPathArr[1]
-  },
-  2: {
-    pre: 'enemy_monkey',
-    format: ['_boom', '_blink', '_ahhhh', '_clean', '_dead', '_round', '_shake', '_tail'],
-    path: enemyPathArr[2]
-  },
-  3: {
-    pre: 'enemy_snake',
-    format: ['_boom', '_blink', '_ahhhh', '_clean', '_dead', '_round', '_shake', '_tail'],
-    path: enemyPathArr[3]
-  }
-};
+var enemyMonsterParams = require('./enemyMonster/params')
 
 var isReady = false;
 var battleStage = null;
@@ -52,82 +18,70 @@ module.exports = function (render) {
     dispatch('enemyHpStart');
 
   }else{
-
-    var enemy = enemyMap[enemymonster.type];
-
-    ////loading脚本,但不执行
-    //require.ensure([
-    //  './enemy_bear',
-    //  './enemy_dragon',
-    //  './enemy_monkey',
-    //  './enemy_snake',
-    //], function (require) {
-
     battleStage = new PIXI.Container();
     render(battleStage);
-
     //loading资源
     loader.add(
       ['playerhp', 'enemyhp', 'fire',
         'fire_button', 'boom_button', 'clean_button', 'ahhhh_button'], 'json')
-      .addMulti(enemy.pre, enemy.format)
+      .addMulti(enemyMonsterParams.enemyMonster, enemyMonsterParams.action, 'json')
       .addMulti(myMonsterParams.myMonster, myMonsterParams.action, 'json')
       .add(['hpframe'], 'png').load(function () {
+        var sprites = require('./sprites')
 
-        var myMonster = require('../../../sprites/myMonster')
-
-        var myAttackAction = require('../../../actions/myAttackAction')
-
-        var enemy_monster;
-
-        var enemyMonsterType = parseInt(window.enemymonster.type);
-        if (enemyMonsterType === 0) {
-          enemy_monster = require('./enemy_dragon');
+      var addOperationAction = function() {
+        var actions = {
+          fire: function () {
+            this.interactive = false
+            sprites.myMonster.fire()
+          },
+          scream:function () {
+            sprites.myMonster.scream()
+          },
+          boom: function () {
+            sprites.myMonster.boom()
+          },
+          clean: function () {
+            sprites.myMonster.clean()
+          }
         }
-        if (enemyMonsterType === 1) {
-          enemy_monster = require('./enemy_bear');
-        }
-        if (enemyMonsterType === 2) {
-          enemy_monster = require('./enemy_monkey');
-        }
-        if (enemyMonsterType === 3) {
-          enemy_monster = require('./enemy_snake');
-        }
+        sprites.operation.registerAction(actions, function(randomAttack) {
+          //TODO add logical for randomAttack compare with myAttack
+          console.log('add logical for randomAttack compare with myAttack' + '>>>>>>randomAttackIndex: '+ randomAttack)
+        })
+      }
 
-        var operation2 = require('./operation2')
+      var addMonsterAction = function (params, monster) {
+        params.attack.forEach(function (name,i) {
+          var obj = monster.sprites[i]
+          obj.loop = (name != 'boom')
+          monster[name] = function (lose) {
+            if (name != 'fire') this.removeChildren();
+            this.addChild(obj);
+            if (name != 'dead') obj.play()
+            name === 'dead' ? obj.gotoAndStop(1) : setTimeout(function () {
+              name == 'fire' ? obj.parent.removeChild(obj) : obj.gotoAndStop(0);
+            }, name == 'fire' ? 1500 : 2000);
+          }
+        });
+      }
 
-        var hpframeFactory = require('../../../sprites/hpframe')
-        var enemyhp = require('../../../sprites/enemyhp')
-        var playerhp = require('../../../sprites/playerhp');
-
-        var enemyhpframe = hpframeFactory({x: 20, y: 0})
-        var playerhpframe = hpframeFactory({x: 20, y: 760})
-        var explanation = require('./explanation')
-        myAttackAction(myMonster)
-        enemyHpAction(enemyhp);
-
-        battleStage.ready = true;
-        battleStage.name = 'battleStage';
-
-        //startStafe int
-        battleStage.addChild(enemy_monster);
-
-        battleStage.addChild(operation2)
-        battleStage.addChild(enemyhpframe)
-        battleStage.addChild(playerhpframe)
-        battleStage.addChild(enemyhp)
-        battleStage.addChild(playerhp)
-        battleStage.addChild(explanation)
-        battleStage.addChild(myMonster)
-
-        enemyAttackAction(enemy_monster, enemy.format);
-
-        myHpAction(playerhp);
-
-        earthShockAction(battleStage);
-
-        isReady = true;
-      });
+      battleStage.ready = true;
+      battleStage.name = 'battleStage';
+      addOperationAction()
+      addMonsterAction(myMonsterParams, sprites.myMonster)
+      addMonsterAction(enemyMonsterParams, sprites.enemy_monster)
+        //startStafe init
+      battleStage.addChild(sprites.operation)
+        //hp bars
+      battleStage.addChild(sprites.enemyhpframe)
+      battleStage.addChild(sprites.playerhpframe)
+      battleStage.addChild(sprites.enemyhp)
+      battleStage.addChild(sprites.playerhp)
+        //monsters
+      battleStage.addChild(sprites.enemy_monster);
+      battleStage.addChild(sprites.myMonster)
+      isReady = true;
+    });
   }
-  //});
 };
