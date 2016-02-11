@@ -91,7 +91,7 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
       myMonster[name] = function (lose) {
         this.addChild(obj);
         obj.play();
-
+        state.start(lose)
 
         setTimeout(function () {
           obj.parent.removeChild(obj);
@@ -105,6 +105,7 @@ module.exports = pixilib.createAction('myAttack', function start(myMonster) {
         this.removeChildren();
         this.addChild(obj);
         obj.play();
+        state.start(lose)
 
         setTimeout(function () {
           obj.gotoAndStop(0);
