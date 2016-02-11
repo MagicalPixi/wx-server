@@ -16,10 +16,8 @@ module.exports = function (render) {
 
   if(isReady) {
     render(battleStage);
-
     dispatch('myHpStart');
     dispatch('enemyHpStart');
-
   }else{
     battleStage = new PIXI.Container();
     render(battleStage);
@@ -31,7 +29,6 @@ module.exports = function (render) {
       .addMulti(myMonsterParams.myMonster, myMonsterParams.action, 'json')
       .add(['hpframe'], 'png').load(function () {
         var sprites = require('./sprites')
-
       var addOperationAction = function() {
         var actions = {
           fire: function () {
@@ -50,10 +47,7 @@ module.exports = function (render) {
         }
         sprites.operation.registerAction(actions, function(attackName,randomAttack) {
           //TODO add logical for randomAttack compare with myAttack
-          console.log('add logical for randomAttack compare with myAttack' + '>>>>>>randomAttackIndex: '+ randomAttack)
-
           var compareResult = attackCompare.byName(attackName,randomAttack);
-
           console.log('compare result:',compareResult);
         })
       }
@@ -73,8 +67,6 @@ module.exports = function (render) {
           }
         });
       }
-
-
 
       battleStage.ready = true;
       battleStage.name = 'battleStage';
