@@ -2,8 +2,7 @@
  * Created by zyg on 16/2/4.
  */
 var loader = require('../../loader');
-var myMonsterParams = require('../../../sprites/myMonster/params')
-myMonsterParams.myMonster = myMonsterParams.monsters[window.mymonster.type]
+var myMonsterParams = require('./myMonster/params')
 var enemyMonsterParams = require('./enemyMonster/params')
 
 var isReady = false;

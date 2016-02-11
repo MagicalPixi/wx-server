@@ -16,7 +16,7 @@ var attack = ['boom', 'scream', 'fire', 'clean', 'dead'];
 
 module.exports = {
   cate: cate,
-  myMonster: cate.snake,
+  myMonster: monsters[window.mymonster.type],
   monsters: monsters,
   action: action,
   attack: attack

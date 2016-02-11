@@ -4,7 +4,7 @@
 var hpframeFactory = require('../../../sprites/hpframe')
 var enemyhp = require('../../../sprites/enemyhp')
 var playerhp = require('../../../sprites/playerhp');
-var myMonster = require('../../../sprites/myMonster')
+var myMonster = require('./myMonster')
 var operation = require('./operation2')
 var enemyhpframe = hpframeFactory({x: 20, y: 0})
 var playerhpframe = hpframeFactory({x: 20, y: 760})

@@ -1,6 +1,6 @@
 var loader = require('../../loader');
 var params = require('./params')
-var mymonsterParams = require('../../../sprites/myMonster/params')
+var mymonsterParams = require('./params')
 var descriptionAction = require('../../../actions/descriptionAction');
 var chooseMonsterAction = require('../../../actions/chooseMonsterAction');
 

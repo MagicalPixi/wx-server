@@ -6,11 +6,8 @@ var boom = require('./boom')
 var clean = require('./clean')
 var dead = require('./dead')
 var scream = require('./scream')
-var fire = require('../fire')
+var fire = require('../../../../sprites/fire')
 var myMonster = new PIXI.Container()
-
 myMonster.sprites = [boom, scream, fire, clean, dead]
-
 myMonster.addChild(clean)
-
 module.exports = myMonster
