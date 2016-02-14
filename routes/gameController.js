@@ -48,21 +48,83 @@ var monster = function(req, res, next) {
   })
 }
 
+var randomType = function() {
+  return parseInt(Math.random() * 4)
+}
+
+var monster1 = {
+  property1:1,
+  property1:1,
+  property1:1,
+  property1:1,
+  property1:1,
+  type: randomType(),
+  beat: 2000,
+  ownerNickName: '人言驯兽师',
+  ownerid:'renyan1'
+}
+var monster2 = {
+  property1:0,
+  property1:0,
+  property1:1,
+  property1:1,
+  property1:1,
+  type: randomType(),
+  beat: 2000,
+  ownerNickName: '人言驯兽师',
+  ownerid:'renyan2'
+}
+
+var monster3 = {
+  property1:0,
+  property1:1,
+  property1:1,
+  property1:1,
+  property1:0,
+  type: randomType(),
+  beat: 2000,
+  ownerNickName: '人言驯兽师',
+  ownerid:'renyan3'
+}
+
+var monster4 = {
+  property1:1,
+  property1:0,
+  property1:1,
+  property1:0,
+  property1:1,
+  type: randomType(),
+  beat: 2000,
+  ownerNickName: '人言驯兽师',
+  ownerid:'renyan4'
+}
+
+var monsters = [monster1, monster2, monster3, monster4]
+
 var getGameView = function(req, res, next) {
   var openid = req.params.id
   var param = {
     debug: true,
-    jsApiList: ['translateVoice', 'startRecord', 'stopRecord', 'playVoice', 'pauseVoice', 'stopVoice', 'onVoicePlayEnd', 'uploadVoice', 'downloadVoice'],
+    jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'],
     url: domin + req.originalUrl
   }
   api.getJsConfig(param, function(err, result) {
     if (err) console.log(err)
     var user = req.userInfo
-    getMonster(user.openid, function(err, mymonster) {
-      getMonster(openid, function(err, enemy) {
-        res.render('newyear', {env: process.env.NODE_ENV?process.env.NODE_ENV:'development', config: result, mymonster: mymonster, enemy: enemy, user: user})
+    if (id == 'create') {
+      var newMonster = monsters[randomType()]
+      createOrSaveMonster(newMonster.ownerid, newMonster, function(err, enemy) {
+        getMonster(user.openid, function(err, mymonster) {
+          res.render('newyear', {env: process.env.NODE_ENV?process.env.NODE_ENV:'development', config: result, mymonster: mymonster, enemy: enemy, user: user})
+        })
       })
-    })
+    } else {
+      getMonster(user.openid, function(err, mymonster) {
+        getMonster(openid, function(err, enemy) {
+          res.render('newyear', {env: process.env.NODE_ENV?process.env.NODE_ENV:'development', config: result, mymonster: mymonster, enemy: enemy, user: user})
+        })
+      })
+    }
   })
 }
 
@@ -98,10 +160,6 @@ var createOrSaveMonster = function(openid, monster, callback) {
 var getMonster = function(openid, callback) {
   var Monster = model.Monster
   Monster.findOne({ownerid: openid}, callback)
-}
-
-var randomType = function() {
-  return parseInt(Math.random() * 4)
 }
 
 module.exports = {
