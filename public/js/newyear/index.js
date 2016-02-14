@@ -98,6 +98,10 @@ window.battle = function(){
   require('./battle')(render);
 };
 
+window.onerror = function (error) {
+  console.error('window err:',error)
+}
+
 //start();
 battle();
 //end();

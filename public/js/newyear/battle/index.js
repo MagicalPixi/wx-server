@@ -10,13 +10,16 @@ var attackCompare = require('./attackCompare');
 var isReady = false;
 var battleStage = null;
 
+var enemyHp;
+var playerHp;
+
 module.exports = function (render) {
 
   if(isReady) {
     render(battleStage);
 
-    dispatch('myHpStart');
-    dispatch('enemyHpStart');
+    enemyHp.init();
+    playerHp.init();
 
   }else{
     battleStage = new PIXI.Container();
@@ -29,6 +32,9 @@ module.exports = function (render) {
       .addMulti(myMonsterParams.myMonster, myMonsterParams.action, 'json')
       .add(['hpframe'], 'png').load(function () {
         var sprites = require('./sprites')
+
+        enemyHp = sprites.enemyhp;
+        playerHp = sprites.playerhp;
 
       var addOperationAction = function() {
         var actions = {
