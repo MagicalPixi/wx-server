@@ -31,18 +31,24 @@ var monster_enemy_texts = [require('../../../sprites/dragon_enemy_text'),
 require('../../../sprites/bear_enemy_text'),
 require('../../../sprites/monkey_enemy_text'),
 require('../../../sprites/snake_enemy_text')]
+var ownerName = new PIXI.Text(
+  window.enemymonster.ownerNickName ,{
+    font: '30px Arial',
+    fill: 0x000000,
+    align: 'left'
+  })
 
-var description = new PIXI.Text(
-  window.enemymonster.ownerNickName + '的' + text.texts[window.enemymonster.type] + '\n他已战胜了' + window.enemymonster.beat + '个敌人', {
-  font: '30px Arial',
-  fill: 0x666666,
-  align: 'left'
-})
+var beatCount = new PIXI.Text(
+  window.enemymonster.beat ,{
+    font: '30px Arial',
+    fill: 0x000000,
+    align: 'left'
+  })
 
-description.anchor.x = 0.5
-description.x = 320
-description.y = 700
-
+ownerName.y = 707
+ownerName.x = 100
+beatCount.x = 300
+beatCount.y = 840
 var enemyMonster = new PIXI.Container()
 enemyMonsterAction(enemyMonster)
 
@@ -56,8 +62,9 @@ enemyMonster.addChild(rich)
 enemyMonster.addChild(handsom)
 enemyMonster.addChild(white)
 enemyMonster.addChild(beautiful)
-//enemyMonster.addChild(description)
 enemyMonster.addChild(fuckHim);
+enemyMonster.addChild(ownerName)
+enemyMonster.addChild(beatCount)
 enemyMonster.addChild(monster_enemy_texts[window.enemymonster.type])
 module.exports = enemyMonster
 
