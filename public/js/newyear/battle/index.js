@@ -54,8 +54,19 @@ module.exports = function (render) {
           var r = true;
           if(compareResult > 0){
             r = sprites.enemyhp.injured();
+
+            if(!r){
+              window.end(true);
+            }
+
           }else if(compareResult < 0){
             r = sprites.playerhp.injured();
+
+
+            if(!r){
+              window.end(false);
+            }
+
           }
 
           if(!r){
