@@ -10,8 +10,6 @@ var attackCompare = require('./attackCompare');
 var isReady = false;
 var battleStage = null;
 
-window.ac = attackCompare;
-
 module.exports = function (render) {
 
   if(isReady) {
@@ -54,9 +52,13 @@ module.exports = function (render) {
 
           var compareResult = attackCompare.byName(attackName,randomAttack);
 
-          console.log('compare result:',compareResult);
+          if(compareResult > 0){
+            sprites.enemyhp.injured();
+          }else if(compareResult < 0){
+            sprites.playerhp.injured();
+          }
         })
-      }
+      };
 
       var addMonsterAction = function (params, monster) {
         params.attack.forEach(function (name,i) {
@@ -78,6 +80,7 @@ module.exports = function (render) {
 
       battleStage.ready = true;
       battleStage.name = 'battleStage';
+
       addOperationAction()
       addMonsterAction(myMonsterParams, sprites.myMonster)
       addMonsterAction(enemyMonsterParams, sprites.enemy_monster)

@@ -8,6 +8,9 @@ mySprite.setHp = function(hp) {
 }
 
 mySprite.injured = function(count) {
+  if(!count){
+    count = 1;
+  }
   this.setHp(this.hp - count)
 }
 
