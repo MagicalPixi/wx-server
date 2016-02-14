@@ -4,25 +4,51 @@
 
 var explanation = new PIXI.Container()
 
-var text = new PIXI.Text('', {
-  font: '30px Arial',
+var mytext = new PIXI.Text('', {
+  font: '100px Arial',
   fill: 0x666666,
   align: 'left'
 })
 
-text.y = 350
-text.x = 20
+var enemytext = new PIXI.Text('', {
+  font: '100px Arial',
+  fill: 0x666666,
+  align: 'left'
+})
 
-explanation.addChild(text)
+mytext.y = 550
+mytext.x = 340
 
-var error = ['有点饿了', '卖了个萌', '身体不舒服', '春心荡漾']
+enemytext.y = 150
+enemytext.x = 20
 
-var names = ['赛雷!', '大扫除!', '放火!',
-  '尖叫!', '生气...', '流汗...', '摇尾巴', '变圆', '眨眼', '摇一摇', '挂掉了']
+explanation.addChild(mytext)
+explanation.addChild(enemytext)
 
-explanation.update = function (enemy, success, index) {
-  text.text = enemy ? '敌方' :'你的' + '年兽' + (success ? ('成功使用技能 \'' + names[index] + ' \'') : (error[parseInt(Math.random() * error.length)] +
-  ',\n 错误的使用了技能 \'' + names[index] + ' \''))
+
+var names = ['赛雷!', '大扫除', '放火!',
+  '尖叫!']
+
+explanation.update = function (enemy, my, success) {
+  mytext.text = names[my]
+  enemytext.text = names[enemy]
 }
+
+explanation.nameTransToIndexMap = function (name) {
+  var m = {
+    boom:0,
+    clean:1,
+    fire:2,
+    scream:3,
+  }
+
+  var index = m[name];
+
+  if(index === undefined){
+    throw new Error(name + ' attackName invalid');
+  }
+
+  return index;
+};
 
 module.exports = explanation

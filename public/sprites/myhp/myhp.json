@@ -38,7 +38,7 @@
 
 },
 "meta": {
-	"image": "enemyhp.png",
+	"image": "myhp.png",
 	"size": {"w": 581, "h": 287},
 	"scale": "1"
 }

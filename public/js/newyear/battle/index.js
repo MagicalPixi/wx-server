@@ -4,7 +4,7 @@
 var loader = require('../../loader');
 var myMonsterParams = require('./myMonster/params')
 var enemyMonsterParams = require('./enemyMonster/params')
-
+var explanation = require('./explanation')
 var attackCompare = require('./attackCompare');
 
 var isReady = false;
@@ -12,6 +12,17 @@ var battleStage = null;
 
 var enemyHp;
 var playerHp;
+
+var getTotalHp = function(player) {
+  var properties = ['property1', 'property2', 'property3', 'property4', 'property5']
+  var count = 0
+  for (var a = 0; a < properties.length; a++) {
+    if (player[properties[a]] == 1) {
+      count ++
+    }
+  }
+  return count
+}
 
 module.exports = function (render) {
 
@@ -24,7 +35,7 @@ module.exports = function (render) {
     render(battleStage);
     //loading资源
     loader.add(
-      ['playerhp', 'enemyhp', 'fire',
+      ['myhp', 'enemyhp', 'fire',
         'fire_button', 'boom_button', 'clean_button', 'ahhhh_button'], 'json')
       .addMulti(enemyMonsterParams.enemyMonster, enemyMonsterParams.action, 'json')
       .addMulti(myMonsterParams.myMonster, myMonsterParams.action, 'json')
@@ -51,6 +62,7 @@ module.exports = function (render) {
         sprites.operation.registerAction(actions, function(attackName,randomAttack) {
           //TODO add logical for randomAttack compare with myAttack
           var compareResult = attackCompare.byName(attackName,randomAttack);
+          explanation.update(randomAttack, explanation.nameTransToIndexMap(attackName))
           var r = true;
           if(compareResult > 0){
             r = sprites.enemyhp.injured();
@@ -89,13 +101,14 @@ module.exports = function (render) {
         //startStafe init
       battleStage.addChild(sprites.operation)
         //hp bars
-      battleStage.addChild(sprites.enemyhpframe)
-      battleStage.addChild(sprites.playerhpframe)
+      sprites.enemyhp.gotoAndStop(getTotalHp(window.enemymonster) + 1)
       battleStage.addChild(sprites.enemyhp)
+      sprites.playerhp.gotoAndStop(getTotalHp(window.mymonster) + 1)
       battleStage.addChild(sprites.playerhp)
         //monsters
       battleStage.addChild(sprites.enemy_monster);
       battleStage.addChild(sprites.myMonster)
+      battleStage.addChild(explanation)
       isReady = true;
     });
   }
