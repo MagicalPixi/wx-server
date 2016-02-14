@@ -52,10 +52,15 @@ module.exports = function (render) {
 
           var compareResult = attackCompare.byName(attackName,randomAttack);
 
+          var r = true;
           if(compareResult > 0){
-            sprites.enemyhp.injured();
+            r = sprites.enemyhp.injured();
           }else if(compareResult < 0){
-            sprites.playerhp.injured();
+            r = sprites.playerhp.injured();
+          }
+
+          if(!r){
+            console.log('game over');
           }
         })
       };
