@@ -74,7 +74,7 @@ module.exports = function (render) {
             if (name != 'dead') obj.play()
             name === 'dead' ? obj.gotoAndStop(1) :
               setTimeout(function () {
-                name == 'fire' ? obj.parent.removeChild(obj) : obj.gotoAndStop(0);
+                name == 'fire' && obj.parent ? obj.parent.removeChild(obj) : obj.gotoAndStop(0);
               }, name == 'fire' ? 1500 : 2000);
           }
         });
