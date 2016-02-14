@@ -6,6 +6,7 @@ var ajax = require('../../ajax')
 var params = require('./params')
 var monster ;
 var enemyMonsterType = parseInt(window.enemymonster.type);
+var share_text = require('../../../sprites/share_text')
 if( enemyMonsterType === 0){
   monster = require('../../../sprites/dragon');
 }
@@ -26,17 +27,21 @@ var handsom = require('../../../sprites/handsom')
 var tall = require('../../../sprites/tall')
 var beautiful = require('../../../sprites/beautiful')
 var enemyMonsterAction = require('../../../actions/enemyMonsterAction')
-var description = new PIXI.Text('Thomas 的邋遢兽！\n' +
-  '他已战胜了539个敌人，害怕生活\n' +
-  '在干净的环境里，善于放鞭炮', {
+var name = new PIXI.Text(window.user.nickname, {
   font: '30px Arial',
   fill: 0x666666,
   align: 'left'
 })
+name.x = 320
+name.y = 707
 
-description.anchor.x = 0.5
-description.x = 320
-description.y = 700
+var getProperty = new PIXI.Text(window.user.nickname, {
+  font: '30px Arial',
+  fill: 0x666666,
+  align: 'left'
+})
+getProperty.x = 145
+getProperty.y = 770
 
 var myMonster = new PIXI.Container()
 myMonster.addChild(monster)
@@ -45,30 +50,37 @@ myMonster.addChild(rich)
 myMonster.addChild(handsom)
 myMonster.addChild(white)
 myMonster.addChild(beautiful)
-myMonster.addChild(description)
+myMonster.addChild(name)
+myMonster.addChild(getProperty)
+myMonster.addChild(share_text)
 enemyMonsterAction(myMonster)
 var tags = ['高', '富', '帅', '白', '美']
 var upgradeIndex = 100
+var shareText
 myMonster.update = function (beat) {
   if (beat) {
+    name.text = window.user.nickname
     addNewProperty()
-    var shareText
-    console.log(upgradeIndex)
     if (upgradeIndex < tags.length - 1) {
       shareText = '就在刚才' + window.user.nickname + '弄死了'
-        + window.enemymonster.ownerNickName + '的年兽, \n' + '恭喜你获得了\' ' + tags[upgradeIndex] + "'的属性,\n 成功的阻止了年兽的肆虐!"
+        + window.enemymonster.ownerNickName + '的年兽,' + '恭喜你获得了\' ' + tags[upgradeIndex] + "'的属性, 成功的阻止了年兽的肆虐!"
+      getProperty.text = tags[upgradeIndex]
     } else if(upgradeIndex == 100) {
-      shareText = '就在刚才,' + window.user.nickname + ' 弄死了 '+ window.enemymonster.ownerNickName + '的年兽! \n' +
-        '恭喜获得了所有属性, \'高\' \'富\' \'帅\' \'白\' \n' +
+      shareText = '就在刚才,' + window.user.nickname + ' 弄死了 '+ window.enemymonster.ownerNickName + '的年兽!' +
+        '恭喜获得了所有属性, \'高\' \'富\' \'帅\' \'白\'' +
         ' \'美\' 于一身'
-    } else  {
-      shareText = '就在刚才,' + window.user.nickname + ' 弄死了 '+ window.enemymonster.ownerNickName + '的年兽! \n' +
+      getProperty.text = '全部'
+    } else {
+      getProperty.text = '和自己打萌萌哒'
+      shareText = '就在刚才,' + window.user.nickname + ' 弄死了 ' + window.enemymonster.ownerNickName + '的年兽!' +
         '但他并没有获得属性!'
     }
   } else {
+    name.text = '自己'
+    getProperty.text = '再来一把'
     shareText = '就在刚才, xxx 的年兽被 xxx的年兽 弄死了'
   }
-  description.text = shareText
+  console.log(shareText)
   wx.onMenuShareTimeline({
     title: shareText, // 分享标题
     link: 'http://wx.easyell.com/game' + window.user.opendid, // 分享链接

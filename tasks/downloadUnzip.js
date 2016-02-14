@@ -10,7 +10,7 @@ var download = require('gulp-download');
 var unzip = require('gulp-unzip');
 
 var downloadMaterialNames = [
- 'dragon_text',
+ 'share_text',
 ];
 
 var downloadUrls = downloadMaterialNames.map(function (name) {

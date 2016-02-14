@@ -18,7 +18,7 @@ module.exports = function(render, beat) {
 
       var again = require('../../../sprites/again')
       var monster = require('./monster');
-      monster.update(true)
+      monster.update(beat)
       var light = require('../../../sprites/light');
       light.play();
 

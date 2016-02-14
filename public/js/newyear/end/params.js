@@ -10,7 +10,7 @@ var R = {
     'monkey_description', 'snake_description', 'bear_description',
     'again'
   ],
-  png: ['title', 'dragon', 'monkey', 'snake', 'bear']
+  png: ['title', 'dragon', 'monkey', 'snake', 'bear', 'share_text']
 }
 
 var monsters = ['dragon', 'bear', 'monkey', 'snake']
