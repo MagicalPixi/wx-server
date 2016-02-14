@@ -35,7 +35,10 @@ operation.registerAction = function(actions, callback) {
       actions[attack]()
       var randomAttack = enemyMonster.randomAttack()
       this.interactive = false
-      callback(attack, randomAttack)
+      callback(attack,randomAttack)
+      setTimeout(function () {
+        this.interactive = true;
+      }.bind(this),1000)
     })
   }
 };

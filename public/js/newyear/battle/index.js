@@ -10,14 +10,15 @@ var attackCompare = require('./attackCompare');
 var isReady = false;
 var battleStage = null;
 
-window.ac = attackCompare;
+var enemyHp;
+var playerHp;
 
 module.exports = function (render) {
 
   if(isReady) {
     render(battleStage);
-    dispatch('myHpStart');
-    dispatch('enemyHpStart');
+    enemyHp.init();
+    playerHp.init();
   }else{
     battleStage = new PIXI.Container();
     render(battleStage);
@@ -29,6 +30,8 @@ module.exports = function (render) {
       .addMulti(myMonsterParams.myMonster, myMonsterParams.action, 'json')
       .add(['hpframe'], 'png').load(function () {
         var sprites = require('./sprites')
+        enemyHp = sprites.enemyhp;
+        playerHp = sprites.playerhp;
       var addOperationAction = function() {
         var actions = {
           fire: function () {
@@ -48,9 +51,18 @@ module.exports = function (render) {
         sprites.operation.registerAction(actions, function(attackName,randomAttack) {
           //TODO add logical for randomAttack compare with myAttack
           var compareResult = attackCompare.byName(attackName,randomAttack);
-          console.log('compare result:',compareResult);
+          var r = true;
+          if(compareResult > 0){
+            r = sprites.enemyhp.injured();
+          }else if(compareResult < 0){
+            r = sprites.playerhp.injured();
+          }
+
+          if(!r){
+            console.log('game over');
+          }
         })
-      }
+      };
 
       var addMonsterAction = function (params, monster) {
         params.attack.forEach(function (name,i) {
@@ -70,6 +82,7 @@ module.exports = function (render) {
 
       battleStage.ready = true;
       battleStage.name = 'battleStage';
+
       addOperationAction()
       addMonsterAction(myMonsterParams, sprites.myMonster)
       addMonsterAction(enemyMonsterParams, sprites.enemy_monster)
