@@ -17,9 +17,8 @@ mySprite.injured = function(count) {
 }
 
 mySprite.init = function () {
-  mySprite.setHp(9)
+
 }
-mySprite.setHp(9)
 
 
 
