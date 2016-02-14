@@ -28,8 +28,10 @@ module.exports = function (render) {
 
   if(isReady) {
     render(battleStage);
-    enemyHp.init();
-    playerHp.init();
+
+    sprites.enemyhp.gotoAndStop(getTotalHp(window.enemymonster) + 1)
+    sprites.playerhp.gotoAndStop(getTotalHp(window.mymonster) + 1)
+
   }else{
     battleStage = new PIXI.Container();
     render(battleStage);
@@ -74,11 +76,9 @@ module.exports = function (render) {
           }else if(compareResult < 0){
             r = sprites.playerhp.injured();
 
-
             if(!r){
               window.end(false);
             }
-
           }
 
           if(!r){
@@ -113,8 +113,9 @@ module.exports = function (render) {
       battleStage.addChild(sprites.operation)
         //hp bars
       sprites.enemyhp.gotoAndStop(getTotalHp(window.enemymonster) + 1)
-      battleStage.addChild(sprites.enemyhp)
       sprites.playerhp.gotoAndStop(getTotalHp(window.mymonster) + 1)
+
+        battleStage.addChild(sprites.enemyhp)
       battleStage.addChild(sprites.playerhp)
         //monsters
       battleStage.addChild(sprites.enemy_monster);
