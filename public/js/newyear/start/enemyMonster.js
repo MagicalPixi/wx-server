@@ -26,8 +26,11 @@ var handsom = require('../../../sprites/handsom')
 var tall = require('../../../sprites/tall')
 var beautiful = require('../../../sprites/beautiful')
 var enemyMonsterAction = require('../../../actions/enemyMonsterAction')
-
 var fuckHimAction = require('../../../actions/fuckHimAction');
+var monster_enemy_texts = [require('../../../sprites/dragon_enemy_text'),
+require('../../../sprites/bear_enemy_text'),
+require('../../../sprites/monkey_enemy_text'),
+require('../../../sprites/snake_enemy_text')]
 
 var description = new PIXI.Text(
   window.enemymonster.ownerNickName + '的' + text.texts[window.enemymonster.type] + '\n他已战胜了' + window.enemymonster.beat + '个敌人', {
@@ -53,8 +56,8 @@ enemyMonster.addChild(rich)
 enemyMonster.addChild(handsom)
 enemyMonster.addChild(white)
 enemyMonster.addChild(beautiful)
-enemyMonster.addChild(description)
+//enemyMonster.addChild(description)
 enemyMonster.addChild(fuckHim);
-
+enemyMonster.addChild(monster_enemy_texts[window.enemymonster.type])
 module.exports = enemyMonster
 

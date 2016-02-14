@@ -9,7 +9,10 @@ var R = {
     'white', 'tall', 'rich', 'handsom', 'beautiful',
     'monkey_description', 'snake_description', 'bear_description'
   ],
-  png: ['title', 'dragon', 'monkey', 'snake', 'bear', 'about', 'turnback']
+  png: ['title', 'dragon', 'monkey', 'snake', 'bear', 'about', 'turnback',
+  'dragon_enemy_text', 'bear_enemy_text', 'monkey_enemy_text',
+  'snake_enemy_text', 'dragon_text', 'bear_text', 'monkey_text',
+  'snake_text']
 }
 
 module.exports = {

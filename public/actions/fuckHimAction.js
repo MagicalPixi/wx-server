@@ -6,7 +6,7 @@ var pixiLib = require('pixi-lib');
 module.exports = pixiLib.createAction('fuckHim', function (btn) {
   var state = this;
 
-  btn.y = 1204;
+  btn.y = 1304;
   btn.appear = false;
   btn.interactive = true;
 

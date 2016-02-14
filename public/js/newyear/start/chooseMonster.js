@@ -8,7 +8,11 @@ var monster_description = require('../../../sprites/monster_description')
 var monkey_description = require('../../../sprites/monkey_description')
 var bear_description = require('../../../sprites/bear_description')
 var snake_decription = require('../../../sprites/snake_description')
-
+var bear_text = require('../../../sprites/bear_text')
+var snake_text = require('../../../sprites/snake_text')
+var monkey_text = require('../../../sprites/monkey_text')
+var dragon_text = require('../../../sprites/dragon_text')
+var texts = [dragon_text, bear_text, monkey_text, snake_text]
 var chooseMonster = new PIXI.Container()
 
 // change_monster
@@ -42,25 +46,17 @@ monster_descriptionAction(monster_description);
 monster_descriptionAction(monkey_description);
 monster_descriptionAction(bear_description);
 monster_descriptionAction(snake_decription);
-var description = new PIXI.Text('邋遢兽！害怕生活\n' +
-  '在干净的环境里，善于放鞭炮', {
-  font: '30px Arial',
-  fill: 0x666666,
-  align: 'left'
-})
-
-description.anchor.x = 0.5
-description.x = 320
-description.y = 700
 chooseMonster.current = 0
-chooseMonster.addChild(description)
+chooseMonster.addChild(chooseBar)
 
 chooseMonster.walkIn = function () {
   monsters[this.current].walkIn()
+  this.addChild(texts[this.current])
 }
 
 chooseMonster.walkOut = function (callBack) {
   monsters[this.current].walkOut(callBack)
+  this.removeChild(texts[this.current])
   this.current ++
   if (this.current > 3) {
     this.current = 0

@@ -10,7 +10,7 @@ var download = require('gulp-download');
 var unzip = require('gulp-unzip');
 
 var downloadMaterialNames = [
-  'fire'
+ 'dragon_text',
 ];
 
 var downloadUrls = downloadMaterialNames.map(function (name) {

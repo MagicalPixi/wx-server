@@ -5,18 +5,15 @@ var pixiLib = require('pixi-lib')
 
 module.exports = pixiLib.createAction('description',function start(description) {
   var state = this;
-
   description.speed = 0
   description.isApear = true
   description.acceleration = 0
-
   description.render = function () {
     this.children.forEach(function (child) {
       if (child.render) child.render()
     });
     this.y += this.speed
     this.speed += this.acceleration
-
     checkdrop(this.parent)
   }
 
