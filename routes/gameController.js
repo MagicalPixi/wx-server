@@ -111,7 +111,7 @@ var getGameView = function(req, res, next) {
   api.getJsConfig(param, function(err, result) {
     if (err) console.log(err)
     var user = req.userInfo
-    if (id == 'create') {
+    if (req.params.id == 'create') {
       var newMonster = monsters[randomType()]
       createOrSaveMonster(newMonster.ownerid, newMonster, function(err, enemy) {
         getMonster(user.openid, function(err, mymonster) {
