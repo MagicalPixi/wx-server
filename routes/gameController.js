@@ -104,7 +104,7 @@ var monsters = [monster1, monster2, monster3, monster4]
 var getGameView = function(req, res, next) {
   var openid = req.params.id
   var param = {
-    debug: true,
+    debug: false,
     jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'],
     url: domin + req.originalUrl
   }
