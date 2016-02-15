@@ -58,7 +58,7 @@ var monster1 = {
   property1:1,
   property1:1,
   property1:1,
-  type: randomType(),
+  type: 0,
   beat: 2000,
   ownerNickName: '人言驯兽师',
   ownerid:'renyan1'
@@ -69,7 +69,7 @@ var monster2 = {
   property1:1,
   property1:1,
   property1:1,
-  type: randomType(),
+  type: 0,
   beat: 2000,
   ownerNickName: '人言驯兽师',
   ownerid:'renyan2'
@@ -81,7 +81,7 @@ var monster3 = {
   property1:1,
   property1:1,
   property1:0,
-  type: randomType(),
+  type: 0,
   beat: 2000,
   ownerNickName: '人言驯兽师',
   ownerid:'renyan3'
@@ -93,13 +93,28 @@ var monster4 = {
   property1:1,
   property1:0,
   property1:1,
-  type: randomType(),
+  type: 0,
   beat: 2000,
   ownerNickName: '人言驯兽师',
   ownerid:'renyan4'
 }
 
 var monsters = [monster1, monster2, monster3, monster4]
+
+var makeMonster = function(req, res, next) {
+  var param = {
+    debug: false,
+    jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'],
+    url: domin + req.originalUrl
+  }
+  api.getJsConfig(param, function(err, result) {
+    if (err) console.log(err)
+    var newMonster = monsters[randomType()]
+    createOrSaveMonster(newMonster.ownerid, newMonster, function(err, enemy) {
+      res.render('make', {config: result,enemy: enemy})
+    })
+  })
+}
 
 var getGameView = function(req, res, next) {
   var openid = req.params.id
@@ -167,5 +182,6 @@ module.exports = {
   checkAuthorize: checkAuthorize,
   configExample: configExample,
   updateMonster: updateMonster,
-  monster: monster
+  monster: monster,
+  make:makeMonster
 }
