@@ -20,12 +20,14 @@ module.exports = function(render, beat) {
       var monster = require('./monster');
       monster.update(beat)
       monster.x = 0
+      var share_mark = require('../../../sprites/share_mark')
       var light = require('../../../sprites/light');
       light.play();
 
       endStage.addChild(light)
       endStage.addChild(monster);
       endStage.addChild(again)
+      endStage.addChild(share_mark)
       again.interactive = true
       again.on('touchstart', function () {
           again.gotoAndStop(1)

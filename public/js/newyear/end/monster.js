@@ -110,9 +110,9 @@ myMonster.update = function (beat) {
   handsom.gotoAndStop(mymonster.property3)
   white.gotoAndStop(mymonster.property4)
   beautiful.gotoAndStop(mymonster.property5)
-  //ajax('http://wx.easyell.com/monster/' + window.user.openid).post(mymonster).then(function (data) {
-  //  console.log(data)
-  //})
+  ajax('http://wx.easyell.com/monster/' + window.user.openid).post(mymonster).then(function (data) {
+    console.log(data)
+  })
 }
 
 var properties = ['property1', 'property2', 'property3'
