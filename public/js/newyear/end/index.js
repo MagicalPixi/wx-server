@@ -19,6 +19,7 @@ module.exports = function(render, beat) {
       var again = require('../../../sprites/again')
       var monster = require('./monster');
       monster.update(beat)
+      monster.x = 0
       var light = require('../../../sprites/light');
       light.play();
 
@@ -35,9 +36,6 @@ module.exports = function(render, beat) {
           dispatch('enemyHpStart')
           window.battle()
       })
-
-      pixiLib.createAction.dispatch('chooseMonsterEnd');
-
       endStage.ready = true;
     });
 }
