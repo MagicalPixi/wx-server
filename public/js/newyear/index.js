@@ -84,6 +84,12 @@ var render = function(stage) {
   animate()
 };
 
+var BGM = function(start) {
+  var bgm = document.querySelector('#bgm')
+  bgm.src = 'http://7u2min.com1.z0.glb.clouddn.com/pm_battle_bg.mp3';
+  start? bgm.play() : bgm.pause()
+}
+
 document.body.appendChild(renderer.view);
 
 window.start = function () {
@@ -91,6 +97,7 @@ window.start = function () {
 };
 
 window.end = function (beat) {
+  BGM(false)
   require('./end')(render, beat);
 };
 
