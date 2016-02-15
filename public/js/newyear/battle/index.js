@@ -28,7 +28,7 @@ module.exports = function (render) {
 
   if(isReady) {
     render(battleStage);
-
+    var sprites = require('./sprites')
     sprites.enemyhp.gotoAndStop(getTotalHp(window.enemymonster) + 1)
     sprites.playerhp.gotoAndStop(getTotalHp(window.mymonster) + 1)
 
