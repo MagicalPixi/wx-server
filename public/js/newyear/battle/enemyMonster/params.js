@@ -10,7 +10,7 @@ var cate = {
 
 var monsters = ['enemy_dragon', 'enemy_bear', 'enemy_monkey', 'enemy_snake'];
 
-var action = ['_boom', '_clean', '_ahhhh', '_dead']
+var action = ['_boom', '_ahhhh', '_clean', '_dead']
 
 var attack = ['boom', 'scream', 'fire', 'clean', 'dead'];
 

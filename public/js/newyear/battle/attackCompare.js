@@ -5,9 +5,9 @@
 var nameTransToIndexMap = function (name) {
   var m = {
     boom:0,
-    clean:1,
+    scream:1,
     fire:2,
-    scream:3,
+    clean:3,
   }
 
   var index = m[name];

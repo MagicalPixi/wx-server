@@ -30,6 +30,7 @@ var names = ['赛雷!', '大扫除', '放火!',
   '尖叫!']
 
 explanation.update = function (enemy, my, success) {
+  console.log(enemy + names[enemy] + "    " + my + names[my])
   mytext.text = names[my]
   enemytext.text = names[enemy]
 }

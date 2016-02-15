@@ -62,6 +62,7 @@ module.exports = function (render) {
         }
         sprites.operation.registerAction(actions, function(attackName,randomAttack) {
           //TODO add logical for randomAttack compare with myAttack
+          console.log(attackName)
           var compareResult = attackCompare.byName(attackName,randomAttack);
           explanation.update(randomAttack, explanation.nameTransToIndexMap(attackName))
           var r = true;
