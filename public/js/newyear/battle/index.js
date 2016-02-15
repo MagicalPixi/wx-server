@@ -24,10 +24,17 @@ var getTotalHp = function(player) {
   return count
 }
 
+var BGM = function(start) {
+  var bgm = document.querySelector('#bgm')
+  bgm.src = 'http://7u2min.com1.z0.glb.clouddn.com/pm_battle_bg.mp3';
+  start? bgm.play() : bgm.pause()
+}
+
 module.exports = function (render) {
 
   if(isReady) {
     render(battleStage);
+    BGM(true)
     var sprites = require('./sprites')
     sprites.enemyhp.gotoAndStop(getTotalHp(window.enemymonster) + 1)
     sprites.playerhp.gotoAndStop(getTotalHp(window.mymonster) + 1)
@@ -41,6 +48,7 @@ module.exports = function (render) {
       .addMulti(enemyMonsterParams.enemyMonster, enemyMonsterParams.action, 'json')
       .addMulti(myMonsterParams.myMonster, myMonsterParams.action, 'json')
       .add(['fail', 'success'], 'png').load(function () {
+      BGM(true)
         var sprites = require('./sprites')
         enemyHp = sprites.enemyhp;
         playerHp = sprites.playerhp;
