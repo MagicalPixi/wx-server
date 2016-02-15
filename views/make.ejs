@@ -15,6 +15,7 @@
     </script>
     <script>
         window.enemymonster = JSON.parse('<%- JSON.stringify(enemy) %>')
+        var shareText = '年兽正在肆虐, 大家快去阻止他们!!'
         wx.onMenuShareTimeline({
             title: shareText, // 分享标题
             link: 'http://wx.easyell.com/game' + window.enemymonster.ownerid, // 分享链接
