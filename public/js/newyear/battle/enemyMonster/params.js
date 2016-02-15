@@ -10,9 +10,9 @@ var cate = {
 
 var monsters = ['enemy_dragon', 'enemy_bear', 'enemy_monkey', 'enemy_snake'];
 
-var action = ['_boom', '_ahhhh', '_clean', '_dead']
+var action = ['_boom', '_ahhhh', '_clean']
 
-var attack = ['boom', 'scream', 'fire', 'clean', 'dead'];
+var attack = ['boom', 'scream', 'fire', 'clean'];
 
 module.exports = {
   cate: cate,
