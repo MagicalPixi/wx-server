@@ -31,7 +31,6 @@ module.exports = function (render) {
     var sprites = require('./sprites')
     sprites.enemyhp.gotoAndStop(getTotalHp(window.enemymonster) + 1)
     sprites.playerhp.gotoAndStop(getTotalHp(window.mymonster) + 1)
-
   }else{
     battleStage = new PIXI.Container();
     render(battleStage);
