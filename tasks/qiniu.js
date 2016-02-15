@@ -4,10 +4,11 @@
 var path = require('path');
 var qnUpload = require('gulp-qiniu');
 
-var src = path.resolve(__dirname,'../public/images/hitRunMan/background/startTitle.png');
+var src = path.resolve(__dirname,'../public/sprites/*/*.json');
+
 var audioSrc = path.resolve(__dirname,'../public/audio/*');
 
-var optionDir = path.resolve(__dirname,'../uploadDir/');
+var optionDir = 'wx';
 
 module.exports = function(gulp){
   gulp.task('qiniu',function(){
@@ -18,8 +19,18 @@ module.exports = function(gulp){
       private: false
     },{
       dir:optionDir,
-      versioning: true,
       versionFile: './cdn.json'
     }))
   });
+  //gulp.task('qiniu',function(){
+  //  gulp.src(src).pipe(qnUpload({
+  //    accessKey: "OoRT_gLqGqgXXZ1aR3L1iDIjvEYGRfWX86iqU14w",
+  //    secretKey: "TSNUtEGcL50mGAuVtO9C9FBijB3R3djy6pX2_Dzz",
+  //    bucket: "test",
+  //    private: false
+  //  },{
+  //    dir:optionDir,
+  //    versionFile: './cdn.json'
+  //  }))
+  //});
 };
