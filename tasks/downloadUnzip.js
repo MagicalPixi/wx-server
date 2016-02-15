@@ -10,7 +10,7 @@ var download = require('gulp-download');
 var unzip = require('gulp-unzip');
 
 var downloadMaterialNames = [
- 'enemyhp',
+ 'success',
 ];
 
 var downloadUrls = downloadMaterialNames.map(function (name) {

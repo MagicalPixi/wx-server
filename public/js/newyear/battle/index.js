@@ -40,7 +40,7 @@ module.exports = function (render) {
         'fire_button', 'boom_button', 'clean_button', 'ahhhh_button'], 'json')
       .addMulti(enemyMonsterParams.enemyMonster, enemyMonsterParams.action, 'json')
       .addMulti(myMonsterParams.myMonster, myMonsterParams.action, 'json')
-      .add(['hpframe'], 'png').load(function () {
+      .add(['fail', 'success'], 'png').load(function () {
         var sprites = require('./sprites')
         enemyHp = sprites.enemyhp;
         playerHp = sprites.playerhp;
@@ -69,17 +69,29 @@ module.exports = function (render) {
             r = sprites.enemyhp.injured();
 
             if(!r){
-              window.end(true);
+              setTimeout(function () {
+                battleStage.addChild(sprites.success)
+                setTimeout(function () {
+                  battleStage.removeChild(sprites.success)
+                  window.end(true);
+                }, 2000)
+              }, 2000)
+
             }
 
           }else if(compareResult < 0){
             r = sprites.playerhp.injured();
 
             if(!r){
-              window.end(false);
+              setTimeout(function () {
+                battleStage.addChild(sprites.fail)
+                setTimeout(function () {
+                  battleStage.removeChild(sprites.fail)
+                  window.end(false);
+                }, 2000)
+              }, 2000)
             }
           }
-
           if(!r){
             console.log('game over');
           }
