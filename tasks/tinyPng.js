@@ -17,8 +17,6 @@ module.exports = function(gulp){
     gulp.src(pngDir)
       .pipe(tinyPng(apiKey))
       .pipe(gulp.dest(dest));
-
-
   });
 
   gulp.task('moveJson', function () {
