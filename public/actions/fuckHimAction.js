@@ -16,8 +16,8 @@ module.exports = pixiLib.createAction('fuckHim', function (btn) {
     if(!btn.appear){
       btn.y -= speed;
 
-      if(btn.y <= 850){
-        btn.y = 850;
+      if(btn.y <= 880){
+        btn.y = 880;
         btn.appear = true
       }
     }
