@@ -59,7 +59,7 @@ var upgradeIndex = 100
 var shareText
 myMonster.update = function (beat) {
   if (beat) {
-    name.text = window.user.nickname
+    name.text = window.enemymonster.ownerNickName
     addNewProperty()
     if (upgradeIndex < tags.length - 1) {
       shareText = '就在刚才' + window.user.nickname + '弄死了'
@@ -78,7 +78,7 @@ myMonster.update = function (beat) {
   } else {
     name.text = '自己'
     getProperty.text = '再来一把'
-    shareText = '就在刚才, xxx 的年兽被 xxx的年兽 弄死了'
+    shareText = '就在刚才, ' + window.user.nickname + ' 的年兽被 '+ window.enemymonster.ownerNickName +'的年兽 弄死了'
   }
   console.log(shareText)
   wx.onMenuShareTimeline({
