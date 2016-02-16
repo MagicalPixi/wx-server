@@ -5,7 +5,7 @@
 var ajax = require('../../ajax')
 var params = require('./params')
 var monster ;
-var enemyMonsterType = parseInt(window.enemymonster.type);
+var enemyMonsterType = parseInt(window.mymonster.type);
 var share_text = require('../../../sprites/share_text')
 if( enemyMonsterType === 0){
   monster = require('../../../sprites/dragon');
