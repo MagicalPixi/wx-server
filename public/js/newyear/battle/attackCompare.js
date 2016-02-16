@@ -22,7 +22,6 @@ var nameTransToIndexMap = function (name) {
 module.exports = {
   //0 > 1 > 2 > 3 > 0, 0 === 2, 1 === 3
   byIndex: function (myIndex,enemyIndex) {
-
     var result = myIndex === enemyIndex ? 0 :
       Math.abs(myIndex - enemyIndex) === 2 ? 0 :
         myIndex < enemyIndex ? 1 : -1;
