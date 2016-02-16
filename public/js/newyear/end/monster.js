@@ -80,11 +80,15 @@ myMonster.update = function (beat) {
     getProperty.text = '再来一把'
     shareText = '就在刚才, ' + window.user.nickname + ' 的年兽被 '+ window.enemymonster.ownerNickName +'的年兽 弄死了'
   }
+  var  share_imageurls = ['http://7u2min.com1.z0.glb.clouddn.com/monster_game_icon.png',
+  'http://7u2min.com1.z0.glb.clouddn.com/share_icon_bear.png',
+  'http://7u2min.com1.z0.glb.clouddn.com/share_icon_monkey.png',
+  'http://7u2min.com1.z0.glb.clouddn.com/share_icon_snake.png']
   console.log(shareText)
   wx.onMenuShareTimeline({
     title: shareText, // 分享标题
     link: 'http://wx.easyell.com/game/' + window.user.openid, // 分享链接
-    imgUrl: 'http://7u2min.com1.z0.glb.clouddn.com/monster_game_icon.png', // 分享图标
+    imgUrl: share_imageurls[window.mymonster.type], // 分享图标
     success: function () {
       // 用户确认分享后执行的回调函数
     },
@@ -95,7 +99,7 @@ myMonster.update = function (beat) {
   wx.onMenuShareAppMessage({
     title: shareText, // 分享标题
     link: 'http://wx.easyell.com/game/' + window.user.openid, // 分享链接
-    imgUrl: 'http://7u2min.com1.z0.glb.clouddn.com/monster_game_icon.png', // 分享图标
+    imgUrl: share_imageurls[window.mymonster.type], // 分享图标
     success: function () {
       // 用户确认分享后执行的回调函数
     },
