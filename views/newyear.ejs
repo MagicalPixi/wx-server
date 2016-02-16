@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="/style/newyear.css"/>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script>
-
+        var configString = '<%- JSON.stringify(config) %>'
+        var config = JSON.parse(configString)
+        wx.config(config)
     </script>
     <style>
         body{
