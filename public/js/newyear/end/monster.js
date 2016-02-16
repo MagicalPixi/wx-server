@@ -127,16 +127,17 @@ var addNewProperty = function() {
   var count = 0
   for (var i = 0; i < properties.length; i++) {
     var property = properties[i]
-    if (window.mymonster[property] == 0 && window.enemymonster[property] != 0) {
+    if (window.mymonster[property] === 0 && window.enemymonster[property] !== 0) {
       array.push(i)
     }
-    if (window.mymonster[property] == 1) {
+    if (window.mymonster[property] === 1) {
       count ++
     }
   }
+  console.log(array)
   if (array.length > 0) {
-    var index = Math.random() * array.length
-    window.mymonster[array[index]] = 1;
+    var index = parseInt(Math.random()) * array.length
+    window.mymonster[properties[array[index]]] = 1;
     upgradeIndex = array[index]
   } else if(count != 5) {
     upgradeIndex = 101
