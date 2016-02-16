@@ -54,10 +54,10 @@ var randomType = function() {
 
 var monster1 = {
   property1:1,
-  property1:1,
-  property1:1,
-  property1:1,
-  property1:1,
+  property2:1,
+  property3:1,
+  property4:1,
+  property5:1,
   type: 0,
   beat: 2000,
   ownerNickName: '人言驯兽师',
@@ -65,10 +65,10 @@ var monster1 = {
 }
 var monster2 = {
   property1:0,
-  property1:0,
-  property1:1,
-  property1:1,
-  property1:1,
+  property2:0,
+  property3:1,
+  property4:1,
+  property5:1,
   type: 0,
   beat: 2000,
   ownerNickName: '人言驯兽师',
@@ -77,10 +77,10 @@ var monster2 = {
 
 var monster3 = {
   property1:0,
-  property1:1,
-  property1:1,
-  property1:1,
-  property1:0,
+  property2:1,
+  property3:1,
+  property4:1,
+  property5:0,
   type: 0,
   beat: 2000,
   ownerNickName: '人言驯兽师',
@@ -89,10 +89,10 @@ var monster3 = {
 
 var monster4 = {
   property1:1,
-  property1:0,
-  property1:1,
-  property1:0,
-  property1:1,
+  property2:0,
+  property3:1,
+  property4:0,
+  property5:1,
   type: 0,
   beat: 2000,
   ownerNickName: '人言驯兽师',
