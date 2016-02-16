@@ -160,7 +160,7 @@ var createOrSaveMonster = function(openid, monster, callback) {
   var Monster = model.Monster
   Monster.findOne({ownerid: openid}, function(err, result) {
     result = result || new Monster({ownerid: openid, property1: 0, property2: 0, property3: 0, property4: 0, property5: 0})
-    result.type = result.type || randomType()
+    result.type = monster.type || randomType()
     result.property1 = monster.property1
     result.property2 = monster.property2
     result.property3 = monster.property3
