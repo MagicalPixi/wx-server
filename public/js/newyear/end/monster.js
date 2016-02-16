@@ -71,7 +71,7 @@ myMonster.update = function (beat) {
         ' \'美\' 于一身'
       getProperty.text = '全部'
     } else {
-      getProperty.text = '和自己打萌萌哒'
+      getProperty.text = '萌萌哒'
       shareText = '就在刚才,' + window.user.nickname + ' 弄死了 ' + window.enemymonster.ownerNickName + '的年兽!' +
         '但他并没有获得属性!'
     }
