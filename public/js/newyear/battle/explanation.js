@@ -26,8 +26,8 @@ explanation.addChild(mytext)
 explanation.addChild(enemytext)
 
 
-var names = ['赛雷!', '大扫除', '放火!',
-  '尖叫!']
+var names = ['塞雷!', '大扫除', '放火!',
+  '咆哮!']
 
 explanation.update = function (enemy, my, success) {
   console.log(enemy + names[enemy] + "    " + my + names[my])
