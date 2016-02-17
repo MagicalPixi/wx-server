@@ -1,20 +1,19 @@
 {
 "frames": {
-	"boom.png": {
-		"frame": {"x":0, "y":147, "w":458, "h":136},
-		"spriteSourceSize": {"x":26,"y":13,"w":520,"h":170},
-		"sourceSize": {"w":520,"h":170}
+	"boom_button.png": {
+		"frame": {"x":0, "y":0, "w":458, "h":136},
+		"spriteSourceSize": {"x":0,"y":0,"w":458,"h":136},
+		"sourceSize": {"w":458,"h":136}
 	},
-	"boom1.png": {
-		"frame": {"x":0, "y":0, "w":458, "h":146},
-		"spriteSourceSize": {"x":26,"y":13,"w":520,"h":170},
-		"sourceSize": {"w":520,"h":170}
+	"boom_buttom1.png": {
+		"frame": {"x":0, "y":137, "w":458, "h":136},
+		"spriteSourceSize": {"x":0,"y":0,"w":458,"h":136},
+		"sourceSize": {"w":458,"h":136}
 	}
-
 },
 "meta": {
 	"image": "boom_button.png",
-	"size": {"w": 459, "h": 284},
+	"size": {"w": 459, "h": 274},
 	"scale": "1"
 }
 }

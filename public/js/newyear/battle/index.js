@@ -55,7 +55,6 @@ module.exports = function (render) {
       var addOperationAction = function() {
         var actions = {
           fire: function () {
-            this.interactive = false
             sprites.myMonster.fire()
           },
           scream:function () {

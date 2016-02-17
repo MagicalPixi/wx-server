@@ -56,7 +56,7 @@ var mySprite = lib.getMc({
 
         
 
-        "scale.x" :  0.5 ,
+        "scale.x" :  0.52 ,
 
         
 

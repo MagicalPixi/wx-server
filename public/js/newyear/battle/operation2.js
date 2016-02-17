@@ -30,7 +30,11 @@ operation.addChild(cleanButton);
 operation.registerAction = function(actions, callback) {
   for(var key in actions) {
     buttons[key].interactive = true
+    buttons[key].on('touchstart', function() {
+      this.gotoAndStop(1)
+    })
     buttons[key].on('touchend', function () {
+      this.gotoAndStop(0)
       var attack = buttonKey(this) || 'clean'
       actions[attack]()
       var randomAttack = enemyMonster.randomAttack()

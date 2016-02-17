@@ -52,6 +52,11 @@ beatCount.y = 840
 var enemyMonster = new PIXI.Container()
 enemyMonsterAction(enemyMonster)
 
+tall.gotoAndStop(window.enemymonster.property1)
+rich.gotoAndStop(window.enemymonster.property2)
+handsom.gotoAndStop(window.enemymonster.property3)
+white.gotoAndStop(window.enemymonster.property4)
+beautiful.gotoAndStop(window.enemymonster.property5)
 
 var fuckHim = require('../../../sprites/fuck_him');
 fuckHimAction(fuckHim);
