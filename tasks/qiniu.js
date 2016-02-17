@@ -8,7 +8,7 @@ var src = path.resolve(__dirname,'../public/sprites/*/*.png');
 
 var audioSrc = path.resolve(__dirname,'../public/audio/*');
 
-var optionDir = 'wx';
+var optionDir = 'wx/';
 
 module.exports = function(gulp){
   gulp.task('qiniu',function(){
@@ -19,6 +19,7 @@ module.exports = function(gulp){
       private: false
     },{
       dir:optionDir,
+      override:true,
       versionFile: './cdn.json'
     }))
   });
