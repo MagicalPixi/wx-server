@@ -9,11 +9,11 @@ module.exports = pixiLib.createAction('chooseMonster',function start(chooseMonst
   chooseMonster.acceleration = 0
   var comfirm_monster = require('../sprites/comfirm_monster')
   comfirm_monster.on('touchstart', function() {
-    this.gotoAndStop(1)
+    this.gotoAndStop(0)
   })
 
   comfirm_monster.on('touchend', function() {
-    this.gotoAndStop(0)
+    this.gotoAndStop(1)
     window.mymonster = {
       type: chooseMonster.current,
       property1: 0,

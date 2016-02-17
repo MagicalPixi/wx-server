@@ -10,7 +10,7 @@ var enemyMonster = new PIXI.Container()
 enemyMonster.sprites = [boom, clean, fire, scream]
 enemyMonster.addChild(clean)
 enemyMonster.randomAttack = function() {
-  var randomAttackIndex = parseInt(Math.random() * (params.attack.length - 1))
+  var randomAttackIndex = parseInt(Math.random() * (params.attack.length))
   enemyMonster[params.attack[randomAttackIndex]]()
   return randomAttackIndex
 }
